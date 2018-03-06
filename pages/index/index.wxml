@@ -1,13 +1,32 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="tabs-container" >
+    <view class="tabs">
+      <view
+        bindtap="bindSelectedTab"
+        class="{{selectedTab === 0 ? 'selected-tab' : 'tab' }}"
+        data-tab="0"
+      >
+        首页
+      </view>
+      <view
+        bindtap="bindSelectedTab"
+        class="{{selectedTab === 1 ? 'selected-tab' : 'tab' }}"
+        data-tab="1"
+      >
+        课程
+      </view>
+      <view
+        bindtap="bindSelectedTab"
+        class="{{selectedTab === 1 ? 'selected-tab' : 'tab' }}"
+        data-tab="1"
+      >
+        我的
+      </view>
+    </view>
+    <view
+      class="bar"
+      style="{{selectedTab === 0 ?'animation-name: bar-animation-reverse; margin-left:15%': 'animation-name: bar-animation; margin-left: 11.65%'}}"
+    />
   </view>
 </view>
