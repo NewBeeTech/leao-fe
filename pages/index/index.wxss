@@ -100,7 +100,7 @@
 
 .swiper {
   width: 100vw;
-  position: absolute;
+  position: fixed;
   top: 80rpx;
   left: 0;
   right: 0;
