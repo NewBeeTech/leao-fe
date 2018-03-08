@@ -41,17 +41,17 @@
         <view class="bottom-infos">
           <view class="bottom-info">
             <image src="../../assets/tell.svg" class="bottom-icon"/>
-            <view>客服电话</view>
+            <view class="bottom-info-title">客服电话</view>
             <view>15088682347</view>
           </view>
           <view class="bottom-info">
             <image src="../../assets/mail.svg" class="bottom-icon"/>
-            <view>向我们反馈</view>
+            <view class="bottom-info-title">向我们反馈</view>
             <view>请告诉我们您的意见</view>
           </view>
           <view class="bottom-info">
             <image src="../../assets/info.svg" class="bottom-icon"/>
-            <view>关于我们</view>
+            <view class="bottom-info-title">关于我们</view>
             <view>基本信息与常见问题</view>
           </view>
         </view>
