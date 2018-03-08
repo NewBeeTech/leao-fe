@@ -4,7 +4,6 @@
   flex-direction: column;
   padding: 30rpx 30rpx;
   background-color: #fff;
-  overflow-y: scroll;
 }
 
 .hotCoursesDescription {
@@ -25,6 +24,7 @@
 .courses {
   display: flex;
   flex-direction: row;
+  overflow-y: scroll;
 }
 .course {
   margin-right: 20rpx;

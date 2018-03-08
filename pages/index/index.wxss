@@ -104,7 +104,7 @@
   left: 0;
   right: 0;
   overflow-y: scroll;
-  height: 200%;
+  /* height: 200%; */
   background-color: #f5f8fb;
 }
 swiper {
