@@ -133,6 +133,7 @@ swiper {
   height: 228rpx;
 }
 .bottom-info {
+  width: 180rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,10 +148,11 @@ swiper {
   text-align: center;
   color: #cdcdcd;
 }
+
 .bottom-info-title {
   font-size: 24rpx;
 }
-.bottom-icon {
+.bottom-icon{
   width: 60rpx;
   height: 60rpx;
   margin-bottom: 16rpx;
