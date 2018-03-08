@@ -18,15 +18,14 @@
       </view>
       <view
         bindtap="bindSelectedTab"
-        class="{{selectedTab === 1 ? 'selected-tab' : 'tab' }}"
-        data-tab="1"
+        class="{{selectedTab === 2 ? 'selected-tab' : 'tab' }}"
+        data-tab="2"
       >
         我的
       </view>
     </view>
     <view
-      class="bar"
-      style="{{selectedTab === 0 ?'animation-name: bar-animation-reverse; margin-left:15%': 'animation-name: bar-animation; margin-left: 11.65%'}}"
+      class="bar bar-{{selectedTab}}"
     />
   </view>
 </view>

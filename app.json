@@ -5,7 +5,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "orange",
+    "navigationBarBackgroundColor": "#FFD225",
     "navigationBarTitleText": "乐傲运动",
     "navigationBarTextStyle":"black"
   }

@@ -4,16 +4,31 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    selectedTab: 0,
+    emergencyList: [
+
+    ],
+    studayList: [
+
+    ],
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  bindSelectedTab(e) {
+    this.setData({
+      selectedTab: Number(e.currentTarget.dataset.tab),
+    });
+  },
+  getTabStyle: function() {
+    if (this.selectedTab === 0) {
+      return 'animation-name: bar-animation-reverse; margin-left:11.65%';
+    } else if (this.selectedTab === 1) {
+      return 'animation-name: bar-animation; margin-left: 45%';
+    }
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
