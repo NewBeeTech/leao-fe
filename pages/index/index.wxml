@@ -29,10 +29,16 @@
       class="bar bar-{{selectedTab}}"
     />
   </view>
-  <block wx:if="{{ selectedTab == 0}}">
-    <view class="swiper">
+  <swiper class="swiper"  current="{{selectedTab}}" bindchange="change">
+    <swiper-item class="swiper-item">
       <template is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
       <template is="hotCourses" data="{{ description: '热门课程精选', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' }]}}" />
-    </view>
-  </block>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="item">课程</view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="item">我的</view>
+    </swiper-item>
+  </swiper>
 </view>

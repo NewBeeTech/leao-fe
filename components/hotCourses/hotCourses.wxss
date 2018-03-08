@@ -24,10 +24,11 @@
 .courses {
   display: flex;
   flex-direction: row;
-  overflow-y: scroll;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .course {
-  margin-right: 20rpx;
+  margin-bottom: 30rpx;
 }
 .hotCourses-imgSrc {
   width: 335rpx;
