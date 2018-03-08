@@ -29,6 +29,11 @@ Page({
       selectedTab: Number(e.detail.current),
     });
   },
+  call: (e) => {
+    wx.makePhoneCall({
+      phoneNumber: '15088682347' //仅为示例，并非真实的电话号码
+    });
+  },
   onLoad: function () {
     wx.getSystemInfo({
       success: (res) => {

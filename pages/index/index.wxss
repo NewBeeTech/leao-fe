@@ -147,6 +147,11 @@ swiper {
   letter-spacing: normal;
   text-align: center;
   color: rgba(33, 33, 33, 0.87);
+  border: none;
+  background-color: #f5f8fb;
+  margin: 0 0;
+  padding: 0 0;
+  position: static;
 }
 
 .bottom-info-title {
