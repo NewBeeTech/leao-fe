@@ -146,7 +146,7 @@ swiper {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #cdcdcd;
+  color: rgba(33, 33, 33, 0.87);
 }
 
 .bottom-info-title {
