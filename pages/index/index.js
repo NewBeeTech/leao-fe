@@ -23,12 +23,10 @@ Page({
       selectedTab: Number(e.currentTarget.dataset.tab),
     });
   },
-  getTabStyle: function() {
-    if (this.selectedTab === 0) {
-      return 'animation-name: bar-animation-reverse; margin-left:11.65%';
-    } else if (this.selectedTab === 1) {
-      return 'animation-name: bar-animation; margin-left: 45%';
-    }
+  change(e) {
+    this.setData({
+      selectedTab: Number(e.detail.current),
+    });
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

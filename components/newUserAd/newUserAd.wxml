@@ -1,0 +1,7 @@
+
+<template name="newUserAd">
+  <view class="newUserContainer">
+    <view class="description">{{description}}</view>
+    <image class="imgAd" src="{{src}}" />
+  </view>
+</template>
