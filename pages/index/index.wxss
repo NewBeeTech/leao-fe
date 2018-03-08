@@ -1,5 +1,7 @@
 @import "../../libs/animate.wxss"
 @import "../../components/newUserAd/newUserAd.wxss"
+@import "../../components/hotCourses/hotCourses.wxss"
+
 .container {
   font-family: PingFangSC-Regular, sans-serif;
   overflow-x: hidden;
@@ -102,8 +104,11 @@
   left: 0;
   right: 0;
   overflow-y: scroll;
-  height: 100%;
+  height: 200%;
   background-color: #f5f8fb;
+}
+swiper {
+  min-height: 100%;
 }
 .swiper-item {
   /* display: flex; */
@@ -113,6 +118,6 @@
 }
 .item {
   /* height: 100vh; */
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #f5f8fb;
 }

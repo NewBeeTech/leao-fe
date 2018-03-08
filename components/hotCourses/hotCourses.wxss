@@ -1,0 +1,49 @@
+.hotCoursesContainer {
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 30rpx;
+  background-color: #fff;
+  overflow-y: scroll;
+}
+
+.hotCoursesDescription {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.87);
+  margin-bottom: 30rpx;
+}
+
+.courses {
+  display: flex;
+  flex-direction: row;
+}
+.course {
+  margin-right: 20rpx;
+}
+.hotCourses-imgSrc {
+  width: 335rpx;
+  height: 200rpx;
+  border-radius: 4rpx;
+}
+.hotCoursesSubDescription {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.87);
+}

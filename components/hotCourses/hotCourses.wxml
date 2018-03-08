@@ -1,0 +1,13 @@
+<template name="hotCourses">
+  <view class="hotCoursesContainer">
+    <view class="hotCoursesDescription">{{description}}</view>
+    <view class="courses">
+      <block wx:key="{{index}}" wx:for="{{courses}}" >
+        <view class="course">
+          <image class="hotCourses-imgSrc" src="{{item.imgSrc}}" />
+          <view class="hotCoursesSubDescription">{{item.description}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

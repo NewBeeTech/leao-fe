@@ -1,4 +1,5 @@
 <import src="../../components/newUserAd/newUserAd.wxml"/>
+<import src="../../components/hotCourses/hotCourses.wxml"/>
 <view class="container">
   <view class="tabs-container" >
     <view class="tabs">
@@ -31,6 +32,7 @@
   <swiper class="swiper"  current="{{selectedTab}}" bindchange="change">
     <swiper-item class="swiper-item">
       <template is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
+      <template is="hotCourses" data="{{ description: '热门课程精选', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png', description: '羽毛球初级' }]}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
       <view class="item">课程</view>
