@@ -1,5 +1,7 @@
 <import src="../../components/newUserAd/newUserAd.wxml"/>
 <import src="../../components/hotCourses/hotCourses.wxml"/>
+<import src="../../components/coaches/coaches.wxml"/>
+<import src="../../components/gyms/gyms.wxml"/>
 <view class="container">
   <view class="tabs-container" >
     <view class="tabs">
@@ -31,8 +33,30 @@
   </view>
   <swiper class="swiper"  current="{{selectedTab}}" bindchange="change">
     <swiper-item class="swiper-item">
-      <template is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
-      <template is="hotCourses" data="{{ description: '热门课程精选', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' }]}}" />
+      <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
+        <template is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
+        <template is="hotCourses" data="{{ description: '热门课程精选', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' }]}}" />
+        <template is="coaches" data="{{ description: '专业的运动教练', coaches: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/coach.jpg', description: '小毛教练' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/coach.jpg', description: '小毛教练' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/coach.jpg', description: '小毛教练' }]}}" />
+        <template is="gyms" data="{{ description: '北京市体育馆', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' }]}}" />
+        <view class="bottom-infos">
+          <view class="bottom-info">
+            <image src="../../assets/tell.svg" class="bottom-icon"/>
+            <view>客服电话</view>
+            <view>15088682347</view>
+          </view>
+          <view class="bottom-info">
+            <image src="../../assets/mail.svg" class="bottom-icon"/>
+            <view>向我们反馈</view>
+            <view>请告诉我们您的意见</view>
+          </view>
+          <view class="bottom-info">
+            <image src="../../assets/info.svg" class="bottom-icon"/>
+            <view>关于我们</view>
+            <view>基本信息与常见问题</view>
+          </view>
+        </view>
+        <view style="height: 80rpx"></view>
+      </scroll-view>
     </swiper-item>
     <swiper-item class="swiper-item">
       <view class="item">课程</view>

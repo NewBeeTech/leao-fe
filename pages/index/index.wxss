@@ -1,6 +1,7 @@
 @import "../../libs/animate.wxss"
 @import "../../components/newUserAd/newUserAd.wxss"
 @import "../../components/hotCourses/hotCourses.wxss"
+@import "../../components/coaches/coaches.wxss"
 
 .container {
   font-family: PingFangSC-Regular, sans-serif;
@@ -103,21 +104,50 @@
   top: 80rpx;
   left: 0;
   right: 0;
+  bottom: 0rpx;
   overflow-y: scroll;
-  /* height: 200%; */
+  height: auto;
   background-color: #f5f8fb;
 }
 swiper {
-  min-height: 100%;
+  /* min-height: 200%; */
 }
 .swiper-item {
   /* display: flex; */
   /* flex-direction: column; */
   /* width: 100vw; */
-  /* height: 100vh; */
+  /* height: 200vh; */
 }
 .item {
   /* height: 100vh; */
   /* height: 100vh; */
+  /* background-color: #f5f8fb; */
+}
+.bottom-infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   background-color: #f5f8fb;
+  width: 100vw;
+  height: 228rpx;
+}
+.bottom-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ont-family: PingFangSC;
+  font-size: 20rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #cdcdcd;
+}
+.bottom-icon {
+  width: 60rpx;
+  height: 60rpx;
 }

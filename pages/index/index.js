@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     selectedTab: 0,
+    clientHeight: 0,
     emergencyList: [
 
     ],
@@ -29,6 +30,13 @@ Page({
     });
   },
   onLoad: function () {
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          clientHeight: res.windowHeight
+        });
+      }
+    });
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
