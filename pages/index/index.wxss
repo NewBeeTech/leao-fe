@@ -153,4 +153,5 @@ swiper {
 .bottom-icon {
   width: 60rpx;
   height: 60rpx;
+  margin-bottom: 16rpx;
 }
