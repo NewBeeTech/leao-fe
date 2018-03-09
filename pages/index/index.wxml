@@ -100,12 +100,12 @@
               <view>邀请好友</view>
             </view>
           </view>
-          <view class="my-list-cell">
+          <button class="my-list-cell-btn" open-type="contact">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/mail.svg" />
               <view>意见反馈</view>
             </view>
-          </view>
+          </button>
           <view class="my-list-cell-last">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/info.svg" style="color: rgba(33, 33, 33, 0.87);" />
