@@ -8,7 +8,7 @@ Page({
     selectedTab: 0,
     year: `${date.getFullYear()}`,
     month: `${date.getMonth()+1}`,
-    yearAndMonth: `${date.getFullYear()}-${date.getMonth()+1 > 10 ? date.getMonth() : '0' + date.getMonth()}`,
+    yearAndMonth: `${date.getFullYear()}-${date.getMonth()+1 > 10 ? date.getMonth() : '0' + (date.getMonth()+1)}`,
     emergencyList: [
 
     ],

@@ -60,13 +60,16 @@
     </swiper-item>
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
-        <view>
-          <view>
-            <picker mode="date" start="2000-09-01" end="2222-09-01" fields="month" bindchange="bindChangeMonth">
-              <view class="picker">
-                {{year+'年'+month+'月'}}
-              </view>
-            </picker>
+        <view style="padding: 0 30rpx;">
+          <view class="picker-filter">
+            <view>
+              <picker mode="date" value="{{yearAndMonth}}"  end="2222-12-31" fields="month" bindchange="bindChangeMonth">
+                <view class="date-picker">
+                  {{year+'年'+month+'月'}}
+                </view>
+              </picker>
+              <view></view>
+            </view>
           </view>
         </view>
       </scroll-view>
