@@ -153,6 +153,9 @@ swiper {
   padding: 0 0;
   position: static;
 }
+.bottom-info::after {
+  border: none;
+}
 
 .bottom-info-title {
   font-size: 24rpx;
@@ -161,4 +164,13 @@ swiper {
   width: 60rpx;
   height: 60rpx;
   margin-bottom: 16rpx;
+}
+.user-info {
+  width: 100vw;
+  height: 486.5rpx;
+  /* -webkit-filter: blur(3rpx); */
+  /* filter: blur(3rpx); */
+  background-image: url('http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/circle.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }

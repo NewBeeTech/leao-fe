@@ -62,7 +62,9 @@
       <view class="item">课程</view>
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="item">我的</view>
+      <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
+        <view class="user-info"></view>
+      </scroll-view>
     </swiper-item>
   </swiper>
 </view>
