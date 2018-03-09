@@ -87,6 +87,32 @@
         <view class="buy-btn-container">
           <view class="buy-btn">购买课时（限时低至7折）</view>
         </view>
+        <view class="my-list">
+          <view class="my-list-cell">
+            <view class="cell-left-item">
+              <image class="cell-icon" src="../../assets/paper.svg" />
+              <view>交易记录</view>
+            </view>
+          </view>
+          <view class="my-list-cell">
+            <view class="cell-left-item">
+              <image class="cell-icon" src="../../assets/share.svg" />
+              <view>邀请好友</view>
+            </view>
+          </view>
+          <view class="my-list-cell">
+            <view class="cell-left-item">
+              <image class="cell-icon" src="../../assets/mail.svg" />
+              <view>意见反馈</view>
+            </view>
+          </view>
+          <view class="my-list-cell-last">
+            <view class="cell-left-item">
+              <image class="cell-icon" src="../../assets/info.svg" style="color: rgba(33, 33, 33, 0.87);" />
+              <view>关于我们</view>
+            </view>
+          </view>
+        </view>
       </scroll-view>
     </swiper-item>
   </swiper>
