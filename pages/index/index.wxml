@@ -63,7 +63,30 @@
     </swiper-item>
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
-        <view class="user-info"></view>
+        <view class="user-info">
+          <image class="user-avatar" src="{{ userInfo.avatarUrl ? userInfo.avatarUrl : ''}}" />
+          <view class="user-nickName">
+            {{userInfo.nickName}}
+            <image src="../../assets/edit.svg" class="edit-icon" />
+          </view>
+        </view>
+        <view class="courses-info">
+          <view class="course-info">
+            <view class="course-number">0</view>
+            <view class="courses-info-desc">可用课时</view>
+          </view>
+          <view class="course-info">
+            <view class="course-number">0</view>
+            <view class="courses-info-desc">已预约课程</view>
+          </view>
+          <view class="course-info">
+            <view class="course-number">0</view>
+            <view class="courses-info-desc">已完成课程</view>
+          </view>
+        </view>
+        <view class="buy-btn-container">
+          <view class="buy-btn">购买课时（限时低至7折）</view>
+        </view>
       </scroll-view>
     </swiper-item>
   </swiper>
