@@ -59,7 +59,17 @@
       </scroll-view>
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="item">课程</view>
+      <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
+        <view>
+          <view>
+            <picker mode="date" start="2000-09-01" end="2222-09-01" fields="month" bindchange="bindChangeMonth">
+              <view class="picker">
+                {{year+'年'+month+'月'}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </scroll-view>
     </swiper-item>
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">

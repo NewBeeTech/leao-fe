@@ -1,10 +1,14 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const date = new Date();
 
 Page({
   data: {
     selectedTab: 0,
+    year: `${date.getFullYear()}`,
+    month: `${date.getMonth()+1}`,
+    yearAndMonth: `${date.getFullYear()}-${date.getMonth()+1 > 10 ? date.getMonth() : '0' + date.getMonth()}`,
     emergencyList: [
 
     ],
@@ -63,6 +67,14 @@ Page({
         }
       })
     }
+  },
+  bindChangeMonth: function(e) {
+    console.log(e.detail.value);
+    this.setData({
+      yearAndMonth: e.detail.value,
+      year: new Date(e.detail.value).getFullYear(),
+      month: new Date(e.detail.value).getMonth()+1,
+    });
   },
   getUserInfo: function(e) {
     console.log(e)
