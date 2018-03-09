@@ -65,7 +65,10 @@
             <view>
               <picker mode="date" value="{{yearAndMonth}}"  end="2222-12-31" fields="month" bindchange="bindChangeMonth">
                 <view class="date-picker">
-                  {{year+'年'+month+'月'}}
+                  <view class="date-picker-text">
+                    {{year+'年'+month+'月'}}
+                  </view>
+                  <image src="../../assets/black-arrow.svg" class="black-arrow" />
                 </view>
               </picker>
               <view></view>
@@ -115,13 +118,13 @@
           </view>
           <button class="my-list-cell-btn" open-type="contact">
             <view class="cell-left-item">
-              <image class="cell-icon" src="../../assets/mail.svg" />
+              <image class="cell-icon" src="../../assets/mail-black.svg" />
               <view>意见反馈</view>
             </view>
           </button>
           <view class="my-list-cell-last">
             <view class="cell-left-item">
-              <image class="cell-icon" src="../../assets/info.svg" style="color: rgba(33, 33, 33, 0.87);" />
+              <image class="cell-icon" src="../../assets/info-black.svg" style="color: rgba(33, 33, 33, 0.87);" />
               <view>关于我们</view>
             </view>
           </view>
