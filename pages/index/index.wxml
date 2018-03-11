@@ -60,19 +60,14 @@
     </swiper-item>
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
-        <view style="padding: 0 30rpx;">
+        <view style="padding: 0 30rpx; background-image: linear-gradient(to top, #ffeb4c, #ffd225);">
           <view class="picker-filter">
             <view>
-              <picker mode="date" value="{{yearAndMonth}}"  end="2222-12-31" fields="month" bindchange="bindChangeMonth">
-                <view class="date-picker">
-                  <view class="date-picker-text">
-                    {{year+'年'+month+'月'}}
-                  </view>
-                  <image src="../../assets/black-arrow.svg" class="black-arrow" />
-                </view>
-              </picker>
-              <view></view>
+              <view class="date-picker-text">
+                {{year+'年'+month+'月'}}
+              </view>
             </view>
+            <view class="date-picker-desc">会员可以预约未来一周的课程</view>
           </view>
         </view>
       </scroll-view>

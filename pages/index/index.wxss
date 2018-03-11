@@ -363,3 +363,16 @@ swiper {
   max-height: 40rpx;
 
 }
+.date-picker-desc {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.3rpx;
+  text-align: center;
+  color: #8e8b59;
+}
