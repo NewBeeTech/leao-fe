@@ -1,0 +1,36 @@
+<template name="calendar">
+  <view class="calendar-cotainer">
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+    <view class="day-cell">
+      <view>周一</view>
+      <view>7</view>
+    </view>
+  </view>
+</template>

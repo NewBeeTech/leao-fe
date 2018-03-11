@@ -2,6 +2,7 @@
 @import "../../components/newUserAd/newUserAd.wxss"
 @import "../../components/hotCourses/hotCourses.wxss"
 @import "../../components/coaches/coaches.wxss"
+@import "../../components/calendar/calendar.wxss";
 
 .container {
   font-family: PingFangSC-Regular, sans-serif;
@@ -334,7 +335,7 @@ swiper {
 }
 .picker-filter {
   padding: 30rpx 0;
-  border-bottom: 1px solid #e5ebf1;
+  border-bottom: 1px solid #edc801;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
