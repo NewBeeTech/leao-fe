@@ -62,7 +62,7 @@
     </swiper-item>
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
-        <view class="animated {{ selectedTab == 1 ? 'fadeInDown' : ''}}" style="padding: 0 30rpx; background-image: linear-gradient(to top, #ffeb4c, #ffd225);">
+        <view style="padding: 0 30rpx; background-image: linear-gradient(to top, #ffeb4c, #ffd225);">
           <view class="picker-filter">
             <view>
               <view class="date-picker-text">
@@ -73,7 +73,9 @@
           </view>
           <template is="calendar" />
         </view>
-        <template is="emptyCourse" />
+        <view class="animated {{ selectedTab == 1 ? 'fadeInUp' : ''}}">
+          <template is="emptyCourse" />
+        </view>
       </scroll-view>
     </swiper-item>
     <swiper-item class="swiper-item">
