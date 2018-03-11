@@ -3,6 +3,7 @@
 @import "../../components/hotCourses/hotCourses.wxss"
 @import "../../components/coaches/coaches.wxss"
 @import "../../components/calendar/calendar.wxss";
+@import "../../components/emptyCourse/emptyCourse.wxss";
 
 .container {
   font-family: PingFangSC-Regular, sans-serif;

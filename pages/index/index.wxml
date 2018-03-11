@@ -3,6 +3,7 @@
 <import src="../../components/coaches/coaches.wxml"/>
 <import src="../../components/gyms/gyms.wxml"/>
 <import src="../../components/calendar/calendar.wxml"/>
+<import src="../../components/emptyCourse/emptyCourse.wxml"/>
 <view class="container">
   <view class="tabs-container" >
     <view class="tabs">
@@ -72,6 +73,7 @@
           </view>
           <template is="calendar" />
         </view>
+        <template is="emptyCourse" />
       </scroll-view>
     </swiper-item>
     <swiper-item class="swiper-item">
