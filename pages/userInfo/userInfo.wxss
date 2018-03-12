@@ -1,0 +1,78 @@
+.info-title {
+  height: 48rpx;
+  line-height: 48rpx;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.87);
+  width: 100vw;
+  border-bottom: 1rpx solid #d8d8d8;
+  padding: 30rpx;
+}
+.info-cell {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 30rpx;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.info-cell-title {
+  height: 42rpx;
+  line-height: 42rp;x
+  font-family: PingFangSC;
+  font-size: 30rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #212121;
+  margin-bottom: 20rpx;
+}
+.info-cell-input {
+  margin-bottom: 10rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  /* color: #9ca3ae; */
+}
+.info-cell-select {
+  margin-bottom: 10rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  /* color: #9ca3ae; */
+}
+.info-cell-unselect {
+  margin-bottom: 10rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #9ca3ae;
+}

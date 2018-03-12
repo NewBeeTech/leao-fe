@@ -1,0 +1,25 @@
+<view>
+  <view class="basic-info-container">
+    <view class="info-title">基本信息</view>
+    <view class="info-cell">
+      <view class="info-cell-title">昵称</view>
+      <input class="info-cell-input" placeholder="输入昵称" />
+    </view>
+    <view class="info-cell">
+      <view class="info-cell-title">性别</view>
+      <picker value="{{genderSelect == -1 ? '' : genderArray[genderSelect]}}" range="{{genderArray}}" bindchange="changeGender">
+        <view class="{{genderSelect == -1 ? 'info-cell-unselect' : 'info-cell-select'}}">
+          {{genderSelect == -1 ? '选择性别' : genderArray[genderSelect] }}
+        </view>
+      </picker>
+    </view>
+    <view class="info-cell">
+      <view class="info-cell-title">生日</view>
+      <picker value="{{birthday}}" mode="date" bindchange="changeBirthday">
+        <view class="{{birthday ? 'info-cell-select' : 'info-cell-unselect'}}">
+          {{birthday == '' ? '选择生日' : birthday }}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>

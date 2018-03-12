@@ -83,5 +83,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  navAction: (e) => {
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    });
   }
 })

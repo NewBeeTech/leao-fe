@@ -82,7 +82,7 @@
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
         <view class="user-info">
           <image class="user-avatar animated {{ selectedTab == 2 ? 'zoomIn' : ''}}" src="{{ userInfo.avatarUrl ? userInfo.avatarUrl : ''}}" />
-          <view class="user-nickName">
+          <view class="user-nickName" data-url="/pages/userInfo/userInfo" bindtap="navAction">
             {{userInfo.nickName}}
             <image src="../../assets/edit.svg" class="edit-icon" />
           </view>
