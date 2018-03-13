@@ -37,7 +37,7 @@
       <view class="info-cell-title">工作单位</view>
       <input class="info-cell-input" placeholder="输入工作单位" maxlength="20" />
     </view>
-    <view class="info-cell" style="border: none">
+    <view class="info-cell">
       <view class="info-cell-title">地址</view>
       <input class="info-cell-input" placeholder="输入地址" maxlength="20" />
     </view>
