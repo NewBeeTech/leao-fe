@@ -9,7 +9,8 @@
 
 .day-cell {
   width: 60rpx;
-  height: 33rpx;
+  /* height: 33rpx; */
+  height: 127rpx;
   line-height: 33rpx;
   font-family: PingFangSC;
   font-size: 24rpx;
@@ -24,7 +25,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 .day-name {
   margin-bottom: 9rpx;
+}
+.day-cell-selected {
+  width: 60rpx;
+  border: solid 3rpx #000;
+  border-radius: 6rpx;
+  position: absolute;
+  bottom: -1.5rpx;
 }

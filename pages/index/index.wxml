@@ -71,7 +71,7 @@
             </view>
             <view class="date-picker-desc">会员可以预约未来一周的课程</view>
           </view>
-          <template is="calendar" />
+          <template is="calendar" data="{{nextDays, changeDayAction, date}}"/>
         </view>
         <view class="animated {{ selectedTab == 1 ? 'fadeInUp' : ''}}">
           <template is="emptyCourse" />

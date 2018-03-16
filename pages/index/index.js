@@ -2,19 +2,19 @@
 //获取应用实例
 const app = getApp()
 const date = new Date();
+import { getNextNDay } from '../../libs/moment';
+
+
 
 Page({
   data: {
     selectedTab: 0,
     year: `${date.getFullYear()}`,
     month: `${date.getMonth()+1}`,
+    date: date.getDate(),
     yearAndMonth: `${date.getFullYear()}-${date.getMonth()+1 > 10 ? date.getMonth() : '0' + (date.getMonth()+1)}`,
-    emergencyList: [
-
-    ],
-    studayList: [
-
-    ],
+    // 未来8天
+    nextDays: [],
     fetchingLocation: false,
     latitude: '',
     longitude: '',
@@ -41,6 +41,9 @@ Page({
     });
   },
   onLoad: function (options) {
+    this.setData({
+      nextDays: [0, 1, 2, 3, 4, 5, 6, 7].map(item => getNextNDay(item)),
+    });
     this.setData({
       selectedTab: options.selectedTab,
     })
@@ -94,6 +97,13 @@ Page({
         }
       })
     }
+  },
+  changeDayAction(e) {
+    this.setData({
+      year: e.currentTarget.dataset.date.year,
+      month: e.currentTarget.dataset.date.month,
+      date: e.currentTarget.dataset.date.date,
+    });
   },
   bindChangeMonth: function(e) {
     console.log(e.detail.value);

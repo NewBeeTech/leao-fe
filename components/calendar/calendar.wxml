@@ -1,36 +1,11 @@
 <template name="calendar">
   <view class="calendar-cotainer">
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
-    <view class="day-cell">
-      <view class="day-name">周一</view>
-      <view>7</view>
-    </view>
+    <block wx:for="{{nextDays}}" wx:key="index">
+      <view class="day-cell" bindtap="changeDayAction" data-date="{{item}}">
+        <view class="day-name">{{item.day}}</view>
+        <view>{{item.date}}</view>
+        <view class="{{date == item.date ? 'day-cell-selected' : ''}}" />
+      </view>
+    </block>
   </view>
 </template>
