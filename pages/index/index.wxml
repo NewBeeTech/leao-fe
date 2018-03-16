@@ -102,7 +102,7 @@
           </view>
         </view>
         <view class="buy-btn-container">
-          <view class="buy-btn">购买课时（限时低至7折）</view>
+          <view class="buy-btn" data-url="/pages/shop/shop" bindtap="navAction">购买课时（限时低至7折）</view>
         </view>
         <view class="my-list">
           <view class="my-list-cell">

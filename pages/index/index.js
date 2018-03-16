@@ -15,6 +15,9 @@ Page({
     studayList: [
 
     ],
+    fetchingLocation: false,
+    latitude: '',
+    longitude: '',
   },
   //事件处理函数
   bindViewTap: function() {
@@ -38,6 +41,27 @@ Page({
     });
   },
   onLoad: function () {
+    // 获取地理位置
+    this.setData({
+      fetchingLocation: true,
+    });
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        this.setData({
+          latitude: res.latitude,
+          longitude: res.longitude,
+        });
+        console.log(this.data.latitude);
+      },
+      complete: (res) => {
+        this.setData({
+          fetchingLocation: false,
+        });
+      }
+    });
+
+
     if (app.globalData.userInfo) {
       console.log(app.globalData.userInfo);
       this.setData({

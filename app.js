@@ -1,17 +1,13 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    // var logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
-
     // 登录
-    // wx.login({
-    //   success: res => {
-    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-    //   }
-    // })
+    if (!this.globalData.token) { // 如果没有token，进行主动登录
+      this.getToken(
+        (token) => { console.log(token)},
+        () => { console.log('授权失败') },
+      );
+    }
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -33,7 +29,22 @@ App({
       }
     })
   },
+  getToken: (success, failure) => {
+    const token = wx.getStorageSync('token');
+    if (token) {
+      success(token);
+    } else {
+      // 主动授权获取接口
+      wx.login({
+        success: res => {
+          success(res);
+        },
+        failure: failure,
+      });
+    }
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token: '',
   }
 })

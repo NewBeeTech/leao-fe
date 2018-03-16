@@ -1,0 +1,17 @@
+<view class="shop-container">
+  <view class="basic-info-container">
+    <view class="info-title">选择购买课时数</view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radios" wx:for="{{items}}" wx:key="{{index}}">
+        <view class="radio-item">
+          <view class="radio-left">
+            <radio value="{{item.name}}" checked="{{item.checked}}"/>
+            <view class="course">{{item.value}} 课时</view>
+          </view>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </label>
+    </radio-group>
+    <view class="buy-btn">购买课程</view>
+  </view>
+</view>

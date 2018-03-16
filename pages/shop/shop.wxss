@@ -1,0 +1,98 @@
+.info-title {
+  height: 48rpx;
+  line-height: 48rpx;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.87);
+  width: 100vw;
+  border-bottom: 1rpx solid #e5ebf1;
+  padding: 30rpx;
+}
+.basic-info-container {
+  background-color: #fff;
+}
+.shop-container{
+  background-color: #fff;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+.radios {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30rpx;
+}
+.radio-item {
+  border-bottom: 1rpx solid #e5ebf1;
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+radio {
+  width: 46rpx;
+  height: 46rpx;
+  display: flex;
+}
+.radio-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.course {
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(33, 33, 33, 0.87);
+  margin-left: 30rpx;
+}
+.price {
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(33, 33, 33, 0.87);
+}
+.buy-btn {
+  width: 670rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+  text-align: center;
+  margin-left: 40rpx;
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #262a2f;
+}
