@@ -1,0 +1,70 @@
+.buy-success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.buy-success-icon {
+  width: 186rpx;
+  height: 186rpx;
+  margin-top: 127rpx;
+}
+.buy-success-desc {
+  margin-top: 37rpx;
+  margin-bottom: 104rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #424242;
+}
+.return-to-courses {
+  width: 670rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 48rpx;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #262a2f;
+}
+.return-to-index {
+  width: 670rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  border: solid 3rpx transparent;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to left, #ffeb4c, #ffd225);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #262a2f;
+  margin-top: 48rpx;
+}

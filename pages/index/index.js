@@ -40,7 +40,10 @@ Page({
       phoneNumber: '15088682347' //仅为示例，并非真实的电话号码
     });
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    this.setData({
+      selectedTab: options.selectedTab,
+    })
     // 获取地理位置
     this.setData({
       fetchingLocation: true,

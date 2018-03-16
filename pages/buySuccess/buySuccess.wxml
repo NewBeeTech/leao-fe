@@ -1,0 +1,6 @@
+<view class="buy-success-container">
+  <image class="buy-success-icon" src="../../assets/buy-success.svg" />
+  <view class="buy-success-desc">25课时购买成功</view>
+  <view class="return-to-courses" bindtap="routeTo" data-url="/pages/index/index?selectedTab=1">浏览全部课程</view>
+  <view class="return-to-index" bindtap="routeTo" data-url="/pages/index/index?selectedTab=0">回到首页</view>
+</view>
