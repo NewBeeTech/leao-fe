@@ -1,13 +1,16 @@
 //app.js
+const app = getApp()
 App({
-  onLaunch: function () {
+  onLaunch() {
     // 登录
     if (!this.globalData.token) { // 如果没有token，进行主动登录
       this.getToken(
-        (token) => { console.log(token)},
+        (token) => { },
         () => { console.log('授权失败') },
       );
     }
+  },
+  authSaveUserInfo(token) {
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -15,36 +18,76 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo;
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
+              wx.request({
+                url: 'https://ssl.newbeestudio.com/api/user/edit', //仅为示例，并非真实的接口地址
+                data: {
+                  nickName: res.userInfo.nickName,
+                  gender: res.userInfo.gender,
+                  portrait: res.userInfo.avatarUrl,
+                },
+                header: {
+                  'content-type': 'application/json', // 默认值
+                  'token': token,
+                },
+                method: 'POST',
+                success: function(res) {
+                  console.log('保存用户信息');
+                  if (res.data.code == '000') { // 之前使用过运用
+
+                  } else if (res.data.code == '014') { // 之前没有使用过运用
+                    // TODO: 保存用户信息
+                  }
+                }
+              });
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
             }
-          })
+          });
         }
       }
     })
   },
-  getToken: (success, failure) => {
-    const token = wx.getStorageSync('token');
-    if (token) {
-      success(token);
-    } else {
-      // 主动授权获取接口
-      wx.login({
-        success: res => {
-          success(res);
-        },
-        failure: failure,
-      });
-    }
+  getToken(success, failure) {
+    console.log(this);
+    wx.login({
+      success: (res) => {
+        if (res.code) {
+          wx.request({
+            url: 'https://ssl.newbeestudio.com/api/wx/login', //仅为示例，并非真实的接口地址
+            data: {
+              jsCode: res.code,
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: (res) => {
+              if (res.data.code == '000') { // 之前使用过运用
+                wx.setStorageSync('token', res.data.datas);
+              } else if (res.data.code == '014') { // 之前没有使用过运用
+                // TODO: 保存用户信息
+                this.authSaveUserInfo(res.data.datas);
+              }
+            }
+          });
+        } else {
+          failure && failure();
+        }
+      }
+    });
+  },
+  requestLogin(success, failure) {
+    wx.login({
+      success: res => {
+      },
+      failure: failure,
+    });
+
   },
   globalData: {
     userInfo: null,
-    token: '',
+    token: wx.getStorageSync('token'),
   }
 })

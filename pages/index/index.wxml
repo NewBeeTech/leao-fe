@@ -36,9 +36,9 @@
   <swiper class="swiper"  current="{{selectedTab}}" bindchange="change">
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
-        <template is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
-        <template is="hotCourses" data="{{ description: '热门课程精选', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/hotCourse.jpg', description: '羽毛球初级' }]}}" />
-        <template is="coaches" data="{{ description: '专业的运动教练', coaches: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/coach.jpg', description: '小毛教练' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/coach.jpg', description: '小毛教练' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/coach.jpg', description: '小毛教练' }]}}" />
+        <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
+        <template is="hotCourses" data="{{ description: '热门课程精选', courses: courseType }}" />
+        <template is="coaches" data="{{ description: '专业的运动教练', coaches: hotCoach }}" />
         <template is="gyms" data="{{ description: '北京市体育馆', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' }]}}" />
         <view class="bottom-infos">
           <view class="bottom-info" bindtap="call">
@@ -81,9 +81,9 @@
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
         <view class="user-info">
-          <image class="user-avatar animated {{ selectedTab == 2 ? 'zoomIn' : ''}}" src="{{ userInfo.avatarUrl ? userInfo.avatarUrl : ''}}" />
+          <image class="user-avatar animated {{ selectedTab == 2 ? 'zoomIn' : ''}}" src="{{ userInfo.avatarUrl ? userInfo.avatarUrl : '../../assets/defaultUserAvatar.svg'}}" />
           <view class="user-nickName" data-url="/pages/userInfo/userInfo" bindtap="navAction">
-            {{userInfo.nickName}}
+            {{userInfo.nickName || '请编辑'}}
             <image src="../../assets/edit.svg" class="edit-icon" />
           </view>
         </view>

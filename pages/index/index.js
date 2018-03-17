@@ -8,6 +8,7 @@ import { getNextNDay } from '../../libs/moment';
 
 Page({
   data: {
+    token: '',
     selectedTab: 0,
     year: `${date.getFullYear()}`,
     month: `${date.getMonth()+1}`,
@@ -18,6 +19,12 @@ Page({
     fetchingLocation: false,
     latitude: '',
     longitude: '',
+    // 是否是未付费的新用户
+    newUser: true,
+    // 热门课程精选
+    courseType: [],
+    // 专业的运动教练
+    hotCoach: [],
   },
   //事件处理函数
   bindViewTap: function() {
@@ -40,9 +47,11 @@ Page({
       phoneNumber: '15088682347' //仅为示例，并非真实的电话号码
     });
   },
-  onLoad: function (options) {
+  onLoad(options) {
+    this.getIndexData();
     this.setData({
       nextDays: [0, 1, 2, 3, 4, 5, 6, 7].map(item => getNextNDay(item)),
+      token: app.globalData.token,
     });
     this.setData({
       selectedTab: options.selectedTab,
@@ -68,35 +77,58 @@ Page({
     });
 
 
-    if (app.globalData.userInfo) {
-      console.log(app.globalData.userInfo);
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        console.log(app.globalData.userInfo);
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        });
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          console.log(app.globalData.userInfo);
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+
+    // if (app.globalData.userInfo) {
+    //   console.log(app.globalData.userInfo);
+    //   this.setData({
+    //     userInfo: app.globalData.userInfo,
+    //     hasUserInfo: true
+    //   })
+    // } else if (this.data.canIUse){
+    //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+    //   // 所以此处加入 callback 以防止这种情况
+    //   app.userInfoReadyCallback = res => {
+    //     console.log(app.globalData.userInfo);
+    //     this.setData({
+    //       userInfo: res.userInfo,
+    //       hasUserInfo: true
+    //     });
+    //   }
+    // } else {
+    //   // 在没有 open-type=getUserInfo 版本的兼容处理
+    //   wx.getUserInfo({
+    //     success: res => {
+    //       app.globalData.userInfo = res.userInfo
+    //       console.log(app.globalData.userInfo);
+    //       this.setData({
+    //         userInfo: res.userInfo,
+    //         hasUserInfo: true
+    //       })
+    //     }
+    //   })
+    // }
+  },
+  getIndexData() {
+    const token = app.globalData.token || wx.getStorageSync('token');
+    const that = this;
+    wx.request({
+      url: 'https://ssl.newbeestudio.com/api/index', //仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json', // 默认值
+        'token': token,
+      },
+      method: 'GET',
+      success: function(res) {
+        console.log(res.data);
+        if (res.data.code == '000') {
+          that.setData({
+            newUser: res.data.datas.newUser,
+            courseType: res.data.datas.courseType,
+            hotCoach: res.data.datas.hotCoach,
+          });
         }
-      })
-    }
+      }
+    });
   },
   changeDayAction(e) {
     this.setData({

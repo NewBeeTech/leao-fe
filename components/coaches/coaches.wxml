@@ -4,8 +4,8 @@
     <view class="coaches">
       <block wx:key="{{index}}" wx:for="{{coaches}}" >
         <view class="coach">
-          <image class="coach-imgSrc" src="{{item.imgSrc}}" />
-          <view class="coachSubDescription">{{item.description}}</view>
+          <image class="coach-imgSrc" src="{{item.background}}" />
+          <view class="coachSubDescription">{{item.name}}</view>
         </view>
       </block>
     </view>
