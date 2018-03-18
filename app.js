@@ -51,7 +51,6 @@ App({
     })
   },
   getToken(success, failure) {
-    console.log(this);
     wx.login({
       success: (res) => {
         if (res.code) {
@@ -66,8 +65,12 @@ App({
             success: (res) => {
               if (res.data.code == '000') { // 之前使用过运用
                 wx.setStorageSync('token', res.data.datas);
+                // 首页获取token的回调
+                this.getTokenCallBack && this.getTokenCallBack(res.data.datas);
               } else if (res.data.code == '014') { // 之前没有使用过运用
-                // TODO: 保存用户信息
+                wx.setStorageSync('token', res.data.datas);
+                // 首页获取token的回调
+                this.getTokenCallBack && this.getTokenCallBack(res.data.datas);
                 this.authSaveUserInfo(res.data.datas);
               }
             }

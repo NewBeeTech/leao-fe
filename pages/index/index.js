@@ -78,57 +78,104 @@ Page({
 
 
 
-    // if (app.globalData.userInfo) {
-    //   console.log(app.globalData.userInfo);
-    //   this.setData({
-    //     userInfo: app.globalData.userInfo,
-    //     hasUserInfo: true
-    //   })
-    // } else if (this.data.canIUse){
-    //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //   // 所以此处加入 callback 以防止这种情况
-    //   app.userInfoReadyCallback = res => {
-    //     console.log(app.globalData.userInfo);
-    //     this.setData({
-    //       userInfo: res.userInfo,
-    //       hasUserInfo: true
-    //     });
-    //   }
-    // } else {
-    //   // 在没有 open-type=getUserInfo 版本的兼容处理
-    //   wx.getUserInfo({
-    //     success: res => {
-    //       app.globalData.userInfo = res.userInfo
-    //       console.log(app.globalData.userInfo);
-    //       this.setData({
-    //         userInfo: res.userInfo,
-    //         hasUserInfo: true
-    //       })
-    //     }
-    //   })
-    // }
+    if (app.globalData.userInfo) {
+      console.log(app.globalData.userInfo);
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        console.log(app.globalData.userInfo);
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        });
+      }
+    } else {
+      // FIXME: 没有处理没有token的情况
+      const that = this;
+      let token = app.globalData.token || wx.getStorageSync('token');
+      wx.request({
+        url: 'https://ssl.newbeestudio.com/api/user/userinfo',
+        header: {
+          'content-type': 'application/json',
+          token,
+        },
+        success: (res) => {
+          if (res.data.code == '000') { // 之前使用过运用
+            console.log(res.data);
+            const user = res.data.datas.user;
+            user && this.setData({
+              userInfo: {
+                avatarUrl: user.portrait,
+                nickName: user.nickName,
+              }
+            });
+          }
+        }
+      })
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      // wx.getUserInfo({
+      //   success: res => {
+      //     app.globalData.userInfo = res.userInfo
+      //     console.log(app.globalData.userInfo);
+      //     this.setData({
+      //       userInfo: res.userInfo,
+      //       hasUserInfo: true
+      //     })
+      //   }
+      // });
+    }
   },
   getIndexData() {
-    const token = app.globalData.token || wx.getStorageSync('token');
     const that = this;
-    wx.request({
-      url: 'https://ssl.newbeestudio.com/api/index', //仅为示例，并非真实的接口地址
-      header: {
-        'content-type': 'application/json', // 默认值
-        'token': token,
-      },
-      method: 'GET',
-      success: function(res) {
-        console.log(res.data);
-        if (res.data.code == '000') {
-          that.setData({
-            newUser: res.data.datas.newUser,
-            courseType: res.data.datas.courseType,
-            hotCoach: res.data.datas.hotCoach,
-          });
-        }
+    let token = app.globalData.token || wx.getStorageSync('token');
+    if(!token) {
+      app.getTokenCallBack = res => {
+        token = res;
+        console.warn('token: ', res);
+        wx.request({
+          url: 'https://ssl.newbeestudio.com/api/index', //仅为示例，并非真实的接口地址
+          header: {
+            'content-type': 'application/json', // 默认值
+            'token': token,
+          },
+          method: 'GET',
+          success: function(res) {
+            console.log(res.data);
+            if (res.data.code == '000') {
+              that.setData({
+                newUser: res.data.datas.newUser,
+                courseType: res.data.datas.courseType,
+                hotCoach: res.data.datas.hotCoach,
+              });
+            }
+          }
+        });
       }
-    });
+    } else {
+      wx.request({
+        url: 'https://ssl.newbeestudio.com/api/index', //仅为示例，并非真实的接口地址
+        header: {
+          'content-type': 'application/json', // 默认值
+          'token': token,
+        },
+        method: 'GET',
+        success: function(res) {
+          console.log(res.data);
+          if (res.data.code == '000') {
+            that.setData({
+              newUser: res.data.datas.newUser,
+              courseType: res.data.datas.courseType,
+              hotCoach: res.data.datas.hotCoach,
+            });
+          }
+        }
+      });
+    }
   },
   changeDayAction(e) {
     this.setData({
