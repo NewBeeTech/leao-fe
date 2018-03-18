@@ -103,6 +103,8 @@ Page({
               icon: 'success',
               duration: 1000
             });
+            app.globalData.userInfo.nickName = nickName;
+            // console.warn(app.globalData);
             setTimeout(function () {
               wx.navigateBack();
             }, 1000);

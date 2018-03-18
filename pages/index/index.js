@@ -25,6 +25,8 @@ Page({
     courseType: [],
     // 专业的运动教练
     hotCoach: [],
+    userInfo: {
+    },
   },
   //事件处理函数
   bindViewTap: function() {
@@ -98,7 +100,6 @@ Page({
       wx.request({
         url: 'https://ssl.newbeestudio.com/api/user/userinfo',
         header: {
-          'content-type': 'application/json',
           token,
         },
         success: (res) => {
@@ -111,6 +112,7 @@ Page({
                 nickName: user.nickName,
               }
             });
+            app.globalData.userInfo = user && { nickName: user.nickName };
           }
         }
       })
@@ -126,6 +128,20 @@ Page({
       //   }
       // });
     }
+  },
+  onShow() {
+    // 解决用户基本信息编辑了昵称，返回之后的昵称同步问题
+    try {
+      console.log(app.globalData.userInfo, this.data.userInfo)
+      if (app.globalData.userInfo.nickName !== this.data.userInfo.nickName) {
+        this.setData({
+          userInfo: { ...this.data.userInfo, nickName: app.globalData.userInfo.nickName },
+        });
+      }
+    } catch(e) {
+      console.warn(e);
+    }
+
   },
   getIndexData() {
     const that = this;
@@ -190,7 +206,6 @@ Page({
     });
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
