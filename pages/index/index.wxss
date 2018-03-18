@@ -4,6 +4,7 @@
 @import "../../components/coaches/coaches.wxss"
 @import "../../components/calendar/calendar.wxss";
 @import "../../components/emptyCourse/emptyCourse.wxss";
+@import "../../components/loading/loading.wxss";
 
 .container {
   font-family: PingFangSC-Regular, sans-serif;

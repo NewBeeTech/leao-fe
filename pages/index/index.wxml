@@ -4,7 +4,9 @@
 <import src="../../components/gyms/gyms.wxml"/>
 <import src="../../components/calendar/calendar.wxml"/>
 <import src="../../components/emptyCourse/emptyCourse.wxml"/>
+<import src="../../components/loading/loading.wxml" />
 <view class="container">
+  <template is="loading" data="{{ isFetching: isFetching }}" />
   <view class="tabs-container" >
     <view class="tabs">
       <view

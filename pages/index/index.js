@@ -27,6 +27,7 @@ Page({
     hotCoach: [],
     userInfo: {
     },
+    isFetching: false,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -144,6 +145,9 @@ Page({
 
   },
   getIndexData() {
+    this.setData({
+      isFetching: true,
+    });
     const that = this;
     let token = app.globalData.token || wx.getStorageSync('token');
     if(!token) {
@@ -164,6 +168,7 @@ Page({
                 newUser: res.data.datas.newUser,
                 courseType: res.data.datas.courseType,
                 hotCoach: res.data.datas.hotCoach,
+                isFetching: false,
               });
             }
           }
@@ -184,9 +189,10 @@ Page({
               newUser: res.data.datas.newUser,
               courseType: res.data.datas.courseType,
               hotCoach: res.data.datas.hotCoach,
+              isFetching: false,
             });
           }
-        }
+        },
       });
     }
   },

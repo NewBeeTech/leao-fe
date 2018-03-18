@@ -7,24 +7,28 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.4);
 }
 .loading-icon {
   animation: loading 2s ease-in-out infinite;
 }
+.loading-text {
+  color: #fff;
+}
 
 @keyframes loading {
   0% {
-    width: 150rpx;
+    width: 200rpx;
     transform: rotate(0deg);
   }
   50% {
-    width: 100rpx;
+    width: 150rpx;
   }
   100% {
-    width: 150rpx;
+    width: 200rpx;
     transform: rotate(360deg);
   }
 }
