@@ -1,0 +1,5 @@
+<template name="loading">
+  <view wx:if="{{isFetching}}" class="loading-container">
+    <image class="loading-icon" src="../../assets/loading.svg" />
+  </view>
+</template>

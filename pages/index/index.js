@@ -75,9 +75,6 @@ Page({
         });
       }
     });
-
-
-
     if (app.globalData.userInfo) {
       console.log(app.globalData.userInfo);
       this.setData({

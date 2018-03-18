@@ -1,3 +1,4 @@
+@import "../../components/loading/loading.wxss";
 .info-title {
   height: 48rpx;
   line-height: 48rpx;

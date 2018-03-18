@@ -1,0 +1,30 @@
+.loading-container {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+.loading-icon {
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    width: 150rpx;
+    transform: rotate(0deg);
+  }
+  50% {
+    width: 100rpx;
+  }
+  100% {
+    width: 150rpx;
+    transform: rotate(360deg);
+  }
+}

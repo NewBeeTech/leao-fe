@@ -28,7 +28,7 @@ App({
                   portrait: res.userInfo.avatarUrl,
                 },
                 header: {
-                  'content-type': 'application/json', // 默认值
+                  'content-type': 'application/x-www-form-urlencoded', // 默认值
                   'token': token,
                 },
                 method: 'POST',
