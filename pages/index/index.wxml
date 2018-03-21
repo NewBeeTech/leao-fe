@@ -83,7 +83,7 @@
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
         <view class="user-info">
-          <image class="user-avatar animated {{ selectedTab == 2 ? 'zoomIn' : ''}}" src="{{ userInfo.avatarUrl ? userInfo.avatarUrl : '../../assets/defaultUserAvatar.svg'}}" />
+          <image class="user-avatar animated {{ selectedTab == 2 ? 'zoomIn' : ''}}" src="{{ userInfo.portrait ? userInfo.portrait : '../../assets/defaultUserAvatar.svg'}}" />
           <view class="user-nickName" data-url="/pages/userInfo/userInfo" bindtap="navAction">
             {{userInfo.nickName || '请编辑'}}
             <image src="../../assets/edit.svg" class="edit-icon" />

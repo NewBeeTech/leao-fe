@@ -2,13 +2,13 @@
 const app = getApp()
 App({
   onLaunch() {
-    // 登录
-    if (!this.globalData.token) { // 如果没有token，进行主动登录
-      this.getToken(
-        (token) => { },
-        () => { console.log('授权失败') },
-      );
-    }
+    // // 登录
+    // if (!this.globalData.token) { // 如果没有token，进行主动登录
+    //   this.getToken(
+    //     (token) => { },
+    //     () => { console.log('授权失败') },
+    //   );
+    // }
   },
   authSaveUserInfo(token) {
     // 获取用户信息
@@ -90,7 +90,8 @@ App({
 
   },
   globalData: {
-    userInfo: null,
+    userInfo: {
+    },
     token: wx.getStorageSync('token'),
   }
 })
