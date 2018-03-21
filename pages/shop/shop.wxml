@@ -6,9 +6,13 @@
         <view class="radio-item">
           <view class="radio-left">
             <radio value="{{index}}" checked="{{index == select}}"/>
-            <view class="course">{{item.hour}} 课时</view>
+            <view class="course">
+              {{item.hour}} 课时
+              <image class="newUserPrice" wx:if="{{ index == 0 && newUser }}" src="../../assets/newUserPrice.svg"/>
+              <text class="discount" wx:if="{{item.discount}}">优惠￥{{item.discount}}</text>
+            </view>
           </view>
-          <view class="price">￥{{item.price}}</view>
+          <view class="price">￥{{newUser && index == 0 ? '9.90' : item.text}}</view>
         </view>
       </label>
     </radio-group>

@@ -62,6 +62,10 @@ radio {
   text-align: right;
   color: rgba(33, 33, 33, 0.87);
   margin-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
 }
 .price {
   height: 45rpx;
@@ -95,4 +99,27 @@ radio {
   line-height: normal;
   letter-spacing: normal;
   color: #262a2f;
+}
+.newUserPrice {
+  width: 136rpx;
+  height: 33rpx;
+  margin-left: 26rpx;
+}
+.discount {
+  /* width: 136rpx; */
+  padding: 0 15rpx;
+  height: 33rpx;
+  line-height: 33rpx;
+  border-radius: 100rpx;
+  border: solid 1rpx #e64340;
+  font-family: PingFangSC;
+  font-size: 22rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #e64340;
+  margin-left: 20rpx;
 }

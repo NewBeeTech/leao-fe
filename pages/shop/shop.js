@@ -3,22 +3,61 @@ const app = getApp()
 Page({
   data: {
     isFetching: false,
+    newUser: false,
     goods: [{
+      type: 'one',
       hour: 1,
-      price: 1,
+      price: 25800,
+      text: '258.00',
     }, {
+      type: 'ten',
       hour: 10,
-      price: 2700,
+      price: 185000,
+      discount: '185/单次',
+      text: '1,850.00',
     }, {
+      type: 'twentyFive',
       hour: 25,
-      price: 6000,
+      price: 465000,
+      discount: '155/单次',
+      text: '4,650.00',
     }, {
+      type: 'fifty',
       hour: 50,
-      price: 2700,
+      price: 780000,
+      discount: '130/单次',
+      text: '7,800.00',
     }],
     select: 0,
+    token: '',
   },
   onLoad: function () {
+    // 设置token
+    if (!this.data.token) {
+      this.setData({
+        token: wx.getStorageSync('token'),
+      });
+    }
+    this.getGoodsList();
+  },
+  getGoodsList() {
+    wx.showLoading();
+    const token = this.data.token || wx.getStorageSync('token');
+    wx.request({
+      url: 'https://ssl.newbeestudio.com/api/goods/list',
+      header: {
+        token,
+      },
+      success: (res) => {
+        wx.hideLoading();
+        if (res.data.code === '000') {
+          console.log(Object.keys(res.data.datas).map(key => ({ [key]: res.data.datas[key]})));
+          this.setData({
+            newUser: !!res.data.datas.newUser,
+          });
+        }
+      }
+    });
   },
   radioChange(e) {
     this.setData({
@@ -29,7 +68,13 @@ Page({
     this.setData({
       isFetching: true,
     });
-    const price = this.data.goods[this.data.select].price;
+    const newUser = this.data.newUser;
+    let price = this.data.goods[this.data.select].price;
+    let type = this.data.goods[this.data.select].type;
+    if (newUser) {
+      price = 990;
+      type = 'newUser';
+    }
     const hour = this.data.goods[this.data.select].hour;
     let token = app.globalData.token || wx.getStorageSync('token');
     console.log(price);
@@ -40,7 +85,8 @@ Page({
       },
       data: {
         total_fee: price,
-        body: `${hour}课时`
+        body: `${hour}课时`,
+        type,
       },
       success: (res) => {
         this.setData({
