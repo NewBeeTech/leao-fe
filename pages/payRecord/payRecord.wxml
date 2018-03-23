@@ -7,7 +7,7 @@
           <view class="record-cell-date">{{item.createTime}}</view>
         </view>
         <view class="record-cell-second">
-          <view class="record-cell-desc">￥</view>
+          <view class="record-cell-desc">￥{{item.money}}</view>
           <image class="record-cell-icon" src="../../assets/money.svg" />
         </view>
       </view>
