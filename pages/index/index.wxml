@@ -107,7 +107,7 @@
           <view class="buy-btn" data-url="/pages/shop/shop" bindtap="navAction">购买课时（限时低至7折）</view>
         </view>
         <view class="my-list">
-          <view class="my-list-cell">
+          <view class="my-list-cell" data-url="/pages/payRecord/payRecord" bindtap="navAction">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/paper.svg" />
               <view>交易记录</view>

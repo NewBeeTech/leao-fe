@@ -1,0 +1,16 @@
+<view>
+  <block wx:for="{{records}}" wx:key="{{index}}">
+    <view wx:if="{{item.type == 1}}" class="record-container">
+      <view class="record-cell">
+        <view class="record-cell-first">
+          <view class="record-cell-title">购买{{item.hour}}课时</view>
+          <view class="record-cell-date">{{item.createTime}}</view>
+        </view>
+        <view class="record-cell-second">
+          <view class="record-cell-desc">￥</view>
+          <image class="record-cell-icon" src="../../assets/money.svg" />
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

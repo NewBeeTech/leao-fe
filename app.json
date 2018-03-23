@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/shop/shop",
     "pages/buySuccess/buySuccess",
-    "pages/courseType/courseType"
+    "pages/courseType/courseType",
+    "pages/payRecord/payRecord"
   ],
   "window":{
     "backgroundTextStyle":"light",
