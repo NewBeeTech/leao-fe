@@ -213,16 +213,7 @@ Page({
   },
   onShow() {
     // 解决用户基本信息编辑了昵称，返回之后的昵称同步问题
-    try {
-      if (app.globalData.userInfo.nickName !== this.data.userInfo.nickName) {
-        this.setData({
-          userInfo: { ...this.data.userInfo, nickName: app.globalData.userInfo.nickName },
-        });
-      }
-    } catch(e) {
-      console.warn(e);
-    }
-
+    this.getUserInfo();
   },
   /**
    * 获取首页信息
@@ -265,11 +256,16 @@ Page({
       success: function(res) {
         console.log(res.data);
         if (res.data.code == '000') {
-          that.setData({
-            userInfo: res.data.datas.user || {},
-            yi_wan_cheng: res.data.datas.yi_wan_cheng,
-            yi_yu_yue: res.data.datas.yi_yu_yue,
-          });
+          if (res.data.datas.user) {
+            that.setData({
+              userInfo: res.data.datas.user || {},
+              yi_wan_cheng: res.data.datas.yi_wan_cheng,
+              yi_yu_yue: res.data.datas.yi_yu_yue,
+            });
+          } else {
+            that.authSaveUserInfo(that.data.token);
+          }
+
         }
       }
     })
@@ -293,5 +289,28 @@ Page({
     wx.navigateTo({
       url: e.currentTarget.dataset.url,
     });
+  },
+  navToCourseType: (e) => {
+    console.log(e);
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/courseType/courseType?id='+id,
+    });
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '乐傲运动',
+      path: '/page/index/index',
+      success: function(res) {
+        // 转发成功
+      },
+      fail: function(res) {
+        // 转发失败
+      }
+    }
   }
 })

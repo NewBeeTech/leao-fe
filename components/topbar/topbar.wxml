@@ -1,0 +1,25 @@
+<template name="topbar">
+  <view class="tabs">
+    <view
+      bindtap="bindSelectedTab"
+      class="{{selectedTab === 0 ? 'selected-tab' : 'tab' }}"
+      data-tab="0"
+    >
+      首页
+    </view>
+    <view
+      bindtap="bindSelectedTab"
+      class="{{selectedTab === 1 ? 'selected-tab' : 'tab' }}"
+      data-tab="1"
+    >
+      课程
+    </view>
+    <view
+      bindtap="bindSelectedTab"
+      class="{{selectedTab === 2 ? 'selected-tab' : 'tab' }}"
+      data-tab="2"
+    >
+      我的
+    </view>
+  </view>
+</template>

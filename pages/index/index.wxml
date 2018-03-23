@@ -39,7 +39,7 @@
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
         <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
-        <template is="hotCourses" data="{{ description: '热门课程精选', courses: courseType }}" />
+        <template is="hotCourses" data="{{ description: '热门课程精选', courses: courseType, navToCourseType: navToCourseType }}" />
         <template is="coaches" data="{{ description: '专业的运动教练', coaches: hotCoach }}" />
         <template is="gyms" data="{{ description: '北京市体育馆', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' }]}}" />
         <view class="bottom-infos">
@@ -113,12 +113,12 @@
               <view>交易记录</view>
             </view>
           </view>
-          <view class="my-list-cell">
+          <button class="my-list-cell-btn" open-type="share">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/share.svg" />
               <view>邀请好友</view>
             </view>
-          </view>
+          </button>
           <button class="my-list-cell-btn" open-type="contact">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/mail-black.svg" />

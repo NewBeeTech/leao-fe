@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="136" height="33" viewBox="0 0 136 33">
+    <defs>
+        <linearGradient id="a" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFEB4C"/>
+            <stop offset="100%" stop-color="#FFD225"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="136" height="33" fill="url(#a)" rx="16.5"/>
+        <text fill="#262A2F" font-family="PingFangSC-Medium, PingFang SC" font-size="22" font-weight="400">
+            <tspan x="13" y="25">新用户专享</tspan>
+        </text>
+    </g>
+</svg>

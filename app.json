@@ -4,7 +4,8 @@
     "pages/userInfo/userInfo",
     "pages/logs/logs",
     "pages/shop/shop",
-    "pages/buySuccess/buySuccess"
+    "pages/buySuccess/buySuccess",
+    "pages/courseType/courseType"
   ],
   "window":{
     "backgroundTextStyle":"light",
