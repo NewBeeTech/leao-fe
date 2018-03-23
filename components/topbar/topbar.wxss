@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+  background-color: #FFD225;
+}
+
+.tab {
+  display: flex;
+  flex: 1;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: normal;
+  font-size: 32rpx;
+}
+
+.selected-tab {
+  display: flex;
+  flex: 1;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-weight: 550;
+  font-size: 32rpx;
+}

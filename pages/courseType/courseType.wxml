@@ -1,1 +1,25 @@
-<view></view>
+<import src="../../components/topbar/topbar.wxml"/>
+<view>
+  <template is="topbar" date="{{ navAction }}" />
+  <view class="courseTypeTop">
+    <image src="{{courseType.img}}" class="courseTypeImg" />
+    <view class="courseTypeName">{{courseType.name}}</view>
+  </view>
+  <view>
+    <view class="courseList-header">近期课程列表</view>
+    <block wx:for="{{courseList}}" wx:key="{{index}}">
+      <view class="courseList">
+        <view class="courseList-cell">
+          <view class="courseList-cell-first">
+            <view class="courseList-cell-title">{{item.name}}</view>
+            <view class="courseList-cell-time">{{item.time}}</view>
+          </view>
+          <view class="courseList-cell-second">
+            <view class="courseList-cell-desc">{{item.gym}}</view>
+            <view class="courseList-cell-date">{{item.date}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

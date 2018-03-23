@@ -1,0 +1,108 @@
+@import "../../components/topbar/topbar.wxss";
+.courseTypeTop {
+  position: relative;
+}
+.courseTypeImg {
+  width: 100vw;
+  height: 377rpx;
+}
+.courseTypeName {
+  position: absolute;
+  left: 0;
+  top: 240rpx;
+  width: 440rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top-right-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  background-color: #ffd225;
+  text-align: center;
+}
+.courseList {
+  padding: 0 30rpx;
+}
+.courseList-cell {
+  padding: 30rpx 0 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.courseList-cell-first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.courseList-cell-second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.courseList-cell-title {
+  height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.87);
+}
+.courseList-cell-time {
+  height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.87);
+}
+.courseList-cell-desc {
+  height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #888888;
+}
+.courseList-cell-date {
+  height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #888888;
+}
+.courseList-header {
+  padding: 0 30rpx;
+  width: 690rpx;
+  height: 60rpx;
+  background-color: #f5f8fb;
+  line-height: 60rpx;
+  text-align: center;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(33, 33, 33, 0.87);
+}
