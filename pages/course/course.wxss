@@ -1,0 +1,237 @@
+@import "../../components/topbar/topbar.wxss";
+.courseTypeTop {
+  position: relative;
+}
+.courseTypeImg {
+  width: 100vw;
+  height: 377rpx;
+}
+.courseTypeName {
+  position: absolute;
+  left: 0;
+  top: 240rpx;
+  width: 440rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top-right-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  background-color: #ffd225;
+  text-align: center;
+}
+.courseList {
+  padding: 0 30rpx;
+}
+.courseList-cell {
+  padding: 30rpx 0 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.courseList-cell-first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.courseList-cell-second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.courseList-cell-title {
+  height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.87);
+}
+.courseList-cell-time {
+  height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.87);
+}
+.courseList-cell-desc {
+  height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #888888;
+}
+.courseList-cell-date {
+  height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #888888;
+}
+.courseList-header {
+  padding: 0 30rpx;
+  width: 690rpx;
+  height: 60rpx;
+  background-color: #f5f8fb;
+  line-height: 60rpx;
+  text-align: center;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(33, 33, 33, 0.87);
+}
+.course-content {
+  padding: 60rpx 30rpx;
+}
+.content-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #353535;
+}
+.content-title-border {
+  width: 10rpx;
+  height: 34rpx;
+  border-radius: 100rpx;
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+  margin-right: 20rpx;
+}
+.coach {
+  margin: 30rpx 0 60rpx 0;
+  display: flex;
+  flex-direction: row;
+}
+.coachPortrait {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-right: 24rpx;
+}
+.coach-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.coach-info-name {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-family: PingFangSC;
+  font-size: 30rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #262a2f;
+}
+.coach-info-desc {
+  height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #888888;
+}
+.course-desc {
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #353535;
+  margin: 30rpx 0 60rpx 0;
+}
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+.bottomBar-left {
+  background-color: #f5f8fb;
+  width: 150rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #262a2f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 30rpx;
+}
+.bottomBar-right {
+  width: 100%;
+  line-height: 48rpx;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #262a2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gray {
+  background-color: #e2e2e2;
+}
+.light {
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+}

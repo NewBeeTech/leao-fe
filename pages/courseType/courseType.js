@@ -35,4 +35,11 @@ Page({
       url: `/pages/index/index?selectedTab=${e.currentTarget.dataset.selectedtab}`
     });
   },
+  navToCourse: (e) => {
+    console.log(e);
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/course/course?id='+id,
+    });
+  },
 });

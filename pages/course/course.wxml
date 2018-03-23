@@ -1,0 +1,41 @@
+<import src="../../components/topbar/topbar.wxml"/>
+<view>
+  <template is="topbar" date="{{ navAction }}" />
+  <view class="courseTypeTop">
+    <image src="{{course.img}}" class="courseTypeImg" />
+    <view class="courseTypeName">{{course.name}}</view>
+  </view>
+  <view class="course-content">
+    <view>
+      <view class="content-title"><view class="content-title-border" />课程教练</view>
+      <view class="coach">
+         <image class="coachPortrait" src="{{course.coachPortrait}}" />
+         <view class="coach-info">
+           <view class="coach-info-name">{{course.coach}}</view>
+           <view class="coach-info-desc">{{course.simpleDesc}}</view>
+         </view>
+      </view>
+    </view>
+    <view>
+      <view class="content-title"><view class="content-title-border" />课程简介</view>
+      <view class="course-desc">
+        热身活动后以高远球和网前放球的规范动作以及前后场步伐衔接训练为主，例如挑球，抽球，杀球吊球勾对角等等，较后二十分钟为羽毛球专项身体
+      </view>
+    </view>
+    <view>
+      <view class="content-title"><view class="content-title-border" />课程时间</view>
+      <view class="course-time">
+        2018年9月27日 18:00/20:00
+      </view>
+    </view>
+  </view>
+  <view class="bottomBar">
+    <view class="bottomBar-left">
+      <view>已预约</view>
+      <view>{{course.count}}/{{course.maxCount}}</view>
+    </view>
+    <view class="bottomBar-right {{course.signStatusClass}}">
+      {{course.signStatusText}}
+    </view>
+  </view>
+</view>
