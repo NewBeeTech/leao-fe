@@ -60,7 +60,7 @@
           <view class="moreCourseBtn" bindtap="changeTab" data-tab="1">查看更多可预约的课程</view>
         </view>
         <template is="hotCourses" data="{{ description: '热门课程精选', courses: courseType, navToCourseType: navToCourseType }}" />
-        <template is="coaches" data="{{ description: '专业的运动教练', coaches: hotCoach }}" />
+        <template is="coaches" data="{{ description: '专业的运动教练', coaches: hotCoach, navToCoach: navToCoach }}" />
         <template is="gyms" data="{{ gyms, description: '附近的运动场馆' }}" />
         <view class="bottom-infos">
           <view class="bottom-info" bindtap="call">

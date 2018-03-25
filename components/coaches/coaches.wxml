@@ -3,7 +3,7 @@
     <view class="hotCoursesDescription">{{description}}</view>
     <view class="coaches">
       <block wx:key="{{index}}" wx:for="{{coaches}}" >
-        <view class="coach">
+        <view class="coach" bindtap="navToCoach" data-id="{{item.id}}">
           <image class="coach-imgSrc" src="{{item.background}}" />
           <view class="coachSubDescription">{{item.name}}</view>
         </view>

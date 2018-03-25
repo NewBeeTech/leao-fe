@@ -7,7 +7,8 @@
     "pages/buySuccess/buySuccess",
     "pages/courseType/courseType",
     "pages/payRecord/payRecord",
-    "pages/course/course"
+    "pages/course/course",
+    "pages/coach/coach"
   ],
   "window":{
     "backgroundTextStyle":"light",

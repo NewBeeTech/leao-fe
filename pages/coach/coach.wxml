@@ -1,0 +1,43 @@
+<import src="../../components/topbar/topbar.wxml"/>
+<view>
+  <template is="topbar" date="{{ navAction }}" />
+  <swiper indicator-dots autoplay interval="5000" duration="1000" indicator-active-color="#fff">
+  <block wx:for="{{coach.imgs}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+  <view class="coach-content">
+    <view>
+      <view class="coach">
+         <image class="coachPortrait" src="{{coach.portrait}}" />
+         <view class="coach-info">
+           <view class="coach-info-name">{{coach.name}}</view>
+           <view class="coach-info-desc">{{coach.simpleDesc}}</view>
+         </view>
+      </view>
+    </view>
+    <view>
+      <view class="content-title"><view class="content-title-border" />教练简介</view>
+      <view class="course-desc">
+        {{coach.desc}}
+      </view>
+    </view>
+    <view class="courseList-header">近期课程列表</view>
+    <block wx:for="{{courseList}}" wx:key="{{index}}">
+      <view class="courseList">
+        <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">
+          <view class="courseList-cell-first">
+            <view class="courseList-cell-title">{{item.name}}</view>
+            <view class="courseList-cell-time">{{item.time}}</view>
+          </view>
+          <view class="courseList-cell-second">
+            <view class="courseList-cell-desc">{{item.gym}}</view>
+            <view class="courseList-cell-date">{{item.date}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

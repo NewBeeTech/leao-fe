@@ -368,10 +368,15 @@ Page({
    * @return {[type]}   [description]
    */
   navToCourse: (e) => {
-    console.log(e);
     const id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/course/course?id='+id,
+    });
+  },
+  navToCoach: (e) => {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/coach/coach?id='+id,
     });
   },
   onShareAppMessage: function (res) {
