@@ -6,7 +6,6 @@
 <import src="../../components/emptyCourse/emptyCourse.wxml"/>
 <import src="../../components/loading/loading.wxml" />
 <view class="container">
-  <template is="loading" data="{{ isFetching: isFetching }}" />
   <view class="tabs-container" >
     <view class="tabs">
       <view
@@ -39,6 +38,27 @@
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
         <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
+        <view wx:if="{{!newUser && myCourse && myCourse.length}}" class="myCourse">
+          <view class="myCourseHeader">
+            <view class="myCourseHeaderLeft">已预约的课程</view>
+            <view class="myCourseHeaderRight">查看全部{{"  >"}}</view>
+          </view>
+          <block wx:for="{{myCourse}}" wx:key="index">
+            <view class="courseList">
+              <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">
+                <view class="courseList-cell-first">
+                  <view class="courseList-cell-title">{{item.course}}</view>
+                  <view class="courseList-cell-time">{{item.timeText}}</view>
+                </view>
+                <view class="courseList-cell-second">
+                  <view class="courseList-cell-desc">{{item.gym}}</view>
+                  <view class="courseList-cell-date">{{item.dateText}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="moreCourseBtn" bindtap="changeTab" data-tab="1">查看更多可预约的课程</view>
+        </view>
         <template is="hotCourses" data="{{ description: '热门课程精选', courses: courseType, navToCourseType: navToCourseType }}" />
         <template is="coaches" data="{{ description: '专业的运动教练', coaches: hotCoach }}" />
         <template is="gyms" data="{{ description: '北京市体育馆', courses: [{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' },{ imgSrc: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/gym.png', description: '北京市体育馆' }]}}" />
@@ -91,15 +111,15 @@
         </view>
         <view class="courses-info">
           <view class="course-info">
-            <view class="course-number">0</view>
+            <view class="course-number">{{hour/100}}</view>
             <view class="courses-info-desc">可用课时</view>
           </view>
           <view class="course-info">
-            <view class="course-number">0</view>
+            <view class="course-number">{{yi_yu_yue}}</view>
             <view class="courses-info-desc">已预约课程</view>
           </view>
           <view class="course-info">
-            <view class="course-number">0</view>
+            <view class="course-number">{{yi_wan_cheng}}</view>
             <view class="courses-info-desc">已完成课程</view>
           </view>
         </view>

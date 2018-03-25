@@ -14,6 +14,11 @@ Page({
     const id = options.id
     this.getCourse(id);
   },
+  /**
+   * 获取课程信息
+   * @param  {[type]} id 课程id
+   * @return {[type]}    [description]
+   */
   getCourse(id) {
     wx.request({
       url: 'https://ssl.newbeestudio.com/api/course/info?courseId='+id,
@@ -46,5 +51,54 @@ Page({
         }
       },
     });
-  }
+  },
+  /**
+   * 底部按钮事件
+   * @return {[type]} [description]
+   */
+  bottomBtnAction() {
+    const signStatus = this.data.course.signStatus;
+    const that = this;
+    if (signStatus === 0) {
+    } else if (signStatus === -2) {
+    } else if (signStatus === -3) {
+      // 购买课时
+      wx.navigateTo({
+        url: '/pages/shop/shop',
+      });
+    } else if (signStatus === -1) {
+    } else if (signStatus === 1) {
+      // 立即预约
+      const courseId = this.data.course.id;
+      wx.showLoading();
+      wx.request({
+        url: 'https://ssl.newbeestudio.com/api/course/signup?courseId='+courseId,
+        header: {
+          token: this.data.token,
+        },
+        success: (res) => {
+          wx.hideLoading();
+          if (res.data.code === '000') {
+            wx.showToast({
+              title: '预约成功',
+              icon: 'success',
+              duration: 2000
+            });
+            that.getCourse(this.data.course.id);
+          } else {
+            wx.showToast({
+              title: '请稍后再试',
+              icon: 'success',
+              duration: 2000
+            });
+          }
+        }
+      });
+    }
+  },
+  topNavAction: (e) => {
+    wx.reLaunch({
+      url: `/pages/index/index?selectedTab=${e.currentTarget.dataset.selectedtab}`
+    });
+  },
 });

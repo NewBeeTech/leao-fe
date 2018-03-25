@@ -29,7 +29,7 @@
       </view>
     </view>
   </view>
-  <view class="bottomBar">
+  <view class="bottomBar" bindtap="bottomBtnAction">
     <view class="bottomBar-left">
       <view>已预约</view>
       <view>{{course.count}}/{{course.maxCount}}</view>

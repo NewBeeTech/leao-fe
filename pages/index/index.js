@@ -23,10 +23,13 @@ Page({
     courseType: [],
     // 专业的运动教练
     hotCoach: [],
+    // 我的预约课程
+    myCourse: [],
     userInfo: {
     },
     yi_wan_cheng: 0, // 已结束课数
     yi_yu_yue: 0, // 已预约课数
+    hour: 0, // 可用课时，进度是100
     isFetching: false,
   },
   //事件处理函数
@@ -235,12 +238,38 @@ Page({
       success: function(res) {
         wx.hideLoading()
         if (res.data.code == '000') {
-          that.setData({
-            newUser: res.data.datas.newUser,
-            courseType: res.data.datas.courseType,
-            hotCoach: res.data.datas.hotCoach,
-            isFetching: false,
-          });
+          if (res.data.datas.myCourse) {
+            let result = res.data.datas;
+            result.myCourse = result.myCourse.map(item => {
+              let beginTime = item.beginTime;
+              if (beginTime) {
+                beginTime = beginTime.replace(new RegExp('-', 'g'), '/');
+                beginTime = new Date(beginTime);
+                const month = beginTime.getMonth() + 1;
+                const date = beginTime.getDate();
+                const min = beginTime.getMinutes() || '00';
+                const hour = beginTime.getHours() > 10 ? beginTime.getHours() : '0'+beginTime.getHours();
+                return ({
+                  ...item,
+                  dateText: `${month}月${date}日`,
+                  timeText: `${hour}:${min}`,
+                });
+              }
+            });
+            that.setData({
+              newUser: result.newUser,
+              courseType: result.courseType,
+              hotCoach: result.hotCoach,
+              myCourse: result.myCourse,
+            });
+          } else {
+            that.setData({
+              newUser: res.data.datas.newUser,
+              courseType: res.data.datas.courseType,
+              hotCoach: res.data.datas.hotCoach,
+              myCourse: res.data.datas.myCourse,
+            });
+          }
         }
       },
     });
@@ -261,6 +290,7 @@ Page({
               userInfo: res.data.datas.user || {},
               yi_wan_cheng: res.data.datas.yi_wan_cheng,
               yi_yu_yue: res.data.datas.yi_yu_yue,
+              hour: res.data.datas.hour,
             });
           } else {
             that.authSaveUserInfo(that.data.token);
@@ -288,6 +318,12 @@ Page({
   navAction: (e) => {
     wx.navigateTo({
       url: e.currentTarget.dataset.url,
+    });
+  },
+  changeTab(e) {
+    const tab = e.currentTarget.dataset.tab;
+    this.setData({
+      selectedTab: tab,
     });
   },
   navToCourseType: (e) => {
