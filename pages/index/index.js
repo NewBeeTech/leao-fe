@@ -379,6 +379,12 @@ Page({
       url: '/pages/coach/coach?id='+id,
     });
   },
+  navToGym: (e) => {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/gym/gym?id='+id,
+    });
+  },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮

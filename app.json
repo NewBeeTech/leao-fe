@@ -8,7 +8,8 @@
     "pages/courseType/courseType",
     "pages/payRecord/payRecord",
     "pages/course/course",
-    "pages/coach/coach"
+    "pages/coach/coach",
+    "pages/gym/gym"
   ],
   "window":{
     "backgroundTextStyle":"light",
