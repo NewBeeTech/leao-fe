@@ -30,6 +30,7 @@ Page({
     yi_wan_cheng: 0, // 已结束课数
     yi_yu_yue: 0, // 已预约课数
     hour: 0, // 可用课时，进度是100
+    gyms: [], // 场馆
     isFetching: false,
   },
   //事件处理函数
@@ -59,6 +60,7 @@ Page({
         // 获取首页信息
         this.getIndexData();
         this.getUserInfo();
+        this.getGyms();
       }
     );
     this.setData({
@@ -69,21 +71,7 @@ Page({
     this.setData({
       fetchingLocation: true,
     });
-    wx.getLocation({
-      type: 'wgs84',
-      success: (res) => {
-        this.setData({
-          latitude: res.latitude,
-          longitude: res.longitude,
-        });
-        console.log(this.data.latitude);
-      },
-      complete: (res) => {
-        this.setData({
-          fetchingLocation: false,
-        });
-      }
-    });
+
     // if (app.globalData.userInfo && app.globalData.userInfo.nickName) {
     //   console.log(app.globalData.userInfo);
     //   this.setData({
@@ -274,6 +262,32 @@ Page({
       },
     });
   },
+  getGyms() {
+    const that = this;
+    const token = this.data.token;
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        wx.request({
+          url: 'https://ssl.newbeestudio.com/api/index/gymList',
+          header: {
+            token,
+          },
+          data: {
+            lang: res.latitude,
+            lat: res.longitude,
+          },
+          success: (res) => {
+            if(res.data.code === '000') {
+              this.setData({
+                gyms: res.data.datas,
+              });
+            }
+          }
+        });
+      },
+    });
+  },
   getUserInfo() {
     const that = this;
     wx.request({
@@ -315,22 +329,49 @@ Page({
       month: new Date(e.detail.value).getMonth()+1,
     });
   },
+  /**
+   * 跳转任意页面路径
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
   navAction: (e) => {
     wx.navigateTo({
       url: e.currentTarget.dataset.url,
     });
   },
+  /**
+   * 改变首页tab
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
   changeTab(e) {
     const tab = e.currentTarget.dataset.tab;
     this.setData({
       selectedTab: tab,
     });
   },
+  /**
+   * 跳转到课程类型页面
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
   navToCourseType: (e) => {
     console.log(e);
     const id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/courseType/courseType?id='+id,
+    });
+  },
+  /**
+   * 跳转到课程页面
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
+  navToCourse: (e) => {
+    console.log(e);
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/course/course?id='+id,
     });
   },
   onShareAppMessage: function (res) {
