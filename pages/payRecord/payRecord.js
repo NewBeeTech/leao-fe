@@ -15,7 +15,8 @@ Page({
     this.getPayRecord();
   },
   renderDate(date) {
-    const dateObj = new Date(date);
+    let time = date && date.replace(new RegExp('-', 'g'), '/');
+    const dateObj = new Date(time);
     const month = dateObj.getMonth() + 1;
     const day = dateObj.getDate();
     const hour = dateObj.getHours();

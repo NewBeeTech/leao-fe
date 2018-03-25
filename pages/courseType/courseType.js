@@ -12,7 +12,8 @@ Page({
         console.log(res.data);
         let courseList = res.data.datas.courseList;
         courseList = courseList.map(course => {
-          const beginTime = new Date(course.beginTime);
+          let beginTime = course.beginTime && course.beginTime.replace(new RegExp('-', 'g'), '/');
+          beginTime = new Date(beginTime);
           const min = beginTime.getMinutes() || '00';
           const hour = beginTime.getHours() > 10 ? beginTime.getHours() : '0'+beginTime.getHours();
           const month = beginTime.getMonth() + 1;
