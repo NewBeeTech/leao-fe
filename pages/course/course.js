@@ -68,6 +68,44 @@ Page({
         url: '/pages/shop/shop',
       });
     } else if (signStatus === -1) {
+      // 已预约，点击取消预约
+      wx.showModal({
+        title: '您以成功预约',
+        content: '课程开始前2小时内不可取消',
+        showCancel: true,
+        cancelText: '好的',
+        cancelColor: '#98c379',
+        confirmText: '取消报名',
+        confirmColor: '#000',
+        success: (res) => {
+          if (res.confirm) {
+            const courseId = this.data.course.id;
+            wx.showLoading();
+            wx.request({
+              url: 'https://ssl.newbeestudio.com/api/course/cancelSignup?courseId='+courseId,
+              header: {
+                token: this.data.token,
+              },
+              success: (res) => {
+                wx.hideLoading();
+                if (res.data.code === '000') {
+                  wx.showToast({
+                    title: '取消成功',
+                    icon: 'success',
+                    duration: 2000
+                  });
+                  that.getCourse(this.data.course.id);
+                } else {
+                  wx.showToast({
+                    title: res.data.message,
+                    duration: 2000
+                  });
+                }
+              }
+            });
+          }
+        }
+      });
     } else if (signStatus === 1) {
       // 立即预约
       const courseId = this.data.course.id;
