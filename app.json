@@ -9,6 +9,7 @@
     "pages/payRecord/payRecord",
     "pages/course/course",
     "pages/coach/coach",
+    "pages/myCourse/myCourse",
     "pages/gym/gym"
   ],
   "window":{
