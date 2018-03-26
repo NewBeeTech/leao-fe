@@ -93,10 +93,23 @@
             </view>
             <view class="date-picker-desc">会员可以预约未来一周的课程</view>
           </view>
-          <template is="calendar" data="{{nextDays, changeDayAction, date}}"/>
+          <template is="calendar" data="{{nextDays, changeDayAction, date, calendarCourses }}"/>
         </view>
         <view class="animated {{ selectedTab == 1 ? 'fadeInUp' : ''}}">
-          <template is="emptyCourse" />
+          <template  wx:if="{{calendarCourses[dayIndex].length === 0}}" is="emptyCourse" />
+          <block wx:else>
+            <view wx:for="{{calendarCourses[dayIndex]}}" wx:key="index">
+              <view>
+                <view>{{item.name}}</view>
+                <view wx:if="{{item.signStatus === 1}}">已预约</view>
+              </view>
+              <view> </view>
+              <view>
+                <view>{{item.gym}}</view>
+                <view>{{item.coach}} <image src="{{item.coachPortrait}}"/></view>
+              </view>
+            </view>
+          </block>
         </view>
       </scroll-view>
     </swiper-item>

@@ -27,6 +27,9 @@
   justify-content: center;
   position: relative;
 }
+.day-cell-gray {
+  color: #8e8b59;
+}
 .day-name {
   margin-bottom: 9rpx;
 }

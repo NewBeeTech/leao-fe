@@ -33,5 +33,6 @@ export function getNextNDay(AddDayCount) {
        month,
        date,
        day,
+       dateObj: dd,
      });
 }

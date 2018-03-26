@@ -14,6 +14,7 @@ Page({
     yearAndMonth: `${date.getFullYear()}-${date.getMonth()+1 > 10 ? date.getMonth() : '0' + (date.getMonth()+1)}`,
     // 未来8天
     nextDays: [],
+    dayIndex: 0,
     fetchingLocation: false,
     latitude: '',
     longitude: '',
@@ -25,6 +26,7 @@ Page({
     hotCoach: [],
     // 我的预约课程
     myCourse: [],
+    calendarCourses: [],
     userInfo: {
     },
     yi_wan_cheng: 0, // 已结束课数
@@ -61,6 +63,7 @@ Page({
         this.getIndexData();
         this.getUserInfo();
         this.getGyms();
+        this.getCourses(getNextNDay(0).dateObj,getNextNDay(7).dateObj);
       }
     );
     this.setData({
@@ -314,11 +317,34 @@ Page({
       }
     })
   },
+  getCourses(begin, end) {
+    const that = this;
+    wx.request({
+      url: 'https://ssl.newbeestudio.com/api/course/calendar', //仅为示例，并非真实的接口地址
+      header: {
+        'token': this.data.token,
+      },
+      data: {
+        begin: begin.getTime(),
+        end: end.getTime(),
+      },
+      method: 'GET',
+      success: function(res) {
+        console.log(res.data);
+        if (res.data.code == '000') {
+          that.setData({
+            calendarCourses: res.data.datas,
+          });
+        }
+      }
+    })
+  },
   changeDayAction(e) {
     this.setData({
       year: e.currentTarget.dataset.date.year,
       month: e.currentTarget.dataset.date.month,
       date: e.currentTarget.dataset.date.date,
+      dayIndex: e.currentTarget.dataset.dayindex,
     });
   },
   bindChangeMonth: function(e) {
