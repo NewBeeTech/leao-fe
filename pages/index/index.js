@@ -332,6 +332,37 @@ Page({
       success: function(res) {
         console.log(res.data);
         if (res.data.code == '000') {
+          let result = res.data.datas;
+          result = result.map(item => {
+            return item.map(course => {
+              if (course) {
+                let beginTime = course.beginTime;
+                beginTime = beginTime.replace(new RegExp('-', 'g'), '/');
+                beginTime = new Date(beginTime);
+                const month = beginTime.getMonth() + 1;
+                const date = beginTime.getDate();
+                const min = beginTime.getMinutes() || '00';
+                const hour = beginTime.getHours() > 10 ? beginTime.getHours() : '0'+beginTime.getHours();
+                course.dateText = `${month}月${date}日`;
+                course.timeText = `${hour}:${min}`;
+                if (beginTime < new Date()) {
+                  course.showText = '已结束';
+                  course.showColor = '#b3b5b2';
+                } else if (course.signStatus === 1) {
+                  course.showText = '已预约';
+                  course.showColor = '#09bb07';
+                } else if (course.count === course.maxCount) {
+                  course.showText = `${course.count}/${course.maxCount}`;
+                  course.showColor = '#b3b5b2';
+                } else if (course.count < course.maxCount) {
+                  course.showText = `${course.count}/${course.maxCount}`;
+                  course.showColor = '#fc6621';
+                }
+              }
+              console.log(course);
+              return course;
+            });
+          });
           that.setData({
             calendarCourses: res.data.datas,
           });

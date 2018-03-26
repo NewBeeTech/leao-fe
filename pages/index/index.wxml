@@ -83,7 +83,7 @@
       </scroll-view>
     </swiper-item>
     <swiper-item class="swiper-item">
-      <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
+      <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx; background: #fff">
         <view style="padding: 0 30rpx; background-image: linear-gradient(to top, #ffeb4c, #ffd225);">
           <view class="picker-filter">
             <view>
@@ -98,15 +98,22 @@
         <view class="animated {{ selectedTab == 1 ? 'fadeInUp' : ''}}">
           <template  wx:if="{{calendarCourses[dayIndex].length === 0}}" is="emptyCourse" />
           <block wx:else>
-            <view wx:for="{{calendarCourses[dayIndex]}}" wx:key="index">
-              <view>
-                <view>{{item.name}}</view>
-                <view wx:if="{{item.signStatus === 1}}">已预约</view>
-              </view>
-              <view> </view>
-              <view>
-                <view>{{item.gym}}</view>
-                <view>{{item.coach}} <image src="{{item.coachPortrait}}"/></view>
+            <view wx:for="{{calendarCourses[dayIndex]}}" wx:key="index" class="calendarCourses">
+              <view class="calendarCourse" bindtap="navToCourse" data-id="{{item.id}}">
+                <view class="calendarCourse-cell">
+                  <view class="calendarCourse-name">{{item.name}}</view>
+                  <view class="calendarCourse-showText" style="border: 2rpx solid {{item.showColor}}; color: {{item.showColor}}">{{item.showText}}</view>
+                </view>
+                <view class="calendarCourse-cell">
+                  <view class="calendarCourse-timeText"><text>{{item.timeText}}</text><text class="calendarCourse-dateText">{{item.dateText}}</text></view>
+                </view>
+                <view class="calendarCourse-cell">
+                  <view class="calendarCourse-gym">{{item.gym}}</view>
+                  <view class="calendarCourse-cell-right">
+                    <view class="calendarCourse-coach">{{item.coach}}</view>
+                    <image class="coachPortrait" src="{{item.coachPortrait}}"/>
+                  </view>
+                </view>
               </view>
             </view>
           </block>
