@@ -59,6 +59,31 @@
           </block>
           <view class="moreCourseBtn" bindtap="changeTab" data-tab="1">查看更多可预约的课程</view>
         </view>
+        <view wx:elseif="{{!newUser && myCourse && myCourse.length === 0}}" class="myCourse">
+          <view class="myCourseHeader" data-url="/pages/myCourse/myCourse" bindtap="navAction">
+            <view class="myCourseHeaderLeft">已预约的课程</view>
+          </view>
+          <view class="courseList">
+            <view class="courseList-cell no-course">
+              你没有预约任何课程
+            </view>
+          </view>
+          <block wx:for="{{recommendCourse}}" wx:key="index">
+            <view class="courseList">
+              <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">
+                <view class="courseList-cell-first">
+                  <view class="courseList-cell-title">{{item.name}} <text class="recommend">推荐</text></view>
+                  <view class="courseList-cell-time">{{item.timeText}}</view>
+                </view>
+                <view class="courseList-cell-second">
+                  <view class="courseList-cell-desc">{{item.gym}}</view>
+                  <view class="courseList-cell-date">{{item.dateText}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="moreCourseBtn" bindtap="changeTab" data-tab="1">查看更多可预约的课程</view>
+        </view>
         <template is="hotCourses" data="{{ description: '热门课程精选', courses: courseType, navToCourseType: navToCourseType }}" />
         <template is="coaches" data="{{ description: '专业的运动教练', coaches: hotCoach, navToCoach: navToCoach }}" />
         <template is="gyms" data="{{ gyms, description: '附近的运动场馆', navToGym }}" />

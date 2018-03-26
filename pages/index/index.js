@@ -24,6 +24,7 @@ Page({
     courseType: [],
     // 专业的运动教练
     hotCoach: [],
+    recommendCourse: [],
     // 我的预约课程
     myCourse: [],
     calendarCourses: [],
@@ -252,14 +253,35 @@ Page({
               courseType: result.courseType,
               hotCoach: result.hotCoach,
               myCourse: result.myCourse,
+              recommendCourse: result.recommendCourse,
             });
           } else {
-            that.setData({
-              newUser: res.data.datas.newUser,
-              courseType: res.data.datas.courseType,
-              hotCoach: res.data.datas.hotCoach,
-              myCourse: res.data.datas.myCourse,
-            });
+            if (res.data.datas.recommendCourse) {
+              let result = res.data.datas;
+              result.recommendCourse = result.recommendCourse.map(item => {
+                let beginTime = item.beginTime;
+                if (beginTime) {
+                  beginTime = beginTime.replace(new RegExp('-', 'g'), '/');
+                  beginTime = new Date(beginTime);
+                  const month = beginTime.getMonth() + 1;
+                  const date = beginTime.getDate();
+                  const min = beginTime.getMinutes() || '00';
+                  const hour = beginTime.getHours() > 10 ? beginTime.getHours() : '0'+beginTime.getHours();
+                  return ({
+                    ...item,
+                    dateText: `${month}月${date}日`,
+                    timeText: `${hour}:${min}`,
+                  });
+                }
+              });
+              that.setData({
+                newUser: result.newUser,
+                courseType: result.courseType,
+                hotCoach: result.hotCoach,
+                myCourse: result.myCourse,
+                recommendCourse: result.recommendCourse,
+              });
+            }
           }
         }
       },
