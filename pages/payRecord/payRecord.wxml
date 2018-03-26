@@ -32,7 +32,7 @@
         </view>
         <view class="record-cell-second">
           <view class="record-cell-desc">{{item.course}}取消报名</view>
-          <image class="record-cell-icon" src="../../assets/payRecode-use.svg" />
+          <image class="record-cell-icon" src="../../assets/reback.svg" />
         </view>
       </view>
     </view>
