@@ -1,0 +1,13 @@
+<template name="richText">
+  <view wx:for="{{richTextArray}}" wx:key="{{index}}">
+    <view wx:if="{{item.type == 1}}" class="content-title">
+      <view class="content-title-border"></view>{{item.content}}
+    </view>
+    <view wx:if="{{item.type == 2}}" class="content-text">
+      {{item.content}}
+    </view>
+    <view wx:if="{{item.type == 3}}">
+      <image class="content-img" src="{{item.content}}" />
+    </view>
+  </view>
+</template>

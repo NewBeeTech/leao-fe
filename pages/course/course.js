@@ -45,8 +45,7 @@ Page({
             result.signStatusText = '立即预约';
             result.signStatusClass = 'light';
           }
-          console.log(result.descJson);
-          console.log(JSON.parse(result.descJson));
+          result.richTextArray = JSON.parse(result.descJson) || [];
           this.setData({
             course: result,
           });
