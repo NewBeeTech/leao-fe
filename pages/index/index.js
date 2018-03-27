@@ -281,6 +281,14 @@ Page({
                 myCourse: result.myCourse,
                 recommendCourse: result.recommendCourse,
               });
+            } else {
+              that.setData({
+                newUser: res.data.datas.newUser,
+                courseType: res.data.datas.courseType,
+                hotCoach: res.data.datas.hotCoach,
+                myCourse: res.data.datas.myCourse,
+                recommendCourse: res.data.datas.recommendCourse,
+              });
             }
           }
         }
