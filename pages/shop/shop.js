@@ -71,7 +71,7 @@ Page({
     const newUser = this.data.newUser;
     let price = this.data.goods[this.data.select].price;
     let type = this.data.goods[this.data.select].type;
-    if (newUser) {
+    if (newUser && this.data.select === 0) {
       price = 990;
       type = 'newUser';
     }
