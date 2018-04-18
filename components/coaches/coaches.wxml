@@ -6,6 +6,7 @@
         <view class="coach" bindtap="navToCoach" data-id="{{item.id}}">
           <image class="coach-imgSrc" src="{{item.background}}" />
           <view class="coachSubDescription">{{item.name}}</view>
+          <view wx:if="{{item.simpleDesc}}" class="simpleDesc">{{item.simpleDesc}}</view>
         </view>
       </block>
     </view>

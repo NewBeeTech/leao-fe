@@ -42,3 +42,22 @@ swiper {
   justify-content: center;
   align-items: center;
 }
+.coach-header {
+  margin-top: 60rpx;
+  width: 690rpx;
+  height: 60rpx;
+  background-color: #f5f8fb;
+  line-height: 60rpx;
+  text-align: center;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(33, 33, 33, 0.87);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

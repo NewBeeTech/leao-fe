@@ -15,6 +15,10 @@ Page({
     this.getCoachInfo(id);
   },
   getCoachInfo(id) {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     wx.request({
       url: 'https://ssl.newbeestudio.com/api/gym/info',
       data: {
@@ -48,6 +52,9 @@ Page({
           });
         }
       },
+      complete: () => {
+        wx.hideLoading();
+      }
     });
   },
   topNavAction: (e) => {

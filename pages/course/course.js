@@ -20,6 +20,10 @@ Page({
    * @return {[type]}    [description]
    */
   getCourse(id) {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     wx.request({
       url: 'https://ssl.newbeestudio.com/api/course/info?courseId='+id,
       header: {
@@ -51,6 +55,9 @@ Page({
           });
         }
       },
+      complete: () => {
+        wx.hideLoading();
+      }
     });
   },
   /**

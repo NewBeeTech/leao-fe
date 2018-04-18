@@ -446,10 +446,11 @@ swiper {
 }
 .calendarCourse {
   width: 100%;
-  margin: 30rpx 0;
+  padding: 30rpx 0;
   border-bottom: 1rpx solid #d8d8d8;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 .calendarCourse-cell {
   display: flex;

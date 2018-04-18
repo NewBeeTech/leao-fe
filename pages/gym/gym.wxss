@@ -35,6 +35,9 @@ swiper {
   line-height: normal;
   letter-spacing: normal;
   color: rgba(33, 33, 33, 0.87);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .coach-content {
   padding: 0rpx 30rpx;

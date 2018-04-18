@@ -18,10 +18,9 @@ Page({
     error: '',
   },
   onLoad: function () {
-
-    this.setData({
-      isFetching: true,
-      error: '',
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
     });
     const that = this;
     let token = app.globalData.token || wx.getStorageSync('token');
@@ -33,8 +32,8 @@ Page({
       success: (res) => {
         if (res.data.code === '000') {
           const user = res.data.datas.user || {};
+          wx.hideLoading();
           this.setData({
-            isFetching: false,
             ...user,
           });
         }
@@ -71,8 +70,9 @@ Page({
       address,
     } = this.data;
     if (nickName && gender && birthday) { // 基本信息必填
-      this.setData({
-        isFetching: true,
+      wx.showLoading({
+        title: '加载中...',
+        mask: true,
       });
       const that = this;
       let token = app.globalData.token || wx.getStorageSync('token');
@@ -95,9 +95,7 @@ Page({
         method: 'POST',
         success: (res) => {
           if (res.data.code == '000') { // 之前使用过运用
-            that.setData({
-              isFetching: false,
-            });
+            wx.hideLoading();
             wx.showToast({
               title: '保存成功',
               icon: 'success',

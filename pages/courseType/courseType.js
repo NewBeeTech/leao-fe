@@ -5,10 +5,15 @@ Page({
     courseList: [],
   },
   onLoad(options) {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     const id = options.id
     wx.request({
       url: 'https://ssl.newbeestudio.com/api/courseType/info?typeId='+id,
       success: res => {
+
         console.log(res.data);
         let courseList = res.data.datas.courseList;
         courseList = courseList.map(course => {
@@ -31,6 +36,9 @@ Page({
           courseList: courseList,
         })
       },
+      complete: () => {
+        wx.hideLoading();
+      }
     });
   },
   topNavAction: (e) => {

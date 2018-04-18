@@ -48,3 +48,20 @@
   text-align: left;
   color: rgba(33, 33, 33, 0.87);
 }
+.simpleDesc {
+  line-height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: red;
+  color: rgba(33, 33, 33, 0.58);
+  word-break: break-all;
+  word-wrap: break-word;
+  max-width: 216rpx;
+  /* margin-bottom: 20rpx; */
+}
