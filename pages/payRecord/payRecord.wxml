@@ -1,3 +1,7 @@
+<import src="../../components/emptyCourse/emptyCourse.wxml"/>
+<view wx:if="{{records.length === 0 }}" class="animated fadeInUp">
+  <template is="emptyCourse" data="{{ desc: '暂无交易记录' }}" />
+</view>
 <view>
   <block wx:for="{{records}}" wx:key="{{index}}">
     <view wx:if="{{item.type == 1}}" class="record-container">

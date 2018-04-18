@@ -1,6 +1,6 @@
 <template name="emptyCourse">
   <view class="emptyCourse">
     <image src="../../assets/emptyCourse.svg" class="emptyCourseIcon" />
-    <view class="emptyCourseDesc">暂无相关课程安排</view>
+    <view class="emptyCourseDesc">{{desc}}</view>
   </view>
 </template>
