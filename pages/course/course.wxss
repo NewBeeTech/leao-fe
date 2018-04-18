@@ -93,7 +93,7 @@
 }
 .courseList-header {
   padding: 0 30rpx;
-  width: 690rpx;
+  width: 630rpx;
   height: 60rpx;
   background-color: #f5f8fb;
   line-height: 60rpx;
@@ -109,6 +109,7 @@
 }
 .course-content {
   padding: 60rpx 30rpx;
+  margin-bottom: 100rpx;
 }
 .content-title {
   display: flex;

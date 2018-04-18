@@ -1,5 +1,5 @@
 <import src="../../components/topbar/topbar.wxml"/>
-<view>
+<view class="coach-container">
   <template is="topbar" date="{{ navAction }}" />
   <swiper indicator-dots autoplay interval="5000" duration="1000" indicator-active-color="#fff">
   <block wx:for="{{coach.imgs}}">

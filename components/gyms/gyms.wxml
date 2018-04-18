@@ -4,7 +4,7 @@
     <view class="courses">
       <block wx:key="{{index}}" wx:for="{{gyms}}" >
         <view class="course" bindtap="navToGym" data-id="{{item.id}}">
-          <image class="hotCourses-imgSrc" src="{{item.img}}" />
+          <image class="hotCourses-imgSrc" src="{{item.desc}}" />
           <view class="hotCoursesSubDescription">{{item.name}}</view>
         </view>
       </block>

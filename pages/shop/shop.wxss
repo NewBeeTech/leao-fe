@@ -122,4 +122,11 @@ radio {
   text-align: center;
   color: #e64340;
   margin-left: 20rpx;
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.delete-price {
+  text-decoration: line-through;
 }

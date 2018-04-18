@@ -7,26 +7,26 @@ Page({
     goods: [{
       type: 'one',
       hour: 1,
-      price: 25800,
-      text: '258.00',
+      price: 29800,
+      text: '298.00',
     }, {
       type: 'ten',
-      hour: 10,
-      price: 185000,
-      discount: '185/单次',
-      text: '1,850.00',
+      hour: 25,
+      price: 49000,
+      discount: '196/单次',
+      text: '4,900.00',
     }, {
       type: 'twentyFive',
-      hour: 25,
-      price: 465000,
-      discount: '155/单次',
-      text: '4,650.00',
+      hour: 50,
+      price: 88000,
+      discount: '176/单次',
+      text: '8,800.00',
     }, {
       type: 'fifty',
-      hour: 50,
-      price: 780000,
-      discount: '130/单次',
-      text: '7,800.00',
+      hour: 100,
+      price: 1500000,
+      discount: '150/单次',
+      text: '15,000.00',
     }],
     select: 0,
     token: '',
@@ -72,7 +72,7 @@ Page({
     let price = this.data.goods[this.data.select].price;
     let type = this.data.goods[this.data.select].type;
     if (newUser && this.data.select === 0) {
-      price = 990;
+      price = 1990;
       type = 'newUser';
     }
     const hour = this.data.goods[this.data.select].hour;

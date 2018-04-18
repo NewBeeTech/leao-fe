@@ -1,4 +1,5 @@
 @import "../../components/topbar/topbar.wxss";
+@import "../../components/richText/richText.wxss";
 .courseTypeTop {
   position: relative;
 }
@@ -17,6 +18,10 @@
   border-bottom-right-radius: 100rpx;
   background-color: #ffd225;
   text-align: center;
+}
+.richTextCotainer {
+  padding: 0 30rpx;
+  margin-bottom: 30rpx;
 }
 .courseList {
   padding: 0 30rpx;
@@ -92,7 +97,8 @@
 }
 .courseList-header {
   padding: 0 30rpx;
-  width: 690rpx;
+  width: 630rpx;
+  margin-left: 30rpx;
   height: 60rpx;
   line-height: 60rpx;
   background-color: #f5f8fb;

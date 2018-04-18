@@ -1,4 +1,5 @@
 <import src="../../components/topbar/topbar.wxml"/>
+<import src="../../components/richText/richText.wxml"/>
 <view>
   <template is="topbar" date="{{ navAction }}" />
   <view class="courseTypeTop">
@@ -6,6 +7,9 @@
     <view class="courseTypeName">{{courseType.name}}</view>
   </view>
   <view>
+    <view class="richTextCotainer">
+      <template is="richText" data="{{ richTextArray: courseType.richTextArray }}" />
+    </view>
     <view class="courseList-header">近期课程列表</view>
     <block wx:for="{{courseList}}" wx:key="{{index}}">
       <view class="courseList">

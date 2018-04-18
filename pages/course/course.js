@@ -121,14 +121,25 @@ Page({
             wx.showToast({
               title: '预约成功',
               icon: 'success',
-              duration: 2000
+              duration: 500
             });
             that.getCourse(this.data.course.id);
-          } else {
+          } else if (res.data.code === '023') {
             wx.showToast({
-              title: '请稍后再试',
-              icon: 'success',
-              duration: 2000
+              title: res.data.message,
+              icon: 'none',
+              duration: 500,
+            });
+            setTimeout(function () {
+              wx.navigateTo({
+                url: '/pages/userInfo/userInfo',
+              });
+            }, 500);
+          }else {
+            wx.showToast({
+              title: res.data.message,
+              icon: 'failure',
+              duration: 500
             });
           }
         }

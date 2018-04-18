@@ -128,6 +128,12 @@ Page({
       // });
     // }
   },
+  onShow() {
+    this.getIndexData();
+    this.getUserInfo();
+    this.getGyms();
+    this.getCourses(getNextNDay(0).dateObj,getNextNDay(7).dateObj);
+  },
   // 获取token
   // FIXME: 处理token失效的情况
   getToken(successCallBack, failureCallBack) {

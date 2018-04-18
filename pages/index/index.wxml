@@ -60,9 +60,6 @@
           <view class="moreCourseBtn" bindtap="changeTab" data-tab="1">查看更多可预约的课程</view>
         </view>
         <view wx:if="{{!newUser && myCourse && myCourse.length === 0}}" class="myCourse">
-          <view class="myCourseHeader" data-url="/pages/myCourse/myCourse" bindtap="navAction">
-            <view class="myCourseHeaderLeft">已预约的课程</view>
-          </view>
           <view class="courseList">
             <view class="courseList-cell no-course">
               你没有预约任何课程

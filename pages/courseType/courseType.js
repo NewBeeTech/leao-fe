@@ -24,6 +24,8 @@ Page({
             date: `${month}月${day}日`,
           });
         });
+        const courseType = res.data.datas.courseType;
+        courseType.richTextArray = JSON.parse(courseType.descJson) || [];
         this.setData({
           courseType: res.data.datas.courseType,
           courseList: courseList,

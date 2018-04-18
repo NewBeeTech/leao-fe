@@ -3,11 +3,11 @@
     <view wx:if="{{item.type == 1}}" class="record-container">
       <view class="record-cell">
         <view class="record-cell-first">
-          <view class="record-cell-title">购买{{item.hour}}课时</view>
+          <view class="record-cell-title">购买{{item.hour/100}}课时</view>
           <view class="record-cell-date">{{item.createTime}}</view>
         </view>
         <view class="record-cell-second">
-          <view class="record-cell-desc">￥{{item.money}}</view>
+          <view class="record-cell-desc">￥{{item.money/100}}</view>
           <image class="record-cell-icon" src="../../assets/money.svg" />
         </view>
       </view>
@@ -15,7 +15,7 @@
     <view wx:if="{{item.type == 2}}" class="record-container">
       <view class="record-cell">
         <view class="record-cell-first">
-          <view class="record-cell-title">使用{{item.hour}}课时</view>
+          <view class="record-cell-title">使用{{item.hour/100}}课时</view>
           <view class="record-cell-date">{{item.createTime}}</view>
         </view>
         <view class="record-cell-second">
@@ -27,7 +27,7 @@
     <view wx:if="{{item.type == 3}}" class="record-container">
       <view class="record-cell">
         <view class="record-cell-first">
-          <view class="record-cell-title">退回{{item.hour}}课时</view>
+          <view class="record-cell-title">退回{{item.hour/100}}课时</view>
           <view class="record-cell-date">{{item.createTime}}</view>
         </view>
         <view class="record-cell-second">

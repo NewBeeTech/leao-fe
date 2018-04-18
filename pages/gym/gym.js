@@ -41,7 +41,7 @@ Page({
             });
           });
           let gym = res.data.datas.gym;
-          // gym.imgs = gym.imgs.split(',');
+          gym.imgs = gym.imgs && gym.imgs.split(',');
           that.setData({
             gym: gym,
             courseList: courseList,

@@ -2,7 +2,7 @@
 <view class="user-info-container">
   <template is="loading" data="{{ isFetching }}" />
   <view class="basic-info-container">
-    <view class="info-title">基本信息</view>
+    <view class="info-title">学员基本信息</view>
     <view class="info-cell">
       <view class="info-cell-title">昵称</view>
       <input
