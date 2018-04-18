@@ -1,0 +1,16 @@
+<import src="../../components/topbar/topbar.wxml"/>
+<view>
+  <template is="topbar" date="{{ navAction }}" />
+  <map
+    id="map"
+    class="gymMap"
+    longitude="{{long}}"
+    latitude="{{lat}}"
+    markers="{{markers}}"
+    scale="14"
+    bindcontroltap="controltap"
+    bindmarkertap="markertap"
+    show-location
+  >
+  </map>
+</view>

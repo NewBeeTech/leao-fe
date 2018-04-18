@@ -19,10 +19,10 @@ swiper {
   border-bottom: 1rpx solid #e5ebf1;
   padding: 30rpx 0;
 }
-.courseList-header {
+.gym-header {
   /* padding: 0 30rpx; */
   margin-top: 60rpx;
-  width: 630rpx;
+  width: 690rpx;
   height: 60rpx;
   background-color: #f5f8fb;
   line-height: 60rpx;

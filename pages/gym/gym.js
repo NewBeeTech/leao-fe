@@ -55,6 +55,16 @@ Page({
       url: `/pages/index/index?selectedTab=${e.currentTarget.dataset.selectedtab}`
     });
   },
+  navToGymMap() {
+    const {
+      name,
+      long,
+      lat,
+    } = this.data.gym;
+    wx.navigateTo({
+      url: `/pages/gymMap/gymMap?name=${name}&long=${long}&lat=${lat}`,
+    });
+  },
   navToCourse: (e) => {
     console.log(e);
     const id = e.currentTarget.dataset.id;

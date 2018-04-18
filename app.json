@@ -9,7 +9,8 @@
     "pages/course/course",
     "pages/coach/coach",
     "pages/myCourse/myCourse",
-    "pages/gym/gym"
+    "pages/gym/gym",
+    "pages/gymMap/gymMap"
   ],
   "window":{
     "backgroundTextStyle":"light",

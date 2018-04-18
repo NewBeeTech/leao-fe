@@ -84,6 +84,18 @@
 					"name": "我的课程",
 					"pathName": "pages/myCourse/myCourse",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地图",
+					"pathName": "pages/gymMap/gymMap",
+					"query": "lat=39.887016&long=116.479708name=北京泡泡体育运动中心"
+				},
+				{
+					"id": -1,
+					"name": "地图",
+					"pathName": "pages/gymMap/gymMap",
+					"query": "lat=39.887016&long=116.479708&name=北京泡泡体育运动中心"
 				}
 			]
 		}

@@ -14,13 +14,13 @@
         <view class="gym-info-name">{{gym.name}}</view>
         <view class="gym-info-address">{{gym.address}}</view>
       </view>
-      <view class="gym-info-right">
+      <view class="gym-info-right" bindtap="navToGymMap">
         <image class="gym-address-icon" src="../../assets/map.svg" />
       </view>
     </view>
-    <view class="courseList-header">近期课程列表</view>
+    <view class="gym-header">近期课程列表</view>
     <block wx:for="{{courseList}}" wx:key="{{index}}">
-      <view class="courseList">
+      <view class="gymList">
         <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">
           <view class="courseList-cell-first">
             <view class="courseList-cell-title">{{item.name}}</view>
