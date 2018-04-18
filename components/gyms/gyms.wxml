@@ -6,6 +6,7 @@
         <view class="course" bindtap="navToGym" data-id="{{item.id}}">
           <image class="hotCourses-imgSrc" src="{{item.desc}}" />
           <view class="hotCoursesSubDescription">{{item.name}}</view>
+          <view wx:if="{{item.distance}}" class="distance-desc">距您{{item.distance}}km</view>
         </view>
       </block>
     </view>

@@ -108,7 +108,7 @@
   color: rgba(33, 33, 33, 0.87);
 }
 .course-content {
-  padding: 60rpx 30rpx;
+  padding: 0 30rpx 60rpx 30rpx;
   margin-bottom: 100rpx;
 }
 .content-title {

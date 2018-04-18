@@ -5,6 +5,7 @@
 @import "../../components/calendar/calendar.wxss";
 @import "../../components/emptyCourse/emptyCourse.wxss";
 @import "../../components/loading/loading.wxss";
+@import "../../components/gyms/gyms.wxss"
 @import "../courseType/courseType.wxss";
 
 .container {

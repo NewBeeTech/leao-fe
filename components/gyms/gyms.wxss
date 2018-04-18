@@ -48,3 +48,17 @@
   text-align: left;
   color: rgba(33, 33, 33, 0.87);
 }
+.distance-desc {
+  height: 33rpx;
+  line-height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: red;
+  color: rgba(33, 33, 33, 0.58);
+}

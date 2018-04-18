@@ -318,8 +318,10 @@ Page({
           },
           success: (res) => {
             if(res.data.code === '000') {
+              let gyms = res.data.datas;
+              gyms = gyms && gyms.map(item => ({ ...item, distance: item.distance && item.distance.toFixed(1)}));
               this.setData({
-                gyms: res.data.datas,
+                gyms: gyms,
               });
             }
           }
