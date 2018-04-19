@@ -128,12 +128,6 @@ Page({
       // });
     // }
   },
-  onShow() {
-    this.getIndexData();
-    this.getUserInfo();
-    this.getGyms();
-    this.getCourses(getNextNDay(0).dateObj,getNextNDay(7).dateObj);
-  },
   // 获取token
   // FIXME: 处理token失效的情况
   getToken(successCallBack, failureCallBack) {
@@ -213,8 +207,10 @@ Page({
     })
   },
   onShow() {
-    // 解决用户基本信息编辑了昵称，返回之后的昵称同步问题
+    this.getIndexData();
     this.getUserInfo();
+    this.getGyms();
+    this.getCourses(getNextNDay(0).dateObj,getNextNDay(7).dateObj);
   },
   /**
    * 获取首页信息
