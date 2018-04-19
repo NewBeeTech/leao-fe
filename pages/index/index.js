@@ -309,8 +309,8 @@ Page({
             token,
           },
           data: {
-            lang: res.latitude,
-            lat: res.longitude,
+            lang: res.longitude,
+            lat: res.latitude,
           },
           success: (res) => {
             if(res.data.code === '000') {
