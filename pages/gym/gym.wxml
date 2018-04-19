@@ -27,7 +27,10 @@
             <view class="courseList-cell-time">{{item.time}}</view>
           </view>
           <view class="courseList-cell-second">
-            <view class="courseList-cell-desc">{{item.coach}}</view>
+            <view class="courseList-cell-desc coach-infos">
+              <image src="{{item.coachPortrait}}" class="coach-portrait" />
+              {{item.coach}}
+            </view>
             <view class="courseList-cell-date">{{item.date}}</view>
           </view>
         </view>

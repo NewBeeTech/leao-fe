@@ -41,11 +41,11 @@
         <view wx:if="{{!newUser && myCourse && myCourse.length}}" class="myCourse">
           <view class="myCourseHeader" data-url="/pages/myCourse/myCourse" bindtap="navAction">
             <view class="myCourseHeaderLeft">已预约的课程</view>
-            <view class="myCourseHeaderRight">查看全部{{"  >"}}</view>
+            <view wx:if="{{myCourse.length > 2}}" class="myCourseHeaderRight">查看全部{{"  >"}}</view>
           </view>
           <block wx:for="{{myCourse}}" wx:key="index">
             <view class="courseList">
-              <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">
+              <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.courseId}}">
                 <view class="courseList-cell-first">
                   <view class="courseList-cell-title">{{item.course}}</view>
                   <view class="courseList-cell-time">{{item.timeText}}</view>

@@ -91,3 +91,14 @@ swiper {
   text-align: left;
   color: #888888;
 }
+.coach-portrait {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  margin-right: 10rpx;
+}
+.coach-infos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

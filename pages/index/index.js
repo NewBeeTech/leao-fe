@@ -280,7 +280,7 @@ Page({
                 newUser: result.newUser,
                 courseType: result.courseType,
                 hotCoach: result.hotCoach,
-                myCourse: result.myCourse,
+                myCourse: [],
                 recommendCourse: result.recommendCourse,
               });
             } else {
