@@ -209,7 +209,7 @@ Page({
   onShow() {
     this.getIndexData();
     this.getUserInfo();
-    this.getGyms();
+    // this.getGyms();
     this.getCourses(getNextNDay(0).dateObj,getNextNDay(7).dateObj);
   },
   /**
