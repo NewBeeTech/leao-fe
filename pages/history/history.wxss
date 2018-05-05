@@ -1,0 +1,111 @@
+@import "../../components/loading/loading.wxss";
+.history-top {
+  width: 750rpx;
+  height: 280rpx;
+  background-color: #ffd225;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.history-top-bg {
+  width: 620rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-avator {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.exe-detail {
+  width: 400rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  text-align: right;
+  color: #353535;
+}
+.user-info-container {
+  background-color: #f5f8fb;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x:hidden;
+  /* padding: 0 30rpx; */
+}
+
+.history-item {
+  background: #fff;
+  padding: 10px 30rpx;
+}
+.history-item-name {
+  font-size: 36rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #353535;
+}
+.history-item:not(:first-child) {
+  margin-top: 20rpx;
+}
+.info-avator {
+  width: 620rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.add-info-avator {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  margin: 5rpx 5rpx 0 0;
+}
+.history-list {
+  width: 750rpx;
+}
+.history-item-title {
+  width: 690rpx;
+  display: flex;
+  font-size: 32rpx;
+  color: #353535;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+.history-item-address {
+  display: flex;
+  align-items: center;
+}
+.history-item-address image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.history-item-coach {
+  width: 690rpx;
+  padding: 15rpx 0;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #353535;
+}
+.history-item-coach image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.history-feedback {
+  width: 620rpx;
+  font-size: 32rpx;
+  text-align: justify;
+  color: #888888;
+  margin-left: 50rpx;
+  line-height: 1.5;
+  margin-top: 10rpx;
+}
+
+.border-line {
+  border-bottom: 1px solid #e5ebf1;
+}

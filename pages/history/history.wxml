@@ -1,0 +1,101 @@
+<import src="../../components/loading/loading.wxml"/>
+<view class="user-info-container">
+  <template is="loading" data="{{ isFetching }}" />
+  <view class="basic-info-container">
+    <view class="history-top">
+      <view class="history-top-bg" style="background:url(../../assets/history-bg.svg);background-size: cover;">
+        <image class="top-avator" src="../../assets/female.svg" />
+        <view class="exe-detail">
+          <text style="font-weight: 500">学员{{name}}</text> {{gender}} {{age}}岁
+        </view>
+      </view>
+    </view>
+    <view class="history-list">
+      <block wx:key="index" wx:for="{{history}}">
+        <view class="history-item" wx:if="{{item.type == 1}}">
+          <view class="history-item-name">羽毛球初级</view>
+          <view class="history-item-title">
+            <view class="history-item-address">
+              <image src="{{addressIcon}}" />
+              {{item.object.gym}}
+            </view>
+            <view class="history-item-address">
+              <image src="{{calenderIcon}}" />
+              {{item.time}}
+            </view>
+          </view>
+          <view class="history-item-coach">
+            <image src="{{addressIcon}}" />
+            {{item.object.coachUser}}
+          </view>
+        </view>
+        <view class="history-item" wx:if="{{item.type == 2}}">
+          <view class="history-item-name">羽毛球初级</view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">
+              <image src="{{addressIcon}}" />
+              {{item.object.gym}}
+            </view>
+            <view class="history-item-address">
+              <image src="{{calenderIcon}}" />
+              {{item.time}}
+            </view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">核心力量耐力</view>
+            <view class="history-item-address">{{item.time}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">下肢力量耐力</view>
+            <view class="history-item-address">{{item.time}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">下肢爆发力</view>
+            <view class="history-item-address">{{item.time}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">上肢爆发力</view>
+            <view class="history-item-address">{{item.time}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">最大速度</view>
+            <view class="history-item-address">{{item.time}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">多方向速度</view>
+            <view class="history-item-address">{{item.time}}</view>
+          </view>
+        </view>
+        <view class="history-item" wx:if="{{item.type == 3}}">
+          <view class="history-item-name">羽毛球初级</view>
+          <view class="history-item-title">
+            <view class="history-item-address">
+              <image src="{{addressIcon}}" />
+              龙潭湖运动中心
+            </view>
+            <view class="history-item-address">
+              <image src="{{calenderIcon}}" />
+              2017-09-28
+            </view>
+          </view>
+          <view class="history-item-coach">
+            <image src="{{addressIcon}}" />
+            {{item.object.coachUser}}
+          </view>
+          <view class="history-item-coach">
+            <image src="{{feedbackIcon}}" />
+            课程反馈：
+          </view>
+          <view class="history-feedback">
+            sfsffsfsf收到反馈斯洛伐克算了算了附件是龙卷风老司机反馈是垃圾分类收集快速减肥路上
+            <view class="info-avator">
+              <block wx:key="index" wx:for="{{imgList}}">
+                <image src="{{item}}" class="add-info-avator"/>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

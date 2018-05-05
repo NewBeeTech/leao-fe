@@ -458,11 +458,20 @@ Page({
    * @param  {[type]} e [description]
    * @return {[type]}   [description]
    */
-  navToCourse: (e) => {
+  navToCourse(e) {
     const id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/course/course?id='+id,
-    });
+    const userId = this.data.userInfo.id;
+    const type = this.data.userInfo.type;
+    if(type === 1) {
+      wx.navigateTo({
+        url: '/pages/course/course?id='+id,
+      });
+    }
+    if(type === 2) {
+      wx.navigateTo({
+        url: '/pages/coachCourse/coachCourse?id='+id+'&userId='+userId,
+      });
+    }
   },
   navToCoach: (e) => {
     const id = e.currentTarget.dataset.id;

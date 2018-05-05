@@ -1,0 +1,79 @@
+<import src="../../components/loading/loading.wxml"/>
+<view class="user-info-container">
+  <template is="loading" data="{{ isFetching }}" />
+  <view class="basic-info-container">
+    <view class="info-cell">
+      <view class="info-cell-title">核心力量耐力：</view>
+      <input
+        class="info-cell-input"
+        placeholder="请输入..."
+        bindinput="inputChangeAction"
+        data-name="param1"
+        value="{{param1}}"
+        type="number"
+      />
+    </view>
+    <view class="info-cell">
+      <view class="info-cell-title">下肢力量耐力：</view>
+      <input
+        class="info-cell-input"
+        placeholder="请输入..."
+        bindinput="inputChangeAction"
+        data-name="param2"
+        value="{{param2}}"
+        type="number"
+      />
+    </view>
+    <view class="info-cell">
+      <view class="info-cell-title">下肢爆发力：</view>
+      <input
+        class="info-cell-input"
+        placeholder="请输入..."
+        bindinput="inputChangeAction"
+        data-name="param3"
+        value="{{param3}}"
+        type="number"
+      />
+    </view>
+    <view class="info-cell">
+      <view class="info-cell-title">上肢爆发力：</view>
+      <input
+        class="info-cell-input"
+        placeholder="请输入..."
+        bindinput="inputChangeAction"
+        data-name="param4"
+        value="{{param4}}"
+        type="number"
+      />
+    </view>
+    <view class="info-cell">
+      <view class="info-cell-title">最大速度：</view>
+      <input
+        class="info-cell-input"
+        placeholder="请输入..."
+        bindinput="inputChangeAction"
+        data-name="param5"
+        value="{{param5}}"
+        type="number"
+      />
+    </view>
+    <view class="info-cell">
+      <view class="info-cell-title">多方向速度：</view>
+      <input
+        class="info-cell-input"
+        placeholder="请输入..."
+        bindinput="inputChangeAction"
+        data-name="param6"
+        value="{{param6}}"
+        type="number"
+      />
+    </view>
+    <view class="info-avator">
+      <view class="info-cell-title">学员拍照：</view>
+      <view class="info-avator-sub-title">请拍摄大头照</view>
+      <view class="add-info-avator" bindtap="choosePic">+</view>
+    </view>
+  </view>
+
+  <view class="save-bottom-btn" bindtap="checkInfo">确认测试数据</view>
+</view>
