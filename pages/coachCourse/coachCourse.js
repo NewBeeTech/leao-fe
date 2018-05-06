@@ -80,17 +80,9 @@ Page({
      });
    },
    navToHistory(e) {
-     const item = e.currentTarget.dataset.item
-     const {
-       id,
-       count,
-       age,
-       gender,
-       nickName,
-       realName,
-     } = item
+     const userId = e.currentTarget.dataset.userid
      wx.navigateTo({
-       url: `/pages/history/history?userId=${id}&courseId=${this.data.id}&age=${age}&count=${count}&gender=${gender}&name=${realName||nickName}`
+       url: `/pages/history/history?userId=${userId}`
      });
    },
    onShareAppMessage: function (res) {

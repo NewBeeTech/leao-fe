@@ -9,7 +9,7 @@
          <image class="coachPortrait" src="{{course.coachPortrait}}" />
          <view class="coach-info">
            <view class="coach-info-name">{{course.coach}}</view>
-           <view class="coach-info-desc">{{course.simpleDesc}}</view>
+           <view class="coach-info-desc">{{course.coachSimpleDesc}}</view>
          </view>
       </view>
     </view>
@@ -65,7 +65,7 @@
               <view wx:else class="course-list-text">
                 已反馈
               </view>
-              <view class="course-list-text" bindtap="navToHistory" data-item="{{item}}">
+              <view class="course-list-text" bindtap="navToHistory" data-userid="{{item.id}}">
                 历史信息
               </view>
             </view>

@@ -25,14 +25,8 @@ Page({
     history: []
   },
   onLoad: function (e) {
-    const genderObj = {'1': '男', '2': '女'}
     this.setData({
-      courseId: e.courseId,
       userId: e.userId,
-      age: e.age,
-      count: e.count,
-      name: e.name,
-      gender: genderObj[String(e.gender)]
     })
     this.getHistoryList()
   },
@@ -56,8 +50,18 @@ Page({
       method: 'GET',
       success: (res) => {
         if (res.data.code == '000') {
+          const genderObj = {'1': '男', '2': '女'}
+          const result = res.data.datas
+          result.list.map((item) => {
+            item.timeStr = new Date(item.time).Format('yyyy-MM-dd');
+            if(item.type === 3 || item.type === 2) {
+              item.object.jsonObj = JSON.parse(item.object.descJson);
+            }
+          })
           that.setData({
-            history: res.data.datas
+            history: result.list,
+            userInfo: result.user,
+            'userInfo.sex': genderObj[String(result.user.gender)]
           })
           wx.hideLoading();
         }
