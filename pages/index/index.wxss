@@ -42,6 +42,7 @@
   color: rgba(0, 0, 0, 0.5);
   font-weight: normal;
   font-size: 32rpx;
+  position: relative;
 }
 
 .selected-tab {
@@ -53,6 +54,7 @@
   color: rgb(0, 0, 0);
   font-weight: 550;
   font-size: 32rpx;
+  position: relative;
 }
 
 .bar {
@@ -264,7 +266,7 @@ swiper {
   line-height: 80rpx;
   width: 450rpx;
   border-radius: 100rpx;
-  background-image: linear-gradient(to bottom, #ffeb4c, #ffd225);
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
   text-align: center;
   font-family: PingFangSC;
   font-size: 32rpx;
@@ -274,6 +276,7 @@ swiper {
   letter-spacing: normal;
   color: #353535;
   margin: 30rpx 0;
+  box-shadow: 1rpx 10rpx 30rpx rgba(255, 210, 37, 0.83);
 }
 .buy-btn-container {
   background-color: #fff;
@@ -336,6 +339,21 @@ swiper {
   letter-spacing: normal;
   text-align: left;
   color: rgba(33, 33, 33, 0.87);
+}
+.cell-right-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  text-align: right;
+  color: rgba(33, 33, 33, 0.87);
+}
+.cell-right-item image {
+  width: 40rpx;
+  height: 40rpx;
 }
 .picker-filter {
   padding: 30rpx 0;
@@ -581,4 +599,42 @@ swiper {
   border: solid 1rpx #e64340;
   color: #e64340;
   padding: 0 11rpx;
+}
+
+.count {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #ff7900;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  text-align: center;
+  top: 25rpx;
+  right: 50rpx;
+}
+.item-count {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #ff7900;
+  color: #fff;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  line-height: 30rpx;
+  text-align: center;
+}
+
+.money {
+  width: 100rpx;
+  height: 34rpx;
+  border-radius: 15rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  text-align: center;
+  line-height: 34rpx;
+  margin-left: 10rpx;
+  color: #ff7900;
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
 }

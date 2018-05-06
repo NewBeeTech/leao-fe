@@ -9,6 +9,7 @@ Page({
     param5: '',
     param6: '',
     avator: '',
+    avatorUrl: '',
     isFetching: false,
     error: '',
   },
@@ -29,6 +30,7 @@ Page({
   },
   // 提交信息前check
   checkInfo() {
+    var that = this
     const {
       param1,
       param2,
@@ -36,9 +38,9 @@ Page({
       param4,
       param5,
       param6,
-      avator,
-    } = this.data;
-    if (param1 && param2 && param3 && param4 && param5 && param6 && avator) { // 基本信息必填
+      avatorUrl,
+    } = that.data;
+    if (param1 && param2 && param3 && param4 && param5 && param6 && avatorUrl) { // 基本信息必填
       const descJson = JSON.stringify({
         param1,
         param2,
@@ -46,7 +48,7 @@ Page({
         param4,
         param5,
         param6,
-        avator,
+        avator: avatorUrl,
       });
       wx.showModal({
         title: '提交体能测试数据',
@@ -55,7 +57,7 @@ Page({
         confirmText: '提交',
         success: function(res) {
           if (res.confirm) {
-            this.saveUserInfoAction(descJson)
+            that.saveUserInfoAction(descJson)
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -103,22 +105,68 @@ Page({
       }
     });
   },
-  choosePic() {
-    wx.chooseImage({
+  uploadFileToOSS:function (params){
+    var that = this
+    const localName = `${Math.random().toString(36).substr(7)}-phytest.png`;
+    wx.request({
+      url: 'https://ssl.newbeestudio.com/api/oss/web/sign', //仅为示例，并非真实的接口地址
+      data: {},
+      header: {
+        // 'content-type': 'application/json'
+      },
       success: function(res) {
+        console.log(res.data);
+        if(res.data.code == "000") {
+          const signature = res.data.datas;
+          wx.uploadFile({
+            url: signature.host,
+            filePath: params.tempFilePath,
+            name: 'file',
+            formData:{
+              name: localName,
+              key: `${signature.dir}${localName}`,
+              policy: signature.policy,
+              OSSAccessKeyId: signature.accessid,
+              success_action_status: '200',
+              signature: signature.signature,
+            },
+            success: function(res){
+              console.log(res);
+              if(res.statusCode == '200') {
+                that.setData({
+                  avatorUrl: `${signature.host}/${signature.dir}${localName}`,
+                  avator: params.tempFilePath,
+                })
+              } else {
+                wx.showToast({
+                  title: '上传失败',
+                  // image: '/images/fail.png'
+                })
+              }
+            },
+            fail: function(res){
+              console.log('fail', res);
+            }
+          })
+        } else {
+          wx.showToast({
+            title: '上传失败',
+          })
+        }
+      }
+    })
+  },
+  choosePic() {
+    var that = this
+    wx.chooseImage({
+      count: 1,
+      sourceType: ['album', 'camera'],
+      success: function(res) {
+        console.log(res);
         var tempFilePaths = res.tempFilePaths
-        wx.uploadFile({
-          url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          formData:{
-            'user': 'test'
-          },
-          success: function(res){
-            var data = res.data
-            //do something
-          }
-        })
+        that.uploadFileToOSS({
+          tempFilePath: tempFilePaths[0],
+        });
       }
     })
   },

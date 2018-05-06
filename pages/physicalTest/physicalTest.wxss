@@ -31,7 +31,7 @@
 .user-info-container {
   background-color: #fff;
   width: 100vw;
-  min-height: 100vh;
+  height: calc(100vh - 96rpx);
   overflow-y: scroll;
   overflow-x:hidden;
   padding: 0 30rpx;
@@ -91,4 +91,9 @@
   line-height: 275rpx;
   text-align: center;
   color: #d8d8d8;
+}
+.avatorurl {
+  width: 350rpx;
+  height: 350rpx;
+  border-radius: 10rpx;
 }

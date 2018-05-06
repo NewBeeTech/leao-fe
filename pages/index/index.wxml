@@ -28,6 +28,7 @@
         data-tab="2"
       >
         我的
+        <view class="count" wx:if="{{(feedbackCount + phyCount) && selectedTab !== 2 }}">{{(feedbackCount + phyCount) > 9 ? '...' : (feedbackCount + phyCount)}}</view>
       </view>
     </view>
     <view
@@ -169,16 +170,43 @@
           <view class="buy-btn" data-url="/pages/shop/shop" bindtap="navAction">购买课时（限时低至7折）</view>
         </view>
         <view class="my-list">
+          <view class="my-list-cell" data-url="/pages/sport/sport" bindtap="navAction">
+            <view class="cell-left-item">
+              <image class="cell-icon" src="../../assets/sport.svg" />
+              <view>运动能力</view>
+              <view class="item-count" wx:if="{{phyCount}}">{{phyCount > 9 ? '...' : phyCount}}</view>
+            </view>
+            <view class="cell-right-item">
+              <image class="cell-icon" src="../../assets/arrow-right.svg" />
+            </view>
+          </view>
+          <view class="my-list-cell" data-url="/pages/feedbackList/feedbackList" bindtap="navAction">
+            <view class="cell-left-item">
+              <image class="cell-icon" src="../../assets/feedback.svg" />
+              <view>课程反馈</view>
+              <view class="item-count" wx:if="{{feedbackCount}}">{{feedbackCount > 9 ? '...' : feedbackCount}}</view>
+            </view>
+            <view class="cell-right-item">
+              <image class="cell-icon" src="../../assets/arrow-right.svg" />
+            </view>
+          </view>
           <view class="my-list-cell" data-url="/pages/payRecord/payRecord" bindtap="navAction">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/paper.svg" />
               <view>交易记录</view>
             </view>
+            <view class="cell-right-item">
+              <image class="cell-icon" src="../../assets/arrow-right.svg" />
+            </view>
           </view>
-          <button class="my-list-cell-btn" open-type="share">
+          <button class="my-list-cell-btn" data-url="/pages/invitation/invitation" bindtap="navAction">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/share.svg" />
               <view>邀请好友</view>
+              <view class="money">750元</view>
+            </view>
+            <view class="cell-right-item">
+              <image class="cell-icon" src="../../assets/arrow-right.svg" />
             </view>
           </button>
           <button class="my-list-cell-btn" open-type="contact">
@@ -186,11 +214,17 @@
               <image class="cell-icon" src="../../assets/mail-black.svg" />
               <view>意见反馈</view>
             </view>
+            <view class="cell-right-item">
+              <image class="cell-icon" src="../../assets/arrow-right.svg" />
+            </view>
           </button>
           <view class="my-list-cell-last">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/info-black.svg" style="color: rgba(33, 33, 33, 0.87);" />
               <view>关于我们</view>
+            </view>
+            <view class="cell-right-item">
+              <image class="cell-icon" src="../../assets/arrow-right.svg" />
             </view>
           </view>
         </view>

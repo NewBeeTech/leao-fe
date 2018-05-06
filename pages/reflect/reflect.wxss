@@ -1,0 +1,160 @@
+@import "../../components/loading/loading.wxss";
+
+.emptyCourse {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 500rpx);
+}
+.emptyCourseIcon {
+  width: 388rpx;
+  height: 331rpx;
+}
+.emptyCourseDesc {
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #d6d6d6;
+  margin-top: 44rpx;
+}
+
+.no-list {
+  background-color: #fff;
+  min-height: 60vh;
+}
+.basic-info-container {
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.buy-btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 670rpx;
+  border-radius: 100rpx;
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #353535;
+  margin: 40rpx auto 40rpx auto;
+  box-shadow: 1rpx 10rpx 30rpx rgba(255, 210, 37, 0.83);
+}
+.buy-btn-container {
+  background-color: #fff;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-info-container {
+  background-color: #f5f8fb;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+.sport-top{
+  width: 750rpx;
+  height: 400rpx;
+  background-color: #ffd225;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-bg {
+  width: 690rpx;
+  height: 289rpx;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  background-color: #ffffff;
+}
+.reflect-top {
+  margin: 0rpx auto;
+  margin-top: 30rpx;
+  width: 630rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #9ca3ae;
+}
+.reflect-money {
+  margin: 0rpx auto;
+  margin-top: 30rpx;
+  width: 630rpx;
+  height: 102rpx;
+  line-height: 80rpx;
+  font-size: 70rpx;
+  font-weight: 500;
+  color: #353535;
+  border-bottom: 1px solid #e5ebf1;
+}
+.history-item-title {
+  width: 690rpx;
+  display: flex;
+  font-size: 32rpx;
+  color: #353535;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+.history-item-title:not(:last-child) {
+  border-bottom: 1rpx solid #e5ebf1;
+}
+.sport-top-avator {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: solid 6rpx #f5f8fb;
+}
+.sport-top-gender {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+.sport-username {
+  font-size: 34rpx;
+  padding: 15rpx 0;
+  font-weight: 500;
+  text-align: left;
+  color: #353535;
+}
+.sport-age {
+  font-size: 32rpx;
+  padding: 15rpx 0;
+  font-weight: 500;
+  text-align: left;
+  color: #8e8b59;
+}
+
+.history-item-address {
+  opacity: 0.85;
+  font-size: 32rpx;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #353535;
+}
+
+.list-title {
+  margin-top: 20rpx;
+  background-color: #fff;
+  font-size: 34rpx;
+  color: #353535;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #e5ebf1;
+}
+.list-title>image{
+  width: 60rpx;
+  height: 60rpx;
+}

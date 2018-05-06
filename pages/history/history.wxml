@@ -6,8 +6,9 @@
       <view class="history-top-bg" style="background:url(../../assets/history-bg.svg);background-size: cover;">
         <image class="top-avator" src="{{userInfo.portrait}}" />
         <view class="exe-detail">
-          <text style="font-weight: 500">学员{{userInfo.realName || userInfo.nickName}}</text>
-          {{userInfo.sex}} {{userInfo.age}}岁
+          <view>学员{{userInfo.realName || userInfo.nickName}}</view>
+          <view>{{userInfo.sex}}</view>
+          <view wx:if="{{userInfo.age}}">{{userInfo.age}}岁</view>
         </view>
       </view>
     </view>
@@ -26,7 +27,7 @@
             </view>
           </view>
           <view class="history-item-coach">
-            <image src="{{addressIcon}}" />
+            <image src="{{userIcon}}" />
             {{item.object.coach}}
           </view>
         </view>
@@ -80,7 +81,7 @@
             </view>
           </view>
           <view class="history-item-coach">
-            <image src="{{addressIcon}}" />
+            <image src="{{userIcon}}" />
             {{item.object.coach}}
           </view>
           <view class="history-item-coach">
@@ -88,7 +89,7 @@
             课程反馈：
           </view>
           <view class="history-feedback">
-            {{item.object.jsonObj.content}}
+            <text decode="true">{{item.object.jsonObj.content}}</text>
             <view class="info-avator">
               <block wx:key="index" wx:for="{{item.object.jsonObj.imgList}}">
                 <image src="{{item}}" class="add-info-avator"/>

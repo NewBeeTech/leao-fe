@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="87" viewBox="0 0 560 87">
+    <defs>
+        <linearGradient id="a" x1="58.8%" x2="58.8%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF7900"/>
+            <stop offset="100%" stop-color="#FFB902"/>
+        </linearGradient>
+        <linearGradient id="b" x1="71.064%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="560" height="80" y="7" fill="#F05204" rx="40"/>
+        <rect width="560" height="80" fill="url(#a)" rx="40"/>
+        <circle cx="68" cy="18" r="7" fill="#FFF" opacity=".6"/>
+        <rect width="46" height="14" x="93" y="11" fill="url(#b)" opacity=".6" rx="7"/>
+        <text fill="#FFF" font-family="MFTongXin_Noncommercial-Regular, MF TongXin (Noncommercial)" font-size="32">
+            <tspan x="184" y="52">立即邀请好友</tspan>
+        </text>
+    </g>
+</svg>

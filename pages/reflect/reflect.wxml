@@ -1,0 +1,70 @@
+<import src="../../components/loading/loading.wxml"/>
+<view class="user-info-container">
+  <template is="loading" data="{{ isFetching }}" />
+  <view class="sport-top">
+    <view class="top-bg">
+      <view class="reflect-top">
+        可提现金额
+      </view>
+      <view class="reflect-money">
+        ￥{{userInfo.resMoney}}
+      </view>
+      <view class="reflect-top">
+        累计收益 ￥{{userInfo.resTotalMoney}}
+      </view>
+    </view>
+  </view>
+
+  <view class="buy-btn-container">
+    <view class="buy-btn" data-url="/pages/shop/shop" bindtap="navAction">立即提现</view>
+  </view>
+  <view class="list-title">
+    <image src="../../assets/cost.svg" />
+    提现记录
+  </view>
+  <view wx:if="1" class="emptyCourse">
+    <image src="../../assets/emptyCourse.svg" class="emptyCourseIcon" />
+    <view class="emptyCourseDesc">暂无记录</view>
+  </view>
+  <view wx:else class="basic-info-container">
+    <view  class="animated fadeInUp">
+      <view class="history-item-title">
+        <view class="history-item-address">核心力量耐力
+          <image class="sport-top-gender" src="../../assets/notice.svg" />
+        </view>
+        <view class="history-item-address">{{testInfo.jsonObj.params1 || '--'}}</view>
+      </view>
+      <view class="history-item-title">
+        <view class="history-item-address">下肢力量耐力
+          <image class="sport-top-gender" src="../../assets/notice.svg" />
+        </view>
+        <view class="history-item-address">{{testInfo.jsonObj.params2 || '--'}}</view>
+      </view>
+      <view class="history-item-title">
+        <view class="history-item-address">下肢爆发力
+          <image class="sport-top-gender" src="../../assets/notice.svg" />
+        </view>
+        <view class="history-item-address">{{testInfo.jsonObj.params3 || '--'}}</view>
+      </view>
+      <view class="history-item-title">
+        <view class="history-item-address">上肢爆发力
+          <image class="sport-top-gender" src="../../assets/notice.svg" />
+        </view>
+        <view class="history-item-address">{{testInfo.jsonObj.params4 || '--'}}</view>
+      </view>
+      <view class="history-item-title">
+        <view class="history-item-address">最大速度
+          <image class="sport-top-gender" src="../../assets/notice.svg" />
+        </view>
+        <view class="history-item-address">{{testInfo.jsonObj.params5 || '--'}}</view>
+      </view>
+      <view class="history-item-title">
+        <view class="history-item-address">多方向速度
+          <image class="sport-top-gender" src="../../assets/notice.svg" />
+        </view>
+        <view class="history-item-address">{{testInfo.jsonObj.params6 || '--'}}</view>
+      </view>
+    </view>
+
+  </view>
+</view>

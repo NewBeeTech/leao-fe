@@ -12,7 +12,8 @@ Page({
     content: '',
     isFetching: false,
     error: '',
-    imgList: []
+    imgList: [],
+    imgUrlList: []
   },
   onLoad: function (e) {
     const genderObj = {'1': '男', '2': '女'}
@@ -34,14 +35,15 @@ Page({
   },
   // 保存用户信息
   checkInfo() {
+    var that = this
     const {
       content,
-      imgList
-    } = this.data;
+      imgUrlList
+    } = that.data;
     if (content) { // 基本信息必填
       const descJson = JSON.stringify({
         content,
-        imgList
+        imgList: imgUrlList
       });
       wx.showModal({
         title: '提交训练返回',
@@ -50,7 +52,7 @@ Page({
         confirmText: '提交',
         success: function(res) {
           if (res.confirm) {
-            this.saveUserInfoAction(descJson)
+            that.saveUserInfoAction(descJson)
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -98,31 +100,123 @@ Page({
       }
     });
   },
-  choosePic() {
-    wx.chooseImage({
-      success: function(res) {
-        var tempFilePaths = res.tempFilePaths
-        wx.uploadFile({
-          url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          formData:{
-            'user': 'test'
-          },
-          success: function(res){
-            var data = res.data
-            //do something
+  uploadFileToOSS:function (params){
+    console.log(params);
+    const tempFilePaths = params.tempFilePaths
+    var that = this
+    tempFilePaths.map((item, index) => {
+      const localName = `${Math.random().toString(36).substr(7)}-phytest.png`;
+      wx.request({
+        url: 'https://ssl.newbeestudio.com/api/oss/web/sign', //仅为示例，并非真实的接口地址
+        success: function(res) {
+          console.log(res.data);
+          if(res.data.code == "000") {
+            const signature = res.data.datas;
+            wx.uploadFile({
+              url: signature.host,
+              filePath: item,
+              name: 'file',
+              formData:{
+                name: localName,
+                key: `${signature.dir}${localName}`,
+                policy: signature.policy,
+                OSSAccessKeyId: signature.accessid,
+                success_action_status: '200',
+                signature: signature.signature,
+              },
+              success: function(res){
+                if(res.statusCode == '200') {
+                  var imgIndex = "imgList[" + index + "]";
+                  var imgUrlIndex = "imgUrlList[" + index + "]";
+                  that.setData({
+                    [imgUrlIndex]: `${signature.host}/${signature.dir}${localName}`,
+                    [imgIndex]: item,
+                  })
+                // } else {
+                //   wx.showToast({
+                //     title: '上传失败',
+                //   })
+                }
+              },
+              fail: function(res){
+                console.log('fail', res);
+              }
+            })
+          // } else {
+          //   wx.showToast({
+          //     title: '上传失败',
+          //   })
           }
-        })
+        }
+      })
+    })
+    // const localName = `${Math.random().toString(36).substr(7)}-phytest.png`;
+    // wx.request({
+    //   url: 'https://ssl.newbeestudio.com/api/oss/web/sign', //仅为示例，并非真实的接口地址
+    //   success: function(res) {
+    //     console.log(res.data);
+    //     if(res.data.code == "000") {
+    //       const signature = res.data.datas;
+    //       wx.uploadFile({
+    //         url: signature.host,
+    //         filePath: params.tempFilePath,
+    //         name: 'file',
+    //         formData:{
+    //           name: localName,
+    //           key: `${signature.dir}${localName}`,
+    //           policy: signature.policy,
+    //           OSSAccessKeyId: signature.accessid,
+    //           success_action_status: '200',
+    //           signature: signature.signature,
+    //         },
+    //         success: function(res){
+    //           console.log(res);
+    //           if(res.statusCode == '200') {
+    //             that.setData({
+    //               avatorUrl: `${signature.host}/${signature.dir}${localName}`,
+    //               avator: params.tempFilePath,
+    //             })
+    //           } else {
+    //             wx.showToast({
+    //               title: '上传失败',
+    //             })
+    //           }
+    //         },
+    //         fail: function(res){
+    //           console.log('fail', res);
+    //         }
+    //       })
+    //     } else {
+    //       wx.showToast({
+    //         title: '上传失败',
+    //       })
+    //     }
+    //   }
+    // })
+  },
+  choosePic() {
+    var that = this
+    wx.chooseImage({
+      count: 9,
+      sourceType: ['album', 'camera'],
+      success: function(res) {
+        console.log(res);
+        var tempFilePaths = res.tempFilePaths
+        that.uploadFileToOSS({
+          tempFilePaths,
+        });
       }
     })
   },
   remove(e) {
     const index = e.currentTarget.dataset.index
     const list = this.data.imgList
+    const urlList = this.data.imgUrlList
     list.splice(index, 1)
+    urlList.splice(index, 1)
     this.setData({
-      imgList: list
+      imgList: list,
+      imgUrlList: urlList
     })
   },
   onShareAppMessage: function (res) {

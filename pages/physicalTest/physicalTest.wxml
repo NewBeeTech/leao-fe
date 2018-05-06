@@ -71,7 +71,8 @@
     <view class="info-avator">
       <view class="info-cell-title">学员拍照：</view>
       <view class="info-avator-sub-title">请拍摄大头照</view>
-      <view class="add-info-avator" bindtap="choosePic">+</view>
+      <image mode="aspectFit" wx:if="{{avator}}" class="avatorurl" bindtap="choosePic" src="{{avator}}"></image>
+      <view  wx:else class="add-info-avator" bindtap="choosePic">+</view>
     </view>
   </view>
 

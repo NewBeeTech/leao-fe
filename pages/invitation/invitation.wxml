@@ -1,0 +1,88 @@
+<import src="../../components/loading/loading.wxml"/>
+<view class="user-info-container">
+  <template is="loading" data="{{ isFetching }}" />
+  <view class="share-top">
+    <image src="../../assets/share-top.png"/>
+  </view>
+  <view class="invitation-button">
+    <button class="invite-button" open-type="share" style="background:url(../../assets/invitation.svg);background-size:cover"/>
+    <view class="show-more" bindtap="showModal">查看活动规则
+      <image src="../../assets/duble-arr.svg" />
+    </view>
+  </view>
+  <view class="list">
+    <image src="../../assets/share-title.svg"/>
+    <view wx:if="{{shareList.length === 0}}" class="share-no-list">
+      <image src="../../assets/no-share.svg" />
+      <view class="share-no-content">
+        暂无邀请好友
+      </view>
+      <view class="goto-invite">
+        快去邀请吧
+      </view>
+    </view>
+    <view wx:else class="share-list">
+      <view class="list-top">
+        <view class="share-amount">
+          已邀请{{shareList.length}}位好友，获得奖金￥{{amount}}
+        </view>
+        <image bindtap="goReflect" src="../../assets/tixian.svg" />
+      </view>
+      <view class="list-bar">
+        <view bindtap="changeBar" data-index="1" class="{{selectedBar === 1 ? 'selected-bar' : 'bar'}}">
+          全部
+        </view>
+        <view bindtap="changeBar" data-index="2" class="{{selectedBar === 2 ? 'selected-bar' : 'bar'}}">
+          已买课
+        </view>
+        <view bindtap="changeBar" data-index="3" class="{{selectedBar === 3 ? 'selected-bar' : 'bar'}}">
+          未买课
+        </view>
+      </view>
+      <view class="list-body">
+        <block wx:for="{{shareList}}" wx:key="index">
+          <view class="list-item">
+            <view class="list-item-top">
+              <view class="list-item-name">
+                {{item.object.nickName || item.object.realName}}
+                <text wx:if="{{item.type == 2}}" class="tag">教练</text>
+              </view>
+              <view class="list-item-time">
+                {{item.timeStr}}
+              </view>
+            </view>
+            <view class="list-item-bottom">
+              获得返金￥{{item.object.money}}
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 菜品详情弹框 -->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title"></view>
+    <view class="modal-title-content">
+      活动规则
+    </view>
+    <view class="modal-content">
+      <view class="rule-content" >
+        <text decode="true">
+          1. 您邀请的好友首次有效买课，您将获得5%的现金奖励，上不封顶；\n
+          2. 首次有效买课定义：用户首次购买课时数≥10的课程；\n
+          3. 奖励金额将于好友买课后7个工作日内发放到你的账号；\n
+          4. 您获得的奖金由乐傲运动提供；\n
+          5. 活动最终解释权归乐傲运动所有。
+        </text>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view
+        class="btn-confirm"
+        bindtap="onConfirm"
+        data-status="confirm">
+      确定</view>
+    </view>
+  </view>
+</view>

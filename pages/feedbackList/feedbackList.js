@@ -23,16 +23,21 @@ Page({
       '../../assets/address.svg',
       '../../assets/address.svg',
     ],
+    userInfo: {},
     history: []
   },
   onLoad: function (e) {
+    const genderObj = {'1': '男', '2': '女'}
     this.setData({
       userId: e.userId,
+      userInfo: app.globalData.userInfo,
+      'userInfo.sex': genderObj[String(app.globalData.userInfo.gender)]
     })
-    this.getHistoryList()
+
+    this.getfeedbackList()
   },
   // 请求历史记录
-  getHistoryList() {
+  getfeedbackList() {
     wx.showLoading({
       title: '加载中...',
       mask: true,
@@ -40,7 +45,7 @@ Page({
     const that = this;
     let token = app.globalData.token || wx.getStorageSync('token');
     wx.request({
-      url: 'https://ssl.newbeestudio.com/api/course/history',
+      url: 'https://ssl.newbeestudio.com/api/course/feedBackList',
       data: {
         userId:that.data.userId,
       },
@@ -51,18 +56,13 @@ Page({
       method: 'GET',
       success: (res) => {
         if (res.data.code == '000') {
-          const genderObj = {'1': '男', '2': '女'}
           const result = res.data.datas
-          result.list.map((item) => {
+          result.map((item) => {
             item.timeStr = new Date(item.time).Format('yyyy-MM-dd');
-            if(item.type === 3 || item.type === 2) {
-              item.object.jsonObj = JSON.parse(item.object.descJson);
-            }
+            item.jsonObj = JSON.parse(item.descJson);
           })
           that.setData({
-            history: result.list,
-            userInfo: result.user,
-            'userInfo.sex': genderObj[String(result.user.gender)]
+            history: result,
           })
           wx.hideLoading();
         }
@@ -84,5 +84,19 @@ Page({
         // 转发失败
       }
     }
+  },
+  topNavAction: (e) => {
+    wx.reLaunch({
+      url: `/pages/index/index?selectedTab=${e.currentTarget.dataset.selectedtab}`
+    });
+  },
+  previewImg(e) {
+    const index = e.currentTarget.dataset.index;
+    const cindex = e.currentTarget.dataset.cindex;
+    const urls = this.data.history[index].jsonObj.imgList;
+    wx.previewImage({
+      current: urls[cindex], // 当前显示图片的http链接
+      urls // 需要预览的图片http链接列表
+    })
   }
 });

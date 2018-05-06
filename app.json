@@ -14,7 +14,13 @@
     "pages/coachCourse/coachCourse",
     "pages/physicalTest/physicalTest",
     "pages/feedBack/feedBack",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/sport/sport",
+    "pages/feedbackList/feedbackList",
+    "pages/invitation/invitation",
+    "pages/reflect/reflect",
+    "pages/reflectSuccess/reflectSuccess",
+    "pages/reflectFail/reflectFail"
   ],
   "window":{
     "backgroundTextStyle":"light",
