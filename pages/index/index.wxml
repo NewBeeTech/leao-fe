@@ -40,9 +40,9 @@
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
         <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
         <view wx:if="{{!newUser && myCourse && myCourse.length}}" class="myCourse">
-          <view class="myCourseHeader" data-url="/pages/myCourse/myCourse" bindtap="navAction">
+          <view class="myCourseHeader" >
             <view class="myCourseHeaderLeft">已预约的课程</view>
-            <view wx:if="{{myCourse.length > 2}}" class="myCourseHeaderRight">查看全部{{"  >"}}</view>
+            <view bindtap="navAction" data-url="/pages/myCourse/myCourse"  wx:if="{{myCourse.length >= 2}}" class="myCourseHeaderRight">查看全部{{"  >"}}</view>
           </view>
           <block wx:for="{{myCourse}}" wx:key="index">
             <view class="courseList">
