@@ -35,7 +35,7 @@ Page({
             let beginTime = course.beginTime && course.beginTime.replace(new RegExp('-', 'g'), '/');
             beginTime = new Date(beginTime);
             const min = beginTime.getMinutes() || '00';
-            const hour = beginTime.getHours() > 10 ? beginTime.getHours() : '0'+beginTime.getHours();
+            const hour = beginTime.getHours() >= 10 ? beginTime.getHours() : '0'+beginTime.getHours();
             const month = beginTime.getMonth() + 1;
             const day = beginTime.getDate();
             return ({

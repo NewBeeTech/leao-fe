@@ -31,7 +31,7 @@ Page({
               const month = beginTime.getMonth() + 1;
               const date = beginTime.getDate();
               const min = beginTime.getMinutes() || '00';
-              const hour = beginTime.getHours() > 10 ? beginTime.getHours() : '0'+beginTime.getHours();
+              const hour = beginTime.getHours() >= 10 ? beginTime.getHours() : '0'+beginTime.getHours();
               return ({
                 ...item,
                 dateText: `${month}月${date}日`,
