@@ -110,7 +110,7 @@ Page({
     }
     return {
       title: '乐傲运动',
-      path: `/page/index/index?userId=${this.data.userId}`,
+      path: `/pages/index/index?userId=${this.data.userId}`,
       success: function(res) {
         // 转发成功
       },

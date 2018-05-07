@@ -62,7 +62,7 @@ Page({
     }
     return {
       title: '乐傲运动',
-      path: '/page/index/index',
+      path: '/pages/index/index',
       success: function(res) {
         // 转发成功
       },
