@@ -1,4 +1,6 @@
 const app = getApp();
+import { formatTime } from '../../libs/moment'
+
 Page({
   data: {
     course: {
@@ -49,7 +51,7 @@ Page({
             result.signStatusText = '立即预约';
             result.signStatusClass = 'light';
           }
-          result.time = new Date(result.beginTime).Format('yyyy年MM月dd日 hh:mm')
+          result.time = formatTime(result.beginTime, 'Y年M月D日 h:m')+'/'+formatTime(result.endTime, 'h:m')
           result.richTextArray = JSON.parse(result.descJson) || [];
           this.setData({
             course: result,

@@ -1,4 +1,6 @@
 const app = getApp();
+import { formatTime } from '../../libs/moment'
+
 Page({
   data: {
     course: {},
@@ -43,7 +45,7 @@ Page({
         console.log(res.data);
         if (res.data.code === '000') {
           const result = res.data.datas;
-          result.time = new Date(result.beginTime).Format('yyyy年MM月dd日 hh:mm')+'/'+new Date(result.endTime).Format('hh:mm')
+          result.time = formatTime(result.beginTime, 'Y年M月D日 h:m')+'/'+formatTime(result.endTime, 'h:m')
           result.richTextArray = JSON.parse(result.descJson) || [];
           this.setData({
             course: result,

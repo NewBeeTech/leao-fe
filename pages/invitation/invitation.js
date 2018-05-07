@@ -1,4 +1,5 @@
 const app = getApp()
+import { formatTime } from '../../libs/moment'
 
 Page({
   data: {
@@ -25,6 +26,7 @@ Page({
       [name]: value,
     });
   },
+
   // 获取
   getShareListAction(type) {
     wx.showLoading({
@@ -49,17 +51,15 @@ Page({
           const result = res.data.datas;
           const type = that.data.userInfo.type;
           result.map(item => {
-            item.timeStr = new Date(item.time).Format('yyyy.MM.dd')
+            item.timeStr = formatTime(item.time, 'Y.M.D')
             item.object.money = type === 2 ? item.object.shareCoachMoney : item.object.shareUserMoney
           });
           let amount = 0;
           if(result.length) {
             amount = result.reduce((accumulator, currentValue, currentIndex, array) => {
-              console.log(accumulator.momey + currentValue.momey);
-              return accumulator.momey + currentValue.momey;
+              return accumulator.momey || 0 + currentValue.momey || 0;
             });
           }
-
           that.setData({
             shareList: result,
             amount,

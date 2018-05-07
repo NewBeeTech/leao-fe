@@ -1,4 +1,5 @@
 const app = getApp()
+import { formatTime } from '../../libs/moment'
 
 Page({
   data: {
@@ -54,7 +55,7 @@ Page({
           const genderObj = {'1': '男', '2': '女'}
           const result = res.data.datas
           result.list.map((item) => {
-            item.timeStr = new Date(item.time).Format('yyyy-MM-dd');
+            item.timeStr = formatTime(item.time, 'Y-M-D');
             if(item.type === 3 || item.type === 2) {
               item.object.jsonObj = JSON.parse(item.object.descJson);
             }

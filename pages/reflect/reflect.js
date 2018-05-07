@@ -1,4 +1,6 @@
 const app = getApp()
+import { formatTime } from '../../libs/moment'
+
 Page({
   data: {
     testInfo: {},
@@ -69,7 +71,7 @@ Page({
           const result = res.data.datas;
           if(result) {
             result.jsonObj = JSON.parse(result.descJson);
-            result.time = new Date(result.updateTime).Format('yyyy.MM.dd');
+            result.time = formatTime(result.updateTime, 'Y.M.D');
           }
           that.setData({
             testInfo: result,

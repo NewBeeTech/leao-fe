@@ -5,11 +5,13 @@
     <image src="../../assets/share-top.png"/>
   </view>
   <view class="invitation-button">
-    <button class="invite-button" open-type="share" style="background:url(../../assets/invitation.png);background-size:cover"/>
+    <image class="invite-button" src="../../assets/invitation.png" />
+    <button class="invite-button" open-type="share" />
     <view class="show-more" bindtap="showModal">查看活动规则
       <image src="../../assets/duble-arr.svg" />
     </view>
   </view>
+
   <view class="list">
     <image src="../../assets/share-title.svg"/>
     <view wx:if="{{shareList.length === 0}}" class="share-no-list">
@@ -52,7 +54,7 @@
               </view>
             </view>
             <view class="list-item-bottom">
-              获得返金￥{{item.object.money}}
+              获得返金￥{{item.object.money || 0}}
             </view>
           </view>
         </block>
