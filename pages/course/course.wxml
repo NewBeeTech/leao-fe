@@ -18,8 +18,8 @@
       </view>
     </view>
     <view>
-      <view class="content-title"><view class="content-title-border" />课程简介</view>
-      <view class="course-desc">
+      <view wx:if="{{course.desc}}" class="content-title"><view class="content-title-border" />课程简介</view>
+      <view wx:if="{{course.desc}}" class="course-desc">
         {{course.desc}}
       </view>
     </view>

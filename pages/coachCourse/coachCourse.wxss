@@ -203,6 +203,7 @@
   text-align: left;
   color: #353535;
   margin: 30rpx 0 60rpx 0;
+  white-space: pre-line;
 }
 .bottomBar {
   position: fixed;
