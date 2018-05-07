@@ -5,7 +5,7 @@
     <image src="../../assets/share-top.png"/>
   </view>
   <view class="invitation-button">
-    <button class="invite-button" open-type="share" style="background:url(../../assets/invitation.svg);background-size:cover"/>
+    <button class="invite-button" open-type="share" style="background:url(../../assets/invitation.png);background-size:cover"/>
     <view class="show-more" bindtap="showModal">查看活动规则
       <image src="../../assets/duble-arr.svg" />
     </view>
