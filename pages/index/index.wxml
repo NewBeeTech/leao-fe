@@ -118,7 +118,7 @@
           </view>
           <template is="calendar" data="{{nextDays, changeDayAction, date, calendarCourses }}"/>
         </view>
-        <view class="animated {{ selectedTab == 1 ? 'fadeInUp' : ''}}">
+        <view style="margin-top: 5rpx;" class="animated {{ selectedTab == 1 ? 'fadeInUp' : ''}}">
           <template  wx:if="{{calendarCourses[dayIndex].length === 0}}" is="emptyCourse" data="{{ desc: '暂无相关课程安排' }}" />
           <block wx:else>
             <view wx:for="{{calendarCourses[dayIndex]}}" wx:key="index" class="calendarCourses">

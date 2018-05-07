@@ -11,6 +11,7 @@ Page({
     gender: -1,
     birthday: '',
     realName: '',
+    phone: '',
     school: '',
     workUnit: '',
     address: '',
@@ -68,8 +69,9 @@ Page({
       school,
       workUnit,
       address,
+      phone,
     } = this.data;
-    if (nickName && gender && birthday) { // 基本信息必填
+    if (nickName && gender && birthday && phone) { // 基本信息必填
       wx.showLoading({
         title: '加载中...',
         mask: true,
@@ -87,6 +89,7 @@ Page({
           school: school || '',
           workUnit: workUnit || '',
           address: address || '',
+          phone: phone || '',
         },
         header: {
           'content-type': 'application/x-www-form-urlencoded', // 默认值

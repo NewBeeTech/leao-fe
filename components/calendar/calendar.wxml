@@ -4,7 +4,7 @@
       <view class="day-cell {{calendarCourses[index].length ? '' : 'day-cell-gray'}}" bindtap="changeDayAction" data-date="{{item}}" data-dayindex="{{index}}">
         <view class="day-name">{{item.day}}</view>
         <view>{{item.date}}</view>
-        <view class="{{date == item.date ? 'day-cell-selected' : ''}}" />
+        <view style="z-index: 100" class="{{date == item.date ? 'day-cell-selected' : ''}}" />
       </view>
     </block>
   </view>

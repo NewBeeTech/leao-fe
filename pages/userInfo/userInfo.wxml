@@ -15,6 +15,17 @@
       />
     </view>
     <view class="info-cell">
+      <view class="info-cell-title">手机号码</view>
+      <input
+        class="info-cell-input"
+        placeholder="请输入手机号码"
+        maxlength="20"
+        bindinput="inputChangeAction"
+        data-name="phone"
+        value="{{phone}}"
+      />
+    </view>
+    <view class="info-cell">
       <view class="info-cell-title">性别</view>
       <picker value="{{gender == -1 ? '' : genderArray[gender]}}" range="{{genderArray}}" bindchange="changeGender">
         <view class="{{gender == -1 ? 'info-cell-unselect' : 'info-cell-select'}}">

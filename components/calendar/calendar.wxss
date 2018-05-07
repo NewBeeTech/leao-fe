@@ -39,4 +39,5 @@
   border-radius: 6rpx;
   position: absolute;
   bottom: -1.5rpx;
+  z-index: 100;
 }
