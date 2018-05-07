@@ -64,6 +64,16 @@ Page({
     });
   },
   /**
+   * 导航到场馆
+   * @return {[type]} [description]
+   */
+  navToGym() {
+    const id = this.data.course.gymId;
+    wx.navigateTo({
+      url: '/pages/gym/gym?id='+id,
+    });
+  },
+  /**
    * 底部按钮事件
    * @return {[type]} [description]
    */

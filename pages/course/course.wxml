@@ -28,6 +28,7 @@
       <view class="course-time">
         {{course.time}}
       </view>
+      <image bindtap="navToGym" class="gymAddressImg" src="{{course.gymAddressImg}}" />
     </view>
     <template is="richText" data="{{ richTextArray: course.richTextArray }}" />
   </view>

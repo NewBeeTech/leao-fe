@@ -1,5 +1,10 @@
 @import "../../components/topbar/topbar.wxss";
 @import "../../components/richText/richText.wxss";
+.gymAddressImg {
+  width: 690rpx;
+  height: 430rpx;
+  margin-top: 30rpx;
+}
 .courseTypeTop {
   position: relative;
 }
