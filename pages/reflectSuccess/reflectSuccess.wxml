@@ -1,0 +1,7 @@
+<view class="buy-success-container">
+  <image class="buy-success-icon" src="../../assets/buy-success.svg" />
+  <view class="buy-success-desc">提现成功</view>
+  <view class="buy-success-content">提现金额：￥5,000.00</view>
+  <view class="buy-success-content">预计2个工作日内到账</view>
+  <view class="return-to-courses" bindtap="rebackTo">完成</view>
+</view>

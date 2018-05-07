@@ -1,0 +1,330 @@
+@import "../../components/topbar/topbar.wxss";
+/* @import "../../components/richText/richText.wxss"; */
+.courseTypeTop {
+  position: relative;
+}
+.courseTypeImg {
+  width: 100vw;
+  height: 377rpx;
+}
+.courseTypeName {
+  position: absolute;
+  left: 0;
+  top: 240rpx;
+  width: 440rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top-right-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  background-color: #ffd225;
+  text-align: center;
+}
+.courseList {
+  padding: 0 30rpx;
+}
+.courseList-cell {
+  padding: 30rpx 0 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.courseList-cell-first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.courseList-cell-second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.courseList-cell-title {
+  height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.87);
+}
+.courseList-cell-time {
+  height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.87);
+}
+.courseList-cell-desc {
+  height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #888888;
+}
+.courseList-cell-date {
+  height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #888888;
+}
+.courseList-header {
+  padding: 0 30rpx;
+  width: 630rpx;
+  height: 60rpx;
+  background-color: #f5f8fb;
+  line-height: 60rpx;
+  text-align: center;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(33, 33, 33, 0.87);
+}
+.course-content {
+  padding: 0 30rpx 160rpx 30rpx;
+  /* margin-bottom: 100rpx; */
+}
+.content-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #353535;
+  margin-top: 40rpx;
+}
+.course-time {
+  font-size: 32rpx;
+  font-weight: normal;
+  margin: 20rpx 0;
+  text-align: left;
+  color: #353535;
+}
+.content-title-name {
+  margin-top: 30rpx;
+  align-items: center;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 40rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #353535;
+}
+.content-title-border {
+  width: 10rpx;
+  height: 34rpx;
+  border-radius: 100rpx;
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+  margin-right: 20rpx;
+}
+.coach {
+  margin: 30rpx 0 60rpx 0;
+  display: flex;
+  flex-direction: row;
+}
+.coachPortrait {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-right: 24rpx;
+}
+.coach-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.coach-info-name {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-family: PingFangSC;
+  font-size: 30rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #262a2f;
+}
+.coach-info-desc {
+  height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #888888;
+}
+.course-desc {
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #353535;
+  margin: 30rpx 0 60rpx 0;
+}
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+.bottomBar-left {
+  background-color: #f5f8fb;
+  width: 150rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #262a2f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 30rpx;
+}
+.bottomBar-right {
+  width: 100%;
+  line-height: 48rpx;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #262a2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gray {
+  background-color: #e2e2e2;
+}
+.light {
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+}
+
+.course-list-block {
+  margin: 20rpx 0;
+  padding: 30rpx 0rpx 0rpx 0rpx;
+  width: 690rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  border: solid 2rpx #e4ebf2;
+}
+.course-list-top {
+  width: 690rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: solid 2rpx #e4ebf2;
+}
+
+.course-list-img {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 10rpx;
+}
+.course-list-item {
+  width: 400rpx;
+  line-height: 1.7;
+  margin: 0 20rpx;
+}
+.course-list-nickname {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #353535;
+}
+.course-list-age {
+  width: 70rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  text-align: center;
+  border-radius: 19rpx;
+  color: #353535;
+  border: solid 1rpx #ffd225;
+}
+.course-list-gender {
+  width: 28rpx;
+  height: 28rpx;
+  margin: 0 10rpx;
+}
+.course-list-phone {
+  font-size: 28rpx;
+  color: #888;
+}
+.course-list-radio {
+  width: 100rpx;
+}
+
+.course-list-bottom {
+  display: flex;
+  height: 80rpx;
+  justify-content: space-around;
+  align-items: center;
+}
+.course-list-text {
+  width: 150rpx;
+  height: 40rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  text-align: center;
+  color: #353535;
+}

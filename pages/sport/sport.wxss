@@ -1,0 +1,80 @@
+@import "../../components/loading/loading.wxss";
+@import "../../components/topbar/topbar.wxss";
+
+.basic-info-container {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.update-time {
+  background-color: #fff;
+  padding: 30rpx;
+  font-size: 28rpx;
+  color: #9ca3ae;
+}
+.user-info-container {
+  background-color: #f5f8fb;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+.sport-top{
+  width: 750rpx;
+  height: 250rpx;
+  background-color: #ffd225;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sport-userinfo {
+  width: 400rpx;
+  margin-left: 40rpx;
+}
+.history-item-title {
+  width: 690rpx;
+  display: flex;
+  font-size: 32rpx;
+  color: #353535;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+.history-item-title:not(:last-child) {
+  border-bottom: 1rpx solid #e5ebf1;
+}
+.sport-top-avator {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: solid 6rpx #f5f8fb;
+}
+.sport-top-gender {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+.sport-username {
+  font-size: 34rpx;
+  padding: 15rpx 0;
+  font-weight: 500;
+  text-align: left;
+  color: #353535;
+}
+.sport-age {
+  font-size: 32rpx;
+  padding: 15rpx 0;
+  font-weight: 500;
+  text-align: left;
+  color: #8e8b59;
+}
+
+.history-item-address {
+  opacity: 0.85;
+  font-size: 32rpx;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #353535;
+}

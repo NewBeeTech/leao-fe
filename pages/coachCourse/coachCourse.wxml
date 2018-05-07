@@ -1,0 +1,78 @@
+<import src="../../components/topbar/topbar.wxml"/>
+<import src="../../components/richText/richText.wxml"/>
+<view>
+  <!-- <template is="topbar" date="{{ navAction }}" /> -->
+  <view class="course-content">
+    <view>
+      <view class="content-title-name">{{course.courseType}}</view>
+      <view class="coach">
+         <image class="coachPortrait" src="{{course.coachPortrait}}" />
+         <view class="coach-info">
+           <view class="coach-info-name">{{course.coach}}</view>
+           <view class="coach-info-desc">{{course.coachSimpleDesc}}</view>
+         </view>
+      </view>
+    </view>
+    <view>
+      <view class="content-title"><view class="content-title-border" />课程时间</view>
+      <view class="course-time">
+        {{course.time}}
+      </view>
+    </view>
+    <view>
+      <view class="content-title"><view class="content-title-border" />课程场馆</view>
+      <view class="course-time">
+        {{course.gym}}
+      </view>
+    </view>
+    <view>
+      <view class="content-title"><view class="content-title-border" />已报名用户</view>
+      <view class="course-list">
+        <block wx:key="{{index}}" wx:for="{{course.list}}">
+          <view class="course-list-block">
+            <view class="course-list-top">
+              <image class="course-list-img" src="{{course.coachPortrait}}" />
+              <view class="course-list-item">
+                <view class="course-list-nickname">
+                  学员{{item.realName || item.nickName}}
+                  <image wx:if="{{item.gender == 1}}" class="course-list-gender" src="{{male}}" />
+                  <image wx:if="{{item.gender == 2}}" class="course-list-gender" src="{{female}}" />
+                  <view wx:if="{{item.age}}" class="course-list-age">
+                    {{item.age}}岁
+                  </view>
+                </view>
+                <view wx:if="{{item.phone}}" class="course-list-phone">
+                  {{item.phone}}
+                </view>
+                <view class="course-list-phone">
+                  {{item.count || 0}}次训练
+                </view>
+              </view>
+              <switch class="course-list-radio" />
+            </view>
+            <view class="course-list-bottom">
+              <view class="course-list-text" bindtap="navToPhyTest" data-userId="{{item.id}}">
+                体质测试
+              </view>
+              <view
+                wx:if="{{item.feedbackStatus}}"
+                class="course-list-text"
+                bindtap="navToFeedBack"
+                data-item="{{item}}"
+              >
+                课程反馈
+              </view>
+              <view wx:else class="course-list-text">
+                已反馈
+              </view>
+              <view class="course-list-text" bindtap="navToHistory" data-userid="{{item.id}}">
+                历史信息
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- <template is="richText" data="{{ richTextArray: course.richTextArray }}" /> -->
+  </view>
+</view>

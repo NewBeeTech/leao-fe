@@ -34,6 +34,9 @@ Page({
     yi_yu_yue: 0, // 已预约课数
     hour: 0, // 可用课时，进度是100
     gyms: [], // 场馆
+    feedbackCount: 0, // 反馈未读红点数
+    phyCount: 0, // 体侧未读红点数
+    shareUserId: '', // 分享人userId
     isFetching: false,
   },
   //事件处理函数
@@ -70,6 +73,7 @@ Page({
     this.setData({
       nextDays: [0, 1, 2, 3, 4, 5, 6, 7].map(item => getNextNDay(item)),
       selectedTab: options.selectedTab,
+      shareUserId: options.userId,
     });
     // 地理位置
     this.setData({
@@ -171,7 +175,8 @@ Page({
     const that = this;
     wx.getSetting({
       success: res => {
-        if (res.authSetting['scope.userInfo']) {
+        // if (res.authSetting['scope.userInfo']) {
+        if (res.errMsg === 'getSetting:ok') {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: respond => {
@@ -200,6 +205,9 @@ Page({
                   }
                 }
               });
+            },
+            fail: res => {
+              console.log(res);
             }
           });
         }
@@ -343,6 +351,9 @@ Page({
               yi_yu_yue: res.data.datas.yi_yu_yue,
               hour: res.data.datas.hour,
             });
+            that.getCount();
+            that.handShareUser();
+            app.globalData.userInfo = res.data.datas.user;
           } else {
             that.authSaveUserInfo(that.data.token);
           }
@@ -404,6 +415,49 @@ Page({
       }
     })
   },
+  getCount() {
+    const that = this;
+    wx.request({
+      url: 'https://ssl.newbeestudio.com/api/course/hotCount', //仅为示例，并非真实的接口地址
+      header: {
+        'token': that.data.token,
+      },
+      data: {
+        userId: that.data.userInfo.id,
+      },
+      method: 'GET',
+      success: function(res) {
+        console.log(res.data);
+        if (res.data.code == '000') {
+          let result = res.data.datas;
+          that.setData({
+            feedbackCount: res.data.datas.feedbackCount,
+            phyCount: res.data.datas.phyCount,
+          });
+        }
+      }
+    })
+  },
+  handShareUser() {
+    const that = this;
+    console.log(that.data.userInfo.id);
+    console.log(that.data.shareUserId);
+    if(that.data.userInfo.id && (that.data.userInfo.id !== that.data.shareUserId)) {
+      wx.request({
+        url: 'https://ssl.newbeestudio.com/api/user/handShareUser', //仅为示例，并非真实的接口地址
+        header: {
+          'token': that.data.token,
+        },
+        data: {
+          shareUserId: that.data.shareUserId,
+        },
+        method: 'GET',
+        success: function(res) {
+          console.log(res.data);
+        }
+      })
+    }
+  },
   changeDayAction(e) {
     this.setData({
       year: e.currentTarget.dataset.date.year,
@@ -425,9 +479,9 @@ Page({
    * @param  {[type]} e [description]
    * @return {[type]}   [description]
    */
-  navAction: (e) => {
+  navAction(e) {
     wx.navigateTo({
-      url: e.currentTarget.dataset.url,
+      url: e.currentTarget.dataset.url + '?userId=' + this.data.userInfo.id,
     });
   },
   /**
@@ -458,11 +512,20 @@ Page({
    * @param  {[type]} e [description]
    * @return {[type]}   [description]
    */
-  navToCourse: (e) => {
+  navToCourse(e) {
     const id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/course/course?id='+id,
-    });
+    const userId = this.data.userInfo.id;
+    const type = this.data.userInfo.type;
+    if(type === 1) {
+      wx.navigateTo({
+        url: '/pages/course/course?id='+id,
+      });
+    }
+    if(type === 2) {
+      wx.navigateTo({
+        url: '/pages/coachCourse/coachCourse?id='+id+'&userId='+userId,
+      });
+    }
   },
   navToCoach: (e) => {
     const id = e.currentTarget.dataset.id;

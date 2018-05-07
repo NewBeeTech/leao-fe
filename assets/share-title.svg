@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="479" height="77" viewBox="0 0 479 77">
+    <defs>
+        <linearGradient id="a" x1="58.8%" x2="58.8%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF7900"/>
+            <stop offset="100%" stop-color="#FFB902"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-99 -12)">
+        <path fill="url(#a)" d="M176.467 19h337.066a8 8 0 0 1 7.822 6.324L535 89H155l13.645-63.676A8 8 0 0 1 176.467 19z"/>
+        <text fill="#FFF" font-family="MFTongXin_Noncommercial-Regular, MF TongXin (Noncommercial)" font-size="32">
+            <tspan x="249" y="66">好友邀请列表</tspan>
+        </text>
+        <circle cx="143" cy="35" r="6" fill="url(#a)"/>
+        <circle cx="569.5" cy="62.5" r="6.5" stroke="url(#a)" stroke-width="4"/>
+        <path fill="url(#a)" d="M554.503 11.003l7.5 15h-15z" transform="rotate(37 554.503 18.503)"/>
+        <path fill="url(#a)" d="M110.119 56.776l8.956 12.79h-17.783z" transform="rotate(35 110.183 63.17)"/>
+    </g>
+</svg>

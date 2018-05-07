@@ -1,0 +1,103 @@
+<import src="../../components/loading/loading.wxml"/>
+<view class="user-info-container">
+  <template is="loading" data="{{ isFetching }}" />
+  <view class="basic-info-container">
+    <view class="history-top">
+      <view class="history-top-bg" style="background:url(../../assets/history-bg.svg);background-size: cover;">
+        <image class="top-avator" src="{{userInfo.portrait}}" />
+        <view class="exe-detail">
+          <view>学员{{userInfo.realName || userInfo.nickName}}</view>
+          <view>{{userInfo.sex}}</view>
+          <view wx:if="{{userInfo.age}}">{{userInfo.age}}岁</view>
+        </view>
+      </view>
+    </view>
+    <view class="history-list">
+      <block wx:key="index" wx:for="{{history}}">
+        <view class="history-item" wx:if="{{item.type == 1}}">
+          <view class="history-item-name">{{item.object.courseType}}</view>
+          <view class="history-item-title">
+            <view class="history-item-address">
+              <image src="{{addressIcon}}" />
+              {{item.object.gym}}
+            </view>
+            <view class="history-item-address">
+              <image src="{{calenderIcon}}" />
+              {{item.timeStr}}
+            </view>
+          </view>
+          <view class="history-item-coach">
+            <image src="{{userIcon}}" />
+            {{item.object.coach}}
+          </view>
+        </view>
+        <view class="history-item" wx:if="{{item.type == 2}}">
+          <view class="history-item-name">{{item.object.courseType}}</view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">
+              <image src="{{addressIcon}}" />
+              {{item.object.gym}}
+            </view>
+            <view class="history-item-address">
+              <image src="{{calenderIcon}}" />
+              {{item.timeStrStr}}
+            </view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">核心力量耐力</view>
+            <view class="history-item-address">{{item.object.jsonObj.params1}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">下肢力量耐力</view>
+            <view class="history-item-address">{{item.object.jsonObj.params2}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">下肢爆发力</view>
+            <view class="history-item-address">{{item.object.jsonObj.params3}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">上肢爆发力</view>
+            <view class="history-item-address">{{item.object.jsonObj.params4}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">最大速度</view>
+            <view class="history-item-address">{{item.object.jsonObj.params5}}</view>
+          </view>
+          <view class="history-item-title  border-line">
+            <view class="history-item-address">多方向速度</view>
+            <view class="history-item-address">{{item.object.jsonObj.params6}}</view>
+          </view>
+        </view>
+        <view class="history-item" wx:if="{{item.type == 3}}">
+          <view class="history-item-name">{{item.object.courseType}}</view>
+          <view class="history-item-title">
+            <view class="history-item-address">
+              <image src="{{addressIcon}}" />
+              {{item.object.gym}}
+            </view>
+            <view class="history-item-address">
+              <image src="{{calenderIcon}}" />
+              {{item.timeStrStr}}
+            </view>
+          </view>
+          <view class="history-item-coach">
+            <image src="{{userIcon}}" />
+            {{item.object.coach}}
+          </view>
+          <view class="history-item-coach">
+            <image src="{{feedbackIcon}}" />
+            课程反馈：
+          </view>
+          <view class="history-feedback">
+            <text decode="true">{{item.object.jsonObj.content}}</text>
+            <view class="info-avator">
+              <block wx:key="index" wx:for="{{item.object.jsonObj.imgList}}">
+                <image src="{{item}}" class="add-info-avator"/>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

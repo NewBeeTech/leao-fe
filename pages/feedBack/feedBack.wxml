@@ -1,0 +1,32 @@
+<import src="../../components/loading/loading.wxml"/>
+<view class="user-info-container">
+  <template is="loading" data="{{ isFetching }}" />
+  <view class="basic-info-container">
+    <view class="exe-count">
+      第{{count}}次训练反馈
+    </view>
+    <view class="exe-detail">
+      学员{{name}} {{gender}} {{age}}岁
+    </view>
+    <view class="info-cell">
+      <textarea
+        class="info-cell-input"
+        placeholder="填写反馈内容..."
+        bindinput="inputChangeAction"
+        data-name="content"
+        value="{{content}}"
+      />
+    </view>
+    <view class="info-avator">
+      <view class="add-info-avator" bindtap="choosePic">+</view>
+      <block wx:key="index" wx:for="{{imgList}}">
+        <view class="add-info-img">
+          <image src="{{item}}" class="add-img"/>
+          <image src="{{clearIcon}}" class="add-img-clear" bindtap="remove" data-index="{{index}}"/>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="save-bottom-btn" bindtap="checkInfo">提交反馈</view>
+</view>

@@ -26,7 +26,7 @@
     <view>
       <view class="content-title"><view class="content-title-border" />课程时间</view>
       <view class="course-time">
-        2018年9月27日 18:00/20:00
+        {{course.time}}
       </view>
     </view>
     <template is="richText" data="{{ richTextArray: course.richTextArray }}" />

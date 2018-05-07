@@ -1,0 +1,60 @@
+<import src="../../components/loading/loading.wxml"/>
+<import src="../../components/topbar/topbar.wxml"/>
+<view class="user-info-container">
+  <template is="loading" data="{{ isFetching }}" />
+  <template is="topbar" date="{{ navAction }}" />
+  <view class="sport-top">
+    <image class="sport-top-avator" src="{{userInfo.portrait}}"/>
+    <view class="sport-userinfo">
+      <view class="sport-username">
+        {{userInfo.realName || userInfo.nickName}}同学
+        <image wx:if="{{userInfo.gender === 2}}" class="sport-top-gender" src="../../assets/female.svg" />
+        <image wx:if="{{userInfo.gender === 1}}" class="sport-top-gender" src="../../assets/male.svg" />
+      </view>
+      <view wx:if="{{userInfo.age}}" class="sport-age">
+        {{userInfo.age}}岁
+      </view>
+    </view>
+  </view>
+  <view class="update-time">
+    {{testInfo.time}}更新
+  </view>
+  <view class="basic-info-container">
+    <view class="history-item-title">
+      <view class="history-item-address">核心力量耐力
+        <image class="sport-top-gender" src="../../assets/notice.svg" />
+      </view>
+      <view class="history-item-address">{{testInfo.jsonObj.params1 || '--'}}</view>
+    </view>
+    <view class="history-item-title">
+      <view class="history-item-address">下肢力量耐力
+        <image class="sport-top-gender" src="../../assets/notice.svg" />
+      </view>
+      <view class="history-item-address">{{testInfo.jsonObj.params2 || '--'}}</view>
+    </view>
+    <view class="history-item-title">
+      <view class="history-item-address">下肢爆发力
+        <image class="sport-top-gender" src="../../assets/notice.svg" />
+      </view>
+      <view class="history-item-address">{{testInfo.jsonObj.params3 || '--'}}</view>
+    </view>
+    <view class="history-item-title">
+      <view class="history-item-address">上肢爆发力
+        <image class="sport-top-gender" src="../../assets/notice.svg" />
+      </view>
+      <view class="history-item-address">{{testInfo.jsonObj.params4 || '--'}}</view>
+    </view>
+    <view class="history-item-title">
+      <view class="history-item-address">最大速度
+        <image class="sport-top-gender" src="../../assets/notice.svg" />
+      </view>
+      <view class="history-item-address">{{testInfo.jsonObj.params5 || '--'}}</view>
+    </view>
+    <view class="history-item-title">
+      <view class="history-item-address">多方向速度
+        <image class="sport-top-gender" src="../../assets/notice.svg" />
+      </view>
+      <view class="history-item-address">{{testInfo.jsonObj.params6 || '--'}}</view>
+    </view>
+  </view>
+</view>

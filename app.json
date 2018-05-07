@@ -10,7 +10,17 @@
     "pages/coach/coach",
     "pages/myCourse/myCourse",
     "pages/gym/gym",
-    "pages/gymMap/gymMap"
+    "pages/gymMap/gymMap",
+    "pages/coachCourse/coachCourse",
+    "pages/physicalTest/physicalTest",
+    "pages/feedBack/feedBack",
+    "pages/history/history",
+    "pages/sport/sport",
+    "pages/feedbackList/feedbackList",
+    "pages/invitation/invitation",
+    "pages/reflect/reflect",
+    "pages/reflectSuccess/reflectSuccess",
+    "pages/reflectFail/reflectFail"
   ],
   "window":{
     "backgroundTextStyle":"light",

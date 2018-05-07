@@ -1,0 +1,99 @@
+@import "../../components/loading/loading.wxss";
+.info-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100rpx;
+  width: 690rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.info-cell-title {
+  height: 45rpx;
+  line-height: 45rp;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  text-align: left;
+  color: #212121;
+  /* margin-bottom: 20rpx; */
+}
+.info-cell-input {
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  text-align: left;
+  /* color: #9ca3ae; */
+}
+.basic-info-container {
+  background-color: #fff;
+}
+.user-info-container {
+  background-color: #fff;
+  width: 100vw;
+  height: calc(100vh - 96rpx);
+  overflow-y: scroll;
+  overflow-x:hidden;
+  padding: 0 30rpx;
+}
+.optional-info-container {
+  background-color: #fff;
+  /* margin-top: 16rpx; */
+  border-top: 1rpx solid #d8d8d8;
+  padding-bottom: 234rpx;
+}
+.save-bottom-btn {
+  width: 100vw;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.info-avator {
+  width: 690rpx;
+  padding: 30rpx 0;
+}
+
+.info-avator-sub-title {
+  object-fit: contain;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  text-align: left;
+  color: #bdbdbd;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.add-info-avator {
+  width: 350rpx;
+  height: 350rpx;
+  border-radius: 10rpx;
+  background-color: #f5f8fb;
+  border: dashed 1rpx #979797;
+  font-size: 400rpx;
+  line-height: 275rpx;
+  text-align: center;
+  color: #d8d8d8;
+}
+.avatorurl {
+  width: 350rpx;
+  height: 350rpx;
+  border-radius: 10rpx;
+}

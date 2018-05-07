@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="70" viewBox="0 0 120 70">
+    <defs>
+        <linearGradient id="a" x1="58.8%" x2="58.8%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF7900"/>
+            <stop offset="100%" stop-color="#FFB902"/>
+        </linearGradient>
+        <linearGradient id="b" x1="71.064%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="120" height="64.368" y="5.632" fill="#F05204" rx="32.184"/>
+        <rect width="120" height="64.368" fill="url(#a)" rx="32.184"/>
+        <circle cx="22" cy="12" r="3" fill="#FFF" opacity=".6"/>
+        <rect width="37" height="6" x="30" y="9" fill="url(#b)" opacity=".6" rx="3"/>
+        <text fill="#FFF" font-family="PingFangSC-Medium, PingFang SC" font-size="32" font-weight="400">
+            <tspan x="28" y="47">提现</tspan>
+        </text>
+    </g>
+</svg>

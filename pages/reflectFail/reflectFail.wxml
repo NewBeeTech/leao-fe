@@ -1,0 +1,7 @@
+<view class="buy-success-container">
+  <image class="buy-success-icon" src="../../assets/reflict-fail.svg" />
+  <view class="buy-success-desc">提现失败</view>
+  <view class="buy-success-content">请稍后再试</view>
+  <view class="buy-success-content">若多次尝试均失败，请联系客服</view>
+  <view class="return-to-courses" bindtap="rebackTo">完成</view>
+</view>
