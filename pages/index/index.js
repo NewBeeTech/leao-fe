@@ -73,7 +73,7 @@ Page({
     this.setData({
       nextDays: [0, 1, 2, 3, 4, 5, 6, 7].map(item => getNextNDay(item)),
       selectedTab: options.selectedTab,
-      shareUserId: options.userId,
+      shareUserId: options.userId || '',
     });
     // 地理位置
     this.setData({
@@ -442,7 +442,7 @@ Page({
     const that = this;
     console.log(that.data.userInfo.id);
     console.log(that.data.shareUserId);
-    if(that.data.userInfo.id && (that.data.userInfo.id !== that.data.shareUserId)) {
+    if(that.data.shareUserId && that.data.userInfo.id && (that.data.userInfo.id !== that.data.shareUserId)) {
       wx.request({
         url: 'https://ssl.newbeestudio.com/api/user/handShareUser', //仅为示例，并非真实的接口地址
         header: {
