@@ -90,7 +90,7 @@ Page({
     } else if (signStatus === -1) {
       // 已预约，点击取消预约
       wx.showModal({
-        title: '您以成功预约',
+        title: '您已成功预约',
         content: '课程开始前2小时内不可取消',
         showCancel: true,
         cancelText: '好的',
