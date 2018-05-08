@@ -113,7 +113,7 @@ Page({
           if(res.data.code == "000") {
             const signature = res.data.datas;
             wx.uploadFile({
-              url: signature.host,
+              url: 'https://ssl.newbeestudio.com',
               filePath: item,
               name: 'file',
               formData:{

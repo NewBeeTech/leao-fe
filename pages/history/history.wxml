@@ -28,7 +28,7 @@
           </view>
           <view class="history-item-coach">
             <image src="{{userIcon}}" />
-            {{item.object.coach}}
+            {{item.object.coachUser}}
           </view>
         </view>
         <view class="history-item" wx:if="{{item.type == 2}}">
@@ -40,7 +40,7 @@
             </view>
             <view class="history-item-address">
               <image src="{{calenderIcon}}" />
-              {{item.timeStrStr}}
+              {{item.timeStr}}
             </view>
           </view>
           <view class="history-item-title  border-line">
@@ -77,12 +77,12 @@
             </view>
             <view class="history-item-address">
               <image src="{{calenderIcon}}" />
-              {{item.timeStrStr}}
+              {{item.timeStr}}
             </view>
           </view>
           <view class="history-item-coach">
             <image src="{{userIcon}}" />
-            {{item.object.coach}}
+            {{item.object.coachUser}}
           </view>
           <view class="history-item-coach">
             <image src="{{feedbackIcon}}" />
