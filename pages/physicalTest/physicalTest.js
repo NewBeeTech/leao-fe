@@ -119,7 +119,7 @@ Page({
         if(res.data.code == "000") {
           const signature = res.data.datas;
           wx.uploadFile({
-            url: signature.host,
+            url: 'https://ssl.newbeestudio.com',
             filePath: params.tempFilePath,
             name: 'file',
             formData:{
@@ -134,7 +134,7 @@ Page({
               console.log(res);
               if(res.statusCode == '200') {
                 that.setData({
-                  avatorUrl: `${signature.host}/${signature.dir}${localName}`,
+                  avatorUrl: `https://ssl.newbeestudio.com/${signature.dir}${localName}`,
                   avator: params.tempFilePath,
                 })
               } else {
