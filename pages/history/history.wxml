@@ -6,7 +6,7 @@
       <view class="history-top-bg" style="background:url(../../assets/history-bg.svg);background-size: cover;">
         <image class="top-avator" src="{{userInfo.portrait}}" />
         <view class="exe-detail">
-          <view>学员{{userInfo.realName || userInfo.nickName}}</view>
+          <view>{{userInfo.realName || userInfo.nickName}}</view>
           <view>{{userInfo.sex}}</view>
           <view wx:if="{{userInfo.age}}">{{userInfo.age}}岁</view>
         </view>

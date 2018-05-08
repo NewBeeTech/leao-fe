@@ -34,7 +34,7 @@
               <image class="course-list-img" src="{{course.coachPortrait}}" />
               <view class="course-list-item">
                 <view class="course-list-nickname">
-                  学员{{item.realName || item.nickName}}
+                  {{item.realName || item.nickName}}
                   <image wx:if="{{item.gender == 1}}" class="course-list-gender" src="{{male}}" />
                   <image wx:if="{{item.gender == 2}}" class="course-list-gender" src="{{female}}" />
                   <view wx:if="{{item.age}}" class="course-list-age">

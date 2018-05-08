@@ -7,7 +7,7 @@
     <image class="sport-top-avator" src="{{userInfo.portrait}}"/>
     <view class="sport-userinfo">
       <view class="sport-username">
-        {{userInfo.realName || userInfo.nickName}}同学
+        {{userInfo.realName || userInfo.nickName}}
         <image wx:if="{{userInfo.gender === 2}}" class="sport-top-gender" src="../../assets/female.svg" />
         <image wx:if="{{userInfo.gender === 1}}" class="sport-top-gender" src="../../assets/male.svg" />
       </view>
