@@ -59,7 +59,7 @@ Page({
         if (res.data.code == '000') {
           const result = res.data.datas
           result.map((item) => {
-            item.timeStr = formatTime(item.time, 'Y-M-D');
+            item.timeStr = formatTime(item.createTime, 'Y-M-D');
             item.jsonObj = JSON.parse(item.descJson);
           })
           that.setData({

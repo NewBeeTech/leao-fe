@@ -29,12 +29,12 @@
             </view>
             <view class="history-item-address">
               <image src="{{calenderIcon}}" />
-              {{item.timeStrStr}}
+              {{item.timeStr}}
             </view>
           </view>
           <view class="history-item-coach">
             <image src="{{userIcon}}" />
-            {{item.coachUser}}
+            {{item.coachUser || ''}}
           </view>
           <view class="history-item-coach">
             <image src="{{feedbackIcon}}" />

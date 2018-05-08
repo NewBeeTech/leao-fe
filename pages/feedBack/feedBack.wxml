@@ -6,7 +6,7 @@
       第{{count}}次训练反馈
     </view>
     <view class="exe-detail">
-      {{name}} {{gender}} {{age}}岁
+      {{name}} {{gender}} {{age !== null ? age + '岁' : ''}}
     </view>
     <view class="info-cell">
       <textarea

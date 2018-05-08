@@ -22,6 +22,8 @@ Page({
         token: wx.getStorageSync('token'),
       });
     }
+  },
+  onShow() {
     this.getCourse();
   },
   /**

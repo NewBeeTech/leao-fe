@@ -55,7 +55,7 @@
                 体质测试
               </view>
               <view
-                wx:if="{{item.feedbackStatus}}"
+                wx:if="{{item.feedbackStatus === 0}}"
                 class="course-list-text"
                 bindtap="navToFeedBack"
                 data-item="{{item}}"

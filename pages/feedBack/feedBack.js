@@ -113,7 +113,7 @@ Page({
           if(res.data.code == "000") {
             const signature = res.data.datas;
             wx.uploadFile({
-              url: signature.host,
+              url: 'https://ssl.newbeestudio.com',
               filePath: item,
               name: 'file',
               formData:{
@@ -129,7 +129,7 @@ Page({
                   var imgIndex = "imgList[" + index + "]";
                   var imgUrlIndex = "imgUrlList[" + index + "]";
                   that.setData({
-                    [imgUrlIndex]: `${signature.host}/${signature.dir}${localName}`,
+                    [imgUrlIndex]: `https://ssl.newbeestudio.com/${signature.dir}${localName}`,
                     [imgIndex]: item,
                   })
                 // } else {
