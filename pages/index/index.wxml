@@ -97,9 +97,9 @@
             <view>请告诉我们您的意见</view>
           </button>
           <view class="bottom-info">
-            <image src="../../assets/info.svg" class="bottom-icon"/>
-            <view class="bottom-info-title">关于我们</view>
-            <view>基本信息与常见问题</view>
+            <image src="../../assets/share.svg" class="bottom-icon"/>
+            <view class="bottom-info-title">邀请好友</view>
+            <view>最高每笔750元</view>
           </view>
         </view>
         <view style="height: 80rpx"></view>

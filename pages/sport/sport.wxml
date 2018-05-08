@@ -16,8 +16,11 @@
       </view>
     </view>
   </view>
-  <view class="update-time">
-    {{testInfo.time}}更新
+  <view wx:if="{{testInfo.jsonObj.params1}}" class="update-time">
+    {{testInfo.time}} 更新
+  </view>
+  <view wx:else class="update-time">
+    参加首节课后由教练录入
   </view>
   <view class="basic-info-container">
     <view class="history-item-title">

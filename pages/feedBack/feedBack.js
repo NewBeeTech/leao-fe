@@ -129,7 +129,7 @@ Page({
                   var imgIndex = "imgList[" + index + "]";
                   var imgUrlIndex = "imgUrlList[" + index + "]";
                   that.setData({
-                    [imgUrlIndex]: `${signature.host}/${signature.dir}${localName}`,
+                    [imgUrlIndex]: `https://ssl.newbeestudio.com/${signature.dir}${localName}`,
                     [imgIndex]: item,
                   })
                 // } else {
