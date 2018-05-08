@@ -182,15 +182,19 @@
 .course-desc {
   font-family: PingFangSC;
   font-size: 28rpx;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
+  /* font-weight: normal; */
+  /* font-style: normal; */
+  /* font-stretch: normal; */
+  /* line-height: normal; */
+  /* letter-spacing: normal; */
+  /* text-align: left; */
   color: #353535;
-  margin: 30rpx 0 60rpx 0;
+  /* margin: 30rpx 0 60rpx 0; */
+  /* white-space: pre-line; */
+  /* border: 1rpx solid red; */
   white-space: pre-line;
+  padding-top: -30rpx;
+  transform: translateY(-30rpx);
 }
 .bottomBar {
   position: fixed;

@@ -17,7 +17,8 @@ swiper {
   display: flex;
   flex-direction: row;
   border-bottom: 1rpx solid #e5ebf1;
-  padding: 30rpx 0;
+  padding: 30rpx 0 30rpx 0;
+  margin: 10rpx 0 0 0;
 }
 .coach-content {
   padding: 0rpx 30rpx;
@@ -43,7 +44,7 @@ swiper {
   align-items: center;
 }
 .coach-header {
-  margin-top: 60rpx;
+  margin-top: 30rpx;
   width: 690rpx;
   height: 60rpx;
   background-color: #f5f8fb;

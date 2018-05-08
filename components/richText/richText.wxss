@@ -12,7 +12,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #353535;
-  margin: 60rpx 0 30rpx 0;
+  margin: 30rpx 0 30rpx 0;
 }
 .content-title-border {
   width: 10rpx;

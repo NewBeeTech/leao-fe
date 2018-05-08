@@ -162,6 +162,12 @@
 					"name": "分享出去的首页",
 					"pathName": "pages/index/index",
 					"query": "userId=17"
+				},
+				{
+					"id": -1,
+					"name": "教练",
+					"pathName": "pages/coach/coach",
+					"query": "id=3"
 				}
 			]
 		}
