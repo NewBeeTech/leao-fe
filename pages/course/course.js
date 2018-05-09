@@ -118,6 +118,7 @@ Page({
                 } else {
                   wx.showToast({
                     title: res.data.message,
+                    icon: 'none',
                     duration: 2000
                   });
                 }
