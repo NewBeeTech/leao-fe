@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -125,13 +125,13 @@
 					"id": 15,
 					"name": "运动能力",
 					"pathName": "pages/sport/sport",
-					"query": "userId=24"
+					"query": "userId=17"
 				},
 				{
 					"id": 16,
 					"name": "课程反馈",
 					"pathName": "pages/feedbackList/feedbackList",
-					"query": "userId=29"
+					"query": "userId=17"
 				},
 				{
 					"id": -1,

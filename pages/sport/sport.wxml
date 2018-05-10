@@ -25,37 +25,37 @@
   <view class="basic-info-container">
     <view class="history-item-title">
       <view class="history-item-address">核心力量耐力
-        <image class="sport-top-gender" src="../../assets/notice.svg" />
+        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
       <view class="history-item-address">{{testInfo.jsonObj.params1 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">下肢力量耐力
-        <image class="sport-top-gender" src="../../assets/notice.svg" />
+        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
       <view class="history-item-address">{{testInfo.jsonObj.params2 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">下肢爆发力
-        <image class="sport-top-gender" src="../../assets/notice.svg" />
+        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
       <view class="history-item-address">{{testInfo.jsonObj.params3 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">上肢爆发力
-        <image class="sport-top-gender" src="../../assets/notice.svg" />
+        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
       <view class="history-item-address">{{testInfo.jsonObj.params4 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">最大速度
-        <image class="sport-top-gender" src="../../assets/notice.svg" />
+        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
       <view class="history-item-address">{{testInfo.jsonObj.params5 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">多方向速度
-        <image class="sport-top-gender" src="../../assets/notice.svg" />
+        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
       <view class="history-item-address">{{testInfo.jsonObj.params6 || '--'}}</view>
     </view>

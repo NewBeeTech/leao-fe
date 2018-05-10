@@ -22,7 +22,7 @@
       <block wx:key="index" wx:for="{{imgList}}">
         <view class="add-info-img">
           <image src="{{item}}" class="add-img"/>
-          <image src="{{clearIcon}}" class="add-img-clear" bindtap="remove" data-index="{{index}}"/>
+          <image src="{{clearIcon}}" mode="aspectFit" class="add-img-clear" bindtap="remove" data-index="{{index}}"/>
         </view>
       </block>
     </view>

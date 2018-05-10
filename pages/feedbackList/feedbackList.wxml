@@ -8,7 +8,7 @@
   <template is="topbar" date="{{ navAction }}" />
   <template is="loading" data="{{ isFetching }}" />
   <view class="basic-info-container">
-    <view class="history-top">
+    <!-- <view class="history-top">
       <view class="history-top-bg" style="background:url(../../assets/history-bg.svg);background-size: cover;">
         <image class="top-avator" src="{{userInfo.portrait}}" />
         <view class="exe-detail">
@@ -17,7 +17,7 @@
           <view wx:if="{{userInfo.age}}">{{userInfo.age}}岁</view>
         </view>
       </view>
-    </view>
+    </view> -->
     <view class="history-list">
       <block wx:key="index" wx:for="{{history}}">
         <view class="history-item">
@@ -44,7 +44,7 @@
             <text decode="true">{{item.jsonObj.content}}</text>
             <view class="info-avator">
               <block wx:key="index" wx:for="{{item.jsonObj.imgList}}" wx:for-index="cindex" wx:for-item="citem">
-                <image bindtap="previewImg" data-index="{{index}}" data-cindex="{{cindex}}" src="{{citem}}" class="add-info-avator"/>
+                <image mode="aspectFit" bindtap="previewImg" data-index="{{index}}" data-cindex="{{cindex}}" src="{{citem}}" class="add-info-avator"/>
                 <!-- <image src="{{citem}}" class="add-info-avator"/> -->
               </block>
             </view>
