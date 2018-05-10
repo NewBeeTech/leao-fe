@@ -7,21 +7,26 @@ button {
   text-align: inherit;
   text-decoration:none;
   line-height: inherit;
-  border-radius: none !important;
+  border-radius: none!important;
   -webkit-tap-highlight-color:transparent;
   overflow:hidden;
   color: inherit;
   background-color: none;
-  border: none !important;
+  border: none!important;
+  border-radius: 0;
 }
 button::after{
+  border: none!important;
+  border-radius: 0!important;
+}
+/* .form-btn {
   border: none !important;
   border-radius: none !important;
 }
-.form-btn {
-border: none !important;
-border-radius: none !important;
-}
+.form-btn::after {
+  border: none!important;
+  border-radius: 0!important;
+} */
 .gymAddressImg {
   width: 690rpx;
   height: 430rpx;
@@ -227,6 +232,7 @@ border-radius: none !important;
   height: 100rpx;
   display: flex;
   flex-direction: row;
+  border-radius: 0;
 }
 .bottomBar-left {
   background-color: #f5f8fb;

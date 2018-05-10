@@ -33,7 +33,7 @@
     <template is="richText" data="{{ richTextArray: course.richTextArray }}" />
   </view>
   <form bindsubmit="bottomBtnAction" report-submit="{{true}}">
-    <button class="bottomBar form-btn" hover-class="none" formType="submit">
+    <button class="bottomBar" hover-class="none" formType="submit">
       <view class="bottomBar-left">
         <view>已预约</view>
         <view>{{course.count}}/{{course.maxCount}}</view>
