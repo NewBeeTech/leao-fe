@@ -8,14 +8,28 @@ Page({
     female: '../../assets/female.svg',
     male: '../../assets/male.svg',
     id: '',
-    userId: ''
+    userId: '',
+    arrivedObj: {}
   },
   onLoad(options) {
+    // arrivedStorage: [{
+    //   courseId: 1,
+    //   arrivedList: [1, 2, 3]
+    // }]
     const id = options.id
     const userId = options.userId
+    const arrivedStorage = wx.getStorageSync('arrivedStorage') || [{
+      courseId: id,
+      arrivedList: [],
+    }]
+    const arrivedObj = {
+      courseId: id,
+      arrivedList: arrivedStorage.filter(item => item.courseId == id)[0]['arrivedList'],
+    }
     this.setData({
       id,
       userId,
+      arrivedObj,
     });
     if (!this.data.token) {
       this.setData({
@@ -25,6 +39,22 @@ Page({
   },
   onShow() {
     this.getCourse();
+  },
+  switchChange(e) {
+    const index = e.currentTarget.dataset.index
+    const list = this.data.course.list
+    const key = 'course.list[' + index + ']isArrived'
+    this.setData({
+      [key]: e.detail.value
+    })
+    const arrivedList = list.filter(item => item.isArrived).map(item => item.id)
+    const arrivedStorage = (wx.getStorageSync('arrivedStorage') || [{courseId: this.data.id,arrivedList: []}]).map(item => {
+      if(item.courseId == this.data.id) {
+        item.arrivedList = arrivedList
+      }
+      return item;
+    })
+    wx.setStorageSync('arrivedStorage', arrivedStorage)
   },
   /**
    * 获取课程信息
@@ -49,6 +79,14 @@ Page({
           const result = res.data.datas;
           result.time = formatTime(result.beginTime, 'Y年M月D日 h:m')+'/'+formatTime(result.endTime, 'h:m')
           result.richTextArray = JSON.parse(result.descJson) || [];
+          result.list.map(item => {
+            console.log(this.data.arrivedObj.arrivedList, this.data.arrivedObj.arrivedList.indexOf(item.id), item.id);
+            if (this.data.arrivedObj.arrivedList.indexOf(item.id) > -1) {
+              item.isArrived = true
+            } else {
+              item.isArrived = false
+            }
+          })
           this.setData({
             course: result,
           });

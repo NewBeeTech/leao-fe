@@ -48,7 +48,8 @@
                   {{item.count || 0}}次训练
                 </view>
               </view>
-              <switch class="course-list-radio" />
+              <switch checked="{{item.isArrived}}" data-index="{{index}}" bindchange="switchChange" class="course-list-radio" />
+              <!-- <switch class="course-list-radio" /> -->
             </view>
             <view class="course-list-bottom">
               <view class="course-list-text" bindtap="navToPhyTest" data-userId="{{item.id}}">
@@ -73,6 +74,5 @@
         </block>
       </view>
     </view>
-    <!-- <template is="richText" data="{{ richTextArray: course.richTextArray }}" /> -->
   </view>
 </view>

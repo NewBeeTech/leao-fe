@@ -4,7 +4,7 @@
   <template is="topbar" date="{{ navAction }}" />
   <view class="courseTypeTop">
     <image src="{{course.img}}" class="courseTypeImg" />
-    <view class="courseTypeName">{{course.name}}</view>
+    <view class="courseTypeName">{{course.courseType}}</view>
   </view>
   <view class="course-content">
     <view>

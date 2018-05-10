@@ -87,19 +87,19 @@
         <template is="gyms" data="{{ gyms, description: '附近的运动场馆', navToGym }}" />
         <view class="bottom-infos">
           <view class="bottom-info" bindtap="call">
-            <image src="../../assets/tell.svg" class="bottom-icon"/>
+            <image src="../../assets/tell1.svg" class="bottom-icon"/>
             <view class="bottom-info-title">客服电话</view>
             <view>15088682347</view>
           </view>
           <button class="bottom-info" open-type="contact" >
-            <image src="../../assets/mail.svg" class="bottom-icon"/>
+            <image src="../../assets/mail1.svg" class="bottom-icon"/>
             <view class="bottom-info-title">向我们反馈</view>
             <view>请告诉我们您的意见</view>
           </button>
-          <view class="bottom-info">
-            <image src="../../assets/share.svg" class="bottom-icon"/>
+          <view class="bottom-info" bindtap="routeToShare">
+            <image src="../../assets/share1.svg" class="bottom-icon"/>
             <view class="bottom-info-title">邀请好友</view>
-            <view>最高每笔750元</view>
+            <view>可获得课时奖励</view>
           </view>
         </view>
         <view style="height: 80rpx"></view>
@@ -203,7 +203,7 @@
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/share.svg" />
               <view>邀请好友</view>
-              <view class="money">750元</view>
+              <view class="money">返课时</view>
             </view>
             <view class="cell-right-item">
               <image class="cell-icon" src="../../assets/arrow-right.svg" />

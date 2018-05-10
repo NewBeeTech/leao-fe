@@ -52,17 +52,17 @@ Page({
           const type = that.data.userInfo.type;
           result.map(item => {
             item.timeStr = formatTime(item.time, 'Y.M.D')
-            item.object.money = type === 2 ? item.object.shareCoachMoney : item.object.shareUserMoney
+            item.object.hour = type === 2 ? item.object.shareCoachMoney / 100 : item.object.shareUserMoney / 100
           });
-          let amount = 0;
+          let count = 0;
           if(result.length) {
-            amount = result.reduce((accumulator, currentValue, currentIndex, array) => {
-              return accumulator.momey || 0 + currentValue.momey || 0;
+            count = result.reduce((accumulator, currentValue, currentIndex, array) => {
+              return accumulator.hour || 0 + currentValue.hour || 0;
             });
           }
           that.setData({
             shareList: result,
-            amount,
+            count,
           })
           wx.hideLoading();
         }

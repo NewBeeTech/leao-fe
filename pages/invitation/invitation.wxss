@@ -71,12 +71,17 @@
   border-radius: 24rpx;
   background-color: #ffffff;
   border: solid 6rpx #ff7900;
+}
+.share-no-list-body {
+  min-height: 900rpx;
+  width: 680rpx;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.share-no-list image {
+.share-no-list-body>image {
   width: 333rpx;
   height: 168rpx;
 }

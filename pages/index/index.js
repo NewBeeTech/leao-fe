@@ -539,6 +539,11 @@ Page({
       url: '/pages/gym/gym?id='+id,
     });
   },
+  routeToShare: () => {
+    wx.navigateTo({
+      url: '/pages/invitation/invitation?userId='+this.data.userInfo.id,
+    });
+  },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮

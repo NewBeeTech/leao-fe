@@ -15,20 +15,39 @@
   <view class="list">
     <image src="../../assets/share-title.svg"/>
     <view wx:if="{{shareList.length === 0}}" class="share-no-list">
-      <image src="../../assets/no-share.svg" />
-      <view class="share-no-content">
-        暂无邀请好友
+      <view class="list-top">
+        <view class="share-amount">
+          已邀请{{shareList.length}}位好友，获得奖励：{{count}}课时
+        </view>
+        <!-- <image bindtap="goReflect" src="../../assets/tixian.svg" /> -->
       </view>
-      <view class="goto-invite">
-        快去邀请吧
+      <view class="list-bar">
+        <view bindtap="changeBar" data-index="1" class="{{selectedBar === 1 ? 'selected-bar' : 'bar'}}">
+          全部
+        </view>
+        <view bindtap="changeBar" data-index="2" class="{{selectedBar === 2 ? 'selected-bar' : 'bar'}}">
+          已买课
+        </view>
+        <view bindtap="changeBar" data-index="3" class="{{selectedBar === 3 ? 'selected-bar' : 'bar'}}">
+          未买课
+        </view>
+      </view>
+      <view class="share-no-list-body">
+        <image src="../../assets/no-share.svg" />
+        <view class="share-no-content">
+          暂无邀请好友
+        </view>
+        <view class="goto-invite">
+          快去邀请吧
+        </view>
       </view>
     </view>
     <view wx:else class="share-list">
       <view class="list-top">
         <view class="share-amount">
-          已邀请{{shareList.length}}位好友，获得奖金￥{{amount}}
+          已邀请{{shareList.length}}位好友，获得奖励：{{count}}课时
         </view>
-        <image bindtap="goReflect" src="../../assets/tixian.svg" />
+        <!-- <image bindtap="goReflect" src="../../assets/tixian.svg" /> -->
       </view>
       <view class="list-bar">
         <view bindtap="changeBar" data-index="1" class="{{selectedBar === 1 ? 'selected-bar' : 'bar'}}">
@@ -54,7 +73,7 @@
               </view>
             </view>
             <view class="list-item-bottom">
-              获得返金￥{{item.object.money || 0}}
+              获得奖励课时：{{item.object.money || 0}}课时
             </view>
           </view>
         </block>
@@ -71,11 +90,9 @@
     <view class="modal-content">
       <view class="rule-content" >
         <text decode="true">
-          1. 您邀请的好友首次有效买课，您将获得5%的现金奖励，上不封顶；\n
-          2. 首次有效买课定义：用户首次购买课时数≥10的课程；\n
-          3. 奖励金额将于好友买课后7个工作日内发放到你的账号；\n
-          4. 您获得的奖金由乐傲运动提供；\n
-          5. 活动最终解释权归乐傲运动所有。
+          1. 邀请好友（新用户）首次购课，每满20课时，即赠送您1免费课时奖励（多买多赠，上不封顶）\n
+          2. 赠送的免费课时，将于好友买课后3个工作日内发放到您的账号\n
+          3. 活动最终解释权归乐傲运动所有
         </text>
       </view>
     </view>
