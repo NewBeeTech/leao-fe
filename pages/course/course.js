@@ -77,8 +77,10 @@ Page({
    * 底部按钮事件
    * @return {[type]} [description]
    */
-  bottomBtnAction() {
+  bottomBtnAction(e) {
+    console.warn(e);
     const signStatus = this.data.course.signStatus;
+    const formId = e.detail.formId;
     const that = this;
     if (signStatus === 0) {
     } else if (signStatus === -2) {
@@ -102,7 +104,7 @@ Page({
             const courseId = this.data.course.id;
             wx.showLoading();
             wx.request({
-              url: 'https://ssl.newbeestudio.com/api/course/cancelSignup?courseId='+courseId,
+              url: 'https://ssl.newbeestudio.com/api/course/cancelSignup?courseId='+courseId+'&formId='+formId,
               header: {
                 token: this.data.token,
               },
@@ -132,7 +134,7 @@ Page({
       const courseId = this.data.course.id;
       wx.showLoading();
       wx.request({
-        url: 'https://ssl.newbeestudio.com/api/course/signup?courseId='+courseId,
+        url: 'https://ssl.newbeestudio.com/api/course/signup?courseId='+courseId+'&formId='+formId,
         header: {
           token: this.data.token,
         },

@@ -32,13 +32,16 @@
     </view>
     <template is="richText" data="{{ richTextArray: course.richTextArray }}" />
   </view>
-  <view class="bottomBar" bindtap="bottomBtnAction">
-    <view class="bottomBar-left">
-      <view>已预约</view>
-      <view>{{course.count}}/{{course.maxCount}}</view>
-    </view>
-    <view class="bottomBar-right {{course.signStatusClass}}">
-      {{course.signStatusText}}
-    </view>
-  </view>
+  <form bindsubmit="bottomBtnAction" report-submit="{{true}}">
+    <button class="bottomBar form-btn" formType="submit">
+      <view class="bottomBar-left">
+        <view>已预约</view>
+        <view>{{course.count}}/{{course.maxCount}}</view>
+      </view>
+      <view class="bottomBar-right {{course.signStatusClass}}">
+        {{course.signStatusText}}
+      </view>
+    </button>
+  </form>
+
 </view>

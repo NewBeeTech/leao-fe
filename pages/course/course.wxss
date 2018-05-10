@@ -1,5 +1,19 @@
 @import "../../components/topbar/topbar.wxss";
 @import "../../components/richText/richText.wxss";
+button {
+  margin: 0 0;
+  padding: 0 0;
+  font-size:18px;
+  text-align: inherit;
+  text-decoration:none;
+  line-height: inherit;
+  border-radius: none;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color: inherit;
+  background-color: none;
+  border: none;
+}
 .gymAddressImg {
   width: 690rpx;
   height: 430rpx;
