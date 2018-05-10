@@ -7,12 +7,20 @@ button {
   text-align: inherit;
   text-decoration:none;
   line-height: inherit;
-  border-radius: none;
+  border-radius: none !important;
   -webkit-tap-highlight-color:transparent;
   overflow:hidden;
   color: inherit;
   background-color: none;
-  border: none;
+  border: none !important;
+}
+button::after{
+  border: none !important;
+  border-radius: none !important;
+}
+.form-btn {
+border: none !important;
+border-radius: none !important;
 }
 .gymAddressImg {
   width: 690rpx;
