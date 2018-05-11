@@ -539,7 +539,7 @@ Page({
       url: '/pages/gym/gym?id='+id,
     });
   },
-  routeToShare: () => {
+  routeToShare: function() {
     wx.navigateTo({
       url: '/pages/invitation/invitation?userId='+this.data.userInfo.id,
     });
