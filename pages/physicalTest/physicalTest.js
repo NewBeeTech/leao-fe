@@ -14,8 +14,9 @@ Page({
     error: '',
   },
   onLoad: function (e) {
+    console.log(e);
     const courseId = e.courseId
-    const userId = e.userId
+    const userId = e.id
     this.setData({
       courseId,
       userId,
@@ -81,8 +82,8 @@ Page({
     wx.request({
       url: 'https://ssl.newbeestudio.com/api/course/addPhyTest', //仅为示例，并非真实的接口地址
       data: {
-        courseId:that.data.courseId,
-        userId:that.data.userId,
+        courseId: that.data.courseId,
+        userId: that.data.userId,
         descJson
       },
       header: {

@@ -175,11 +175,13 @@ Page({
     const that = this;
     wx.getSetting({
       success: res => {
+        console.log(res)
         // if (res.authSetting['scope.userInfo']) {
         if (res.errMsg === 'getSetting:ok') {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: respond => {
+              console.log(respond)
               // this.globalData.userInfo = res.userInfo;
               wx.request({
                 url: 'https://ssl.newbeestudio.com/api/user/edit', //仅为示例，并非真实的接口地址
@@ -440,8 +442,8 @@ Page({
   },
   handShareUser() {
     const that = this;
-    console.log(that.data.userInfo.id);
-    console.log(that.data.shareUserId);
+    console.log('that.data.userInfo.id', that.data.userInfo.id);
+    console.log('that.data.shareUserId', that.data.shareUserId);
     if(that.data.shareUserId && that.data.userInfo.id && (that.data.userInfo.id !== that.data.shareUserId)) {
       wx.request({
         url: 'https://ssl.newbeestudio.com/api/user/handShareUser', //仅为示例，并非真实的接口地址
@@ -453,7 +455,7 @@ Page({
         },
         method: 'GET',
         success: function(res) {
-          console.log(res.data);
+          console.log('分享', res.data);
         }
       })
     }
