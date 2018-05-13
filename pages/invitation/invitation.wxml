@@ -73,7 +73,7 @@
               </view>
             </view>
             <view class="list-item-bottom">
-              获得奖励课时：{{item.object.money || 0}}课时
+              获得奖励课时：{{item.hour || 0}}课时
             </view>
           </view>
         </block>

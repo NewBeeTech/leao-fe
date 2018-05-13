@@ -50,14 +50,18 @@ Page({
         if (res.data.code == '000') { // 之前使用过运用
           const result = res.data.datas;
           const type = that.data.userInfo.type;
+          console.log(type, type === 2);
           result.map(item => {
             item.timeStr = formatTime(item.time, 'Y.M.D')
-            item.object.hour = type === 2 ? item.object.shareCoachMoney / 100 : item.object.shareUserMoney / 100
+            item.hour = type === 2 ? item.object.shareCoachMoney / 100 : item.object.shareUserMoney / 100
           });
           let count = 0;
+          console.log(result);
           if(result.length) {
-            count = result.reduce((accumulator, currentValue, currentIndex, array) => {
-              return accumulator.hour || 0 + currentValue.hour || 0;
+            result.reduce((accumulator, currentValue, currentIndex, array) => {
+              console.log(accumulator, currentValue);
+              count = accumulator.hour || 0 + currentValue.hour || 0;
+              return count;
             });
           }
           that.setData({
