@@ -14,14 +14,8 @@ Page({
     error: '',
   },
   onLoad: function (e) {
-    console.log(e);
     const courseId = e.courseId
-<<<<<<< HEAD
-    const userId = e.userId
-    console.warn(e);
-=======
     const userId = e.id
->>>>>>> eabd80bf6163450bea9cbf8b30ef990c2843861d
     this.setData({
       courseId,
       userId,
