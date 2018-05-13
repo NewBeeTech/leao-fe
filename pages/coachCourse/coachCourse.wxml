@@ -31,7 +31,8 @@
         <block wx:key="{{index}}" wx:for="{{course.list}}">
           <view class="course-list-block">
             <view class="course-list-top">
-              <image class="course-list-img" src="{{course.coachPortrait}}" />
+              <image bindtap="prevImg" data-url="{{item.avator}}" wx:if="{{item.avator}}" class="course-list-img" src="{{item.avator}}" />
+              <image bindtap="prevImg" data-url="{{item.portrait}}" wx:elif="{{item.portrait}}" class="course-list-img" src="{{item.portrait}}" />
               <view class="course-list-item">
                 <view class="course-list-nickname">
                   {{item.realName || item.nickName}}
@@ -52,7 +53,7 @@
               <!-- <switch class="course-list-radio" /> -->
             </view>
             <view class="course-list-bottom">
-              <view class="course-list-text" bindtap="navToPhyTest" data-userId="{{item.id}}">
+              <view class="course-list-text" bindtap="navToPhyTest" data-userid="{{item.id}}">
                 体质测试
               </view>
               <view

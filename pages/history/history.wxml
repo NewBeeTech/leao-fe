@@ -3,7 +3,7 @@
   <template is="loading" data="{{ isFetching }}" />
   <view class="basic-info-container">
     <view class="history-top">
-      <view class="history-top-bg" style="background:url(../../assets/history-bg.svg);background-size: cover;">
+      <view class="history-top-bg" style="background:url(../../assets/history-bg.png);background-size: cover;">
         <image class="top-avator" src="{{userInfo.portrait}}" />
         <view class="exe-detail">
           <view>{{userInfo.realName || userInfo.nickName}}</view>
@@ -32,7 +32,8 @@
           </view>
         </view>
         <view class="history-item" wx:if="{{item.type == 2}}">
-          <view class="history-item-name">{{item.object.courseType}}</view>
+          <view class="history-item-name">体测数据</view>
+          <!-- <view class="history-item-name">{{item.object.courseType}}</view> -->
           <view class="history-item-title  border-line">
             <view class="history-item-address">
               <image src="{{addressIcon}}" />
@@ -45,27 +46,27 @@
           </view>
           <view class="history-item-title  border-line">
             <view class="history-item-address">核心力量耐力</view>
-            <view class="history-item-address">{{item.object.jsonObj.params1}}</view>
+            <view class="history-item-address">{{item.object.jsonObj.param1}}</view>
           </view>
           <view class="history-item-title  border-line">
             <view class="history-item-address">下肢力量耐力</view>
-            <view class="history-item-address">{{item.object.jsonObj.params2}}</view>
+            <view class="history-item-address">{{item.object.jsonObj.param2}}</view>
           </view>
           <view class="history-item-title  border-line">
             <view class="history-item-address">下肢爆发力</view>
-            <view class="history-item-address">{{item.object.jsonObj.params3}}</view>
+            <view class="history-item-address">{{item.object.jsonObj.param3}}</view>
           </view>
           <view class="history-item-title  border-line">
             <view class="history-item-address">上肢爆发力</view>
-            <view class="history-item-address">{{item.object.jsonObj.params4}}</view>
+            <view class="history-item-address">{{item.object.jsonObj.param4}}</view>
           </view>
           <view class="history-item-title  border-line">
             <view class="history-item-address">最大速度</view>
-            <view class="history-item-address">{{item.object.jsonObj.params5}}</view>
+            <view class="history-item-address">{{item.object.jsonObj.param5}}</view>
           </view>
           <view class="history-item-title  border-line">
             <view class="history-item-address">多方向速度</view>
-            <view class="history-item-address">{{item.object.jsonObj.params6}}</view>
+            <view class="history-item-address">{{item.object.jsonObj.param6}}</view>
           </view>
         </view>
         <view class="history-item" wx:if="{{item.type == 3}}">

@@ -16,6 +16,7 @@ Page({
   onLoad: function (e) {
     const courseId = e.courseId
     const userId = e.userId
+    console.warn(e);
     this.setData({
       courseId,
       userId,

@@ -40,6 +40,15 @@ Page({
   onShow() {
     this.getCourse();
   },
+  prevImg(e) {
+    const imgURL = e.currentTarget.dataset.url;
+    if (imgURL) {
+      wx.previewImage({
+        current: imgURL, // 当前显示图片的http链接
+        urls: [imgURL],
+      });
+    }
+  },
   switchChange(e) {
     const index = e.currentTarget.dataset.index
     const list = this.data.course.list
@@ -102,10 +111,13 @@ Page({
    * @return {[type]} [description]
    */
    navToPhyTest(e) {
-     const userId = e.currentTarget.dataset.userId
-     wx.navigateTo({
-       url: `/pages/physicalTest/physicalTest?userId=${userId}&courseId=${this.data.id}`
-     });
+     const userId = e.currentTarget.dataset.userid;
+     if (userId) {
+       wx.navigateTo({
+         url: `/pages/physicalTest/physicalTest?userId=${userId}&courseId=${this.data.id}`
+       });
+     }
+
    },
    navToFeedBack(e) {
      const item = e.currentTarget.dataset.item

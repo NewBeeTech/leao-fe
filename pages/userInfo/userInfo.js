@@ -51,7 +51,7 @@ Page({
   changeGender(e) {
     console.log(e);
     this.setData({
-      genderSelect: e.detail.value,
+      gender: e.detail.value,
     });
   },
   changeBirthday(e) {

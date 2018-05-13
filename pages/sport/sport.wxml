@@ -16,8 +16,8 @@
       </view>
     </view>
   </view>
-  <view wx:if="{{testInfo.jsonObj.params1}}" class="update-time">
-    {{testInfo.time}} 更新
+  <view wx:if="{{testInfo.jsonObj.param1}}" class="update-time">
+    {{testInfo.createTime}} 更新
   </view>
   <view wx:else class="update-time">
     参加首节课后由教练录入
@@ -27,37 +27,37 @@
       <view class="history-item-address">核心力量耐力
         <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
-      <view class="history-item-address">{{testInfo.jsonObj.params1 || '--'}}</view>
+      <view class="history-item-address">{{testInfo.jsonObj.param1 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">下肢力量耐力
         <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
-      <view class="history-item-address">{{testInfo.jsonObj.params2 || '--'}}</view>
+      <view class="history-item-address">{{testInfo.jsonObj.param2 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">下肢爆发力
         <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
-      <view class="history-item-address">{{testInfo.jsonObj.params3 || '--'}}</view>
+      <view class="history-item-address">{{testInfo.jsonObj.param3 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">上肢爆发力
         <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
-      <view class="history-item-address">{{testInfo.jsonObj.params4 || '--'}}</view>
+      <view class="history-item-address">{{testInfo.jsonObj.param4 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">最大速度
         <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
-      <view class="history-item-address">{{testInfo.jsonObj.params5 || '--'}}</view>
+      <view class="history-item-address">{{testInfo.jsonObj.param5 || '--'}}</view>
     </view>
     <view class="history-item-title">
       <view class="history-item-address">多方向速度
         <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
       </view>
-      <view class="history-item-address">{{testInfo.jsonObj.params6 || '--'}}</view>
+      <view class="history-item-address">{{testInfo.jsonObj.param6 || '--'}}</view>
     </view>
   </view>
 </view>
