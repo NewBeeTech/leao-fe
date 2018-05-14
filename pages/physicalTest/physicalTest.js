@@ -15,7 +15,7 @@ Page({
   },
   onLoad: function (e) {
     const courseId = e.courseId
-    const userId = e.id
+    const userId = e.userId
     this.setData({
       courseId,
       userId,
