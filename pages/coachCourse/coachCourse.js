@@ -22,9 +22,10 @@ Page({
       courseId: id,
       arrivedList: [],
     }]
+    const filterArr = arrivedStorage.filter(item => item.courseId == id)
     const arrivedObj = {
       courseId: id,
-      arrivedList: arrivedStorage.filter(item => item.courseId == id)[0]['arrivedList'],
+      arrivedList: filterArr.length ? filterArr[0]['arrivedList'] : [],
     }
     this.setData({
       id,
