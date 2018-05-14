@@ -8,6 +8,27 @@
 @import "../../components/gyms/gyms.wxss"
 @import "../courseType/courseType.wxss";
 
+button {
+  margin: 0 0;
+  padding: 0 0;
+  font-size:18px;
+  text-align: inherit;
+  text-decoration:none;
+  line-height: inherit;
+  border-radius: none!important;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color: inherit;
+  /* background-color: inherit; */
+  background-color: rgba(0,0,0,0);
+  border: none!important;
+  border-radius: 0;
+}
+button::after{
+  border: none!important;
+  border-radius: 0!important;
+  /* background-color: inherit; */
+}
 .container {
   font-family: PingFangSC-Regular, sans-serif;
   overflow-x: hidden;

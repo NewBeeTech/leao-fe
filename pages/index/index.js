@@ -486,6 +486,52 @@ Page({
       url: e.currentTarget.dataset.url + '?userId=' + this.data.userInfo.id,
     });
   },
+  navUserAction(e) {
+    if (this.data.userInfo.portrait) { // 有头像直接跳转
+      wx.navigateTo({
+        url: e.currentTarget.dataset.url + '?userId=' + this.data.userInfo.id,
+      });
+    } else {
+      const that = this;
+      const token = that.data.token;
+      if (e.detail.userInfo) { // 有授权用户信息进行上传
+        wx.showLoading();
+        wx.request({
+          url: 'https://ssl.newbeestudio.com/api/user/edit', //仅为示例，并非真实的接口地址
+            data: {
+              nickName: e.detail.userInfo.nickName,
+              gender: e.detail.userInfo.gender,
+              portrait: e.detail.userInfo.avatarUrl,
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded', // 默认值
+              'token': token,
+            },
+            method: 'POST',
+            success: function(res) {
+              wx.hideLoading();
+              if (res.data.code == '000') { // 保存用户信息
+                that.setData({
+                  userInfo: {
+                    nickName: e.detail.userInfo.nickName,
+                    gender: e.detail.userInfo.gender,
+                    portrait: e.detail.userInfo.avatarUrl,
+                  }
+                });
+                wx.navigateTo({
+                  url: e.currentTarget.dataset.url + '?userId=' + that.data.userInfo.id,
+                });
+              }
+            }
+          });
+      } else {
+        // 无授权用户信息，跳转
+        wx.navigateTo({
+          url: e.currentTarget.dataset.url + '?userId=' + that.data.userInfo.id,
+        });
+      }
+    }
+  },
   /**
    * 改变首页tab
    * @param  {[type]} e [description]
