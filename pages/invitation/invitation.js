@@ -12,6 +12,7 @@ Page({
     showModal: false
   },
   onLoad: function (e) {
+    console.warn('e', e);
     const userId = e.userId
     this.setData({
       userId,
@@ -29,10 +30,10 @@ Page({
 
   // 获取
   getShareListAction(type) {
-    wx.showLoading({
-      title: '加载中...',
-      mask: true,
-    });
+    // wx.showLoading({
+    //   title: '加载中...',
+    //   mask: true,
+    // });
     const that = this;
     let token = app.globalData.token || wx.getStorageSync('token');
     wx.request({
@@ -47,6 +48,11 @@ Page({
       },
       method: 'GET',
       success: (res) => {
+        console.warn({
+          userId:that.data.userId,
+          type
+        });
+        console.warn(res);
         if (res.data.code == '000') { // 之前使用过运用
           const result = res.data.datas;
           const type = that.data.userInfo.type;

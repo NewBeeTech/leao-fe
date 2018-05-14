@@ -486,6 +486,11 @@ Page({
       url: e.currentTarget.dataset.url + '?userId=' + this.data.userInfo.id,
     });
   },
+  /**
+   * 点击编辑用户信息，微信用户信息授权并跳转
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
   navUserAction(e) {
     if (this.data.userInfo.portrait) { // 有头像直接跳转
       wx.navigateTo({

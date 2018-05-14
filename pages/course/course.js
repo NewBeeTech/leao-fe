@@ -6,15 +6,22 @@ Page({
     course: {
     },
     token: '',
+    id: '',
   },
   onLoad(options) {
     if (!this.data.token) {
       this.setData({
         token: wx.getStorageSync('token'),
+        id: options.id,
       });
     }
     const id = options.id
     this.getCourse(id);
+  },
+  onShow() {
+    if (this.data.id) {
+      this.getCourse(this.data.id);
+    }
   },
   /**
    * 获取课程信息
