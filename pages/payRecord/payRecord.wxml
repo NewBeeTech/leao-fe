@@ -16,7 +16,7 @@
         </view>
       </view>
     </view>
-    <view wx:if="{{item.type == 2}}" class="record-container">
+    <view wx:elif="{{item.type == 2}}" class="record-container">
       <view class="record-cell">
         <view class="record-cell-first">
           <view class="record-cell-title">使用{{item.hour/100}}课时</view>
@@ -28,7 +28,7 @@
         </view>
       </view>
     </view>
-    <view wx:if="{{item.type == 3}}" class="record-container">
+    <view wx:elif="{{item.type == 3}}" class="record-container">
       <view class="record-cell">
         <view class="record-cell-first">
           <view class="record-cell-title">退回{{item.hour/100}}课时</view>
@@ -37,6 +37,18 @@
         <view class="record-cell-second">
           <view class="record-cell-desc">{{item.course}}取消报名</view>
           <image class="record-cell-icon" src="../../assets/reback.svg" />
+        </view>
+      </view>
+    </view>
+    <view wx:elif="{{item.type == 4}}" class="record-container">
+      <view class="record-cell">
+        <view class="record-cell-first">
+          <view class="record-cell-title">获得{{item.hour/100}}课时</view>
+          <view class="record-cell-date">{{item.createTime}}</view>
+        </view>
+        <view class="record-cell-second">
+          <view class="record-cell-desc">邀请好友赠课</view>
+          <image class="record-cell-icon" src="../../assets/gift.svg" />
         </view>
       </view>
     </view>
