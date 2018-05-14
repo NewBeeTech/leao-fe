@@ -4,6 +4,25 @@ const app = getApp()
 const date = new Date();
 import { getNextNDay } from '../../libs/moment';
 
+var _lastTime = null
+function throttle(fn, gapTime) {
+    if (gapTime == null || gapTime == undefined) {
+        gapTime = 1500
+    }
+
+    // let _lastTime = null
+
+    // 返回新的函数
+    return function () {
+        let _nowTime = + new Date()
+        console.log(_nowTime, _lastTime, gapTime);
+        if (_nowTime - _lastTime > gapTime || !_lastTime) {
+            fn.apply(this, arguments)   //将this和参数传给原函数
+            _lastTime = _nowTime
+        }
+    }
+}
+
 Page({
   data: {
     token: '',
@@ -51,9 +70,13 @@ Page({
     });
   },
   change(e) {
-    this.setData({
-      selectedTab: Number(e.detail.current),
-    });
+    const that = this;
+    throttle(function() {
+      that.setData({
+        selectedTab: Number(e.detail.current),
+      });
+    }, 300)();
+
   },
   call: (e) => {
     wx.makePhoneCall({
@@ -543,10 +566,13 @@ Page({
    * @return {[type]}   [description]
    */
   changeTab(e) {
-    const tab = e.currentTarget.dataset.tab;
-    this.setData({
-      selectedTab: tab,
-    });
+    const that = this;
+    throttle(function() {
+      const tab = e.currentTarget.dataset.tab;
+      that.setData({
+        selectedTab: tab,
+      });
+    }, 300)();
   },
   /**
    * 跳转到课程类型页面
