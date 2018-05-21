@@ -209,6 +209,7 @@
               <image class="cell-icon" src="../../assets/arrow-right.svg" />
             </view>
           </button>
+          <view class="line" />
           <button class="my-list-cell-btn" open-type="contact">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/mail-black.svg" />
@@ -218,6 +219,7 @@
               <image class="cell-icon" src="../../assets/arrow-right.svg" />
             </view>
           </button>
+          <view class="line" />
           <view class="my-list-cell-last">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/info-black.svg" style="color: rgba(33, 33, 33, 0.87);" />

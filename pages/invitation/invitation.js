@@ -12,13 +12,13 @@ Page({
     showModal: false
   },
   onLoad: function (e) {
-    console.warn('e', e);
     const userId = e.userId
     this.setData({
-      userId,
-      userInfo: app.globalData.userInfo
+      userId
     });
-    this.getShareListAction(1);
+  },
+  onShow () {
+    this.getShareListAction(this.data.selectedBar);
   },
   inputChangeAction(e) {
     const value = e.detail.value;
@@ -48,25 +48,17 @@ Page({
       },
       method: 'GET',
       success: (res) => {
-        console.warn({
-          userId:that.data.userId,
-          type
-        });
-        console.warn(res);
         if (res.data.code == '000') { // 之前使用过运用
           const result = res.data.datas;
-          const type = that.data.userInfo.type;
-          console.log(type, type === 2);
           result.map(item => {
             item.timeStr = formatTime(item.time, 'Y.M.D')
-            item.hour = type === 2 ? item.object.shareCoachMoney / 100 : item.object.shareUserMoney / 100
+            item.hour = item.type === 2 ? item.object.shareCoachMoney / 100 : item.object.shareUserMoney / 100
           });
           let count = 0;
-          console.log(result);
+          console.log('sharelist',result);
           if(result.length) {
             result.reduce((accumulator, currentValue, currentIndex, array) => {
-              console.log(accumulator, currentValue);
-              count = accumulator.hour || 0 + currentValue.hour || 0;
+              count += ((accumulator.hour || 0) + (currentValue.hour || 0));
               return count;
             });
           }
@@ -114,6 +106,7 @@ Page({
     this.hideModal();
   },
   onShareAppMessage (res) {
+    console.warn('userId', this.data.userId)
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)

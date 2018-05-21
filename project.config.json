@@ -137,7 +137,7 @@
 					"id": 17,
 					"name": "分享给好友",
 					"pathName": "pages/invitation/invitation",
-					"query": "userId=1"
+					"query": "userId=29&type=2"
 				},
 				{
 					"id": -1,
@@ -161,7 +161,7 @@
 					"id": 21,
 					"name": "分享出去的首页",
 					"pathName": "pages/index/index",
-					"query": "userId=17"
+					"query": "userId=18"
 				},
 				{
 					"id": -1,
