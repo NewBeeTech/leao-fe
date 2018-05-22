@@ -30,6 +30,12 @@
       </view>
       <image bindtap="navToGym" class="gymAddressImg" src="{{course.gymAddressImg}}" />
     </view>
+    <view>
+      <view class="content-title"><view class="content-title-border" />课程时长</view>
+      <view class="content-text">
+        {{course.length}}分钟
+      </view>
+    </view>
     <template is="richText" data="{{ richTextArray: course.richTextArray }}" />
   </view>
   <form bindsubmit="bottomBtnAction" report-submit="{{true}}">

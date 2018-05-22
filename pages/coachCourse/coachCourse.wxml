@@ -20,6 +20,12 @@
       </view>
     </view>
     <view>
+      <view class="content-title"><view class="content-title-border" />课程时长</view>
+      <view class="course-time">
+        {{course.length}}分钟
+      </view>
+    </view>
+    <view>
       <view class="content-title"><view class="content-title-border" />课程场馆</view>
       <view class="course-time">
         {{course.gym}}
