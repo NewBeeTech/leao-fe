@@ -285,10 +285,10 @@ Page({
             });
             that.setData({
               newUser: result.newUser,
-              courseType: result.courseType,
-              hotCoach: result.hotCoach,
-              myCourse: result.myCourse,
-              recommendCourse: result.recommendCourse,
+              courseType: result.courseType || [],
+              hotCoach: result.hotCoach || [],
+              myCourse: result.myCourse || [],
+              recommendCourse: result.recommendCourse || [],
             });
           } else {
             if (res.data.datas.recommendCourse) {
@@ -321,7 +321,7 @@ Page({
                 newUser: res.data.datas.newUser,
                 courseType: res.data.datas.courseType,
                 hotCoach: res.data.datas.hotCoach,
-                myCourse: res.data.datas.myCourse,
+                myCourse: res.data.datas.myCourse || [],
                 recommendCourse: res.data.datas.recommendCourse,
               });
             }
