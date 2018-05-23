@@ -80,6 +80,9 @@ Page({
       url: '/pages/gym/gym?id='+id,
     });
   },
+  bindGetUserInfo(e) {
+    console.error(e.detail.userInfo);
+  },
   /**
    * 底部按钮事件
    * @return {[type]} [description]
