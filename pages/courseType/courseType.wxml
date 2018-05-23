@@ -3,7 +3,7 @@
 <view>
   <template is="topbar" date="{{ navAction }}" />
   <view class="courseTypeTop">
-    <image src="{{courseType.img}}" class="courseTypeImg" />
+    <image mode="aspectFill" src="{{courseType.img}}" class="courseTypeImg" />
     <view class="courseTypeName">{{courseType.name}}</view>
   </view>
   <view>
