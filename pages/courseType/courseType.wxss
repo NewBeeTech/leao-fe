@@ -9,15 +9,15 @@
 }
 .courseTypeName {
   position: absolute;
-  left: 0;
+  left: 30rpx;
   top: 240rpx;
-  width: 440rpx;
+  width: 240rpx;
   height: 80rpx;
   line-height: 80rpx;
-  border-top-right-radius: 100rpx;
-  border-bottom-right-radius: 100rpx;
+  border-radius: 100rpx;
   background-color: #ffd225;
   text-align: center;
+  font-size: 32rpx;
 }
 .richTextCotainer {
   padding: 0 30rpx;
