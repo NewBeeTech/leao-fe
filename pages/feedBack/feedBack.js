@@ -101,15 +101,15 @@ Page({
     });
   },
   uploadFileToOSS:function (params){
-    console.log(params);
     const tempFilePaths = params.tempFilePaths
     var that = this
+    const currentIndex = that.data.imgList.length
+    console.log(currentIndex)
     tempFilePaths.map((item, index) => {
       const localName = `${Math.random().toString(36).substr(7)}-phytest.png`;
       wx.request({
         url: 'https://ssl.newbeestudio.com/api/oss/web/sign', //仅为示例，并非真实的接口地址
         success: function(res) {
-          console.log(res.data);
           if(res.data.code == "000") {
             const signature = res.data.datas;
             wx.uploadFile({
@@ -126,16 +126,12 @@ Page({
               },
               success: function(res){
                 if(res.statusCode == '200') {
-                  var imgIndex = "imgList[" + index + "]";
-                  var imgUrlIndex = "imgUrlList[" + index + "]";
+                  var imgIndex = "imgList[" + (Number(currentIndex) + Number(index)) + "]";
+                  var imgUrlIndex = "imgUrlList[" + (Number(currentIndex) + Number(index)) + "]";
                   that.setData({
-                    [imgUrlIndex]: `https://ssl.newbeestudio.com/${signature.dir}${localName}`,
+                    [imgUrlIndex]: `https://ssl.newbeestudio.com/${signature.dir}${localName}?x-oss-process=image/quality,q_60`,
                     [imgIndex]: item,
                   })
-                // } else {
-                //   wx.showToast({
-                //     title: '上传失败',
-                //   })
                 }
               },
               fail: function(res){
