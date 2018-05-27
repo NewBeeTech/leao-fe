@@ -10,6 +10,9 @@ Page({
       mask: true,
     });
     const id = options.id
+    this.setData({
+      id: id,
+    });
     wx.request({
       url: 'https://ssl.newbeestudio.com/api/courseType/info?typeId='+id,
       success: res => {
@@ -41,6 +44,28 @@ Page({
       }
     });
   },
+  // 分享好友或群聊
+onShareAppMessage: function () {
+  const self = this;
+  return {
+    title: '课程类型详情',
+    path: `/pages/courseType/courseType?id=${self.data.id}`,
+    success: function(res) {
+      // 转发成功
+      wx.showToast({
+        title: '转发成功',
+        duration: 2000
+      })
+    },
+    fail: function(res) {
+      // 转发失败
+      wx.showToast({
+        title: '转发失败',
+        duration: 2000
+      })
+    }
+  }
+},
   topNavAction: (e) => {
     wx.reLaunch({
       url: `/pages/index/index?selectedTab=${e.currentTarget.dataset.selectedtab}`

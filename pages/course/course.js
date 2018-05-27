@@ -18,6 +18,28 @@ Page({
     const id = options.id
     this.getCourse(id);
   },
+  // 分享好友或群聊
+onShareAppMessage: function () {
+  const self = this;
+  return {
+    title: '课程详情',
+    path: `/pages/course/course?id=${self.data.id}`,
+    success: function(res) {
+      // 转发成功
+      wx.showToast({
+        title: '转发成功',
+        duration: 2000
+      });
+    },
+    fail: function(res) {
+      // 转发失败
+      wx.showToast({
+        title: '转发失败',
+        duration: 2000
+      });
+    }
+  }
+},
   onShow() {
     if (this.data.id) {
       this.getCourse(this.data.id);
