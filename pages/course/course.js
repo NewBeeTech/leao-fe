@@ -58,7 +58,7 @@ Page({
             result.signStatusText = '立即预约';
             result.signStatusClass = 'light';
           }
-          result.time = formatTime(result.beginTime, 'Y年M月D日 h:m')+'/'+formatTime(result.endTime, 'h:m')
+          result.time = formatTime(result.beginTime, 'Y年M月D日 h:m')
           result.richTextArray = JSON.parse(result.descJson) || [];
           this.setData({
             course: result,

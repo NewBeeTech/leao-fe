@@ -87,7 +87,7 @@ Page({
         console.log(res.data);
         if (res.data.code === '000') {
           const result = res.data.datas;
-          result.time = formatTime(result.beginTime, 'Y年M月D日 h:m')+'/'+formatTime(result.endTime, 'h:m')
+          result.time = formatTime(result.beginTime, 'Y年M月D日 h:m')
           result.richTextArray = JSON.parse(result.descJson) || [];
           result.list.map(item => {
             console.log(this.data.arrivedObj.arrivedList, this.data.arrivedObj.arrivedList.indexOf(item.id), item.id);
