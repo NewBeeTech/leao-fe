@@ -10,7 +10,7 @@
     <view class="richTextCotainer">
       <template is="richText" data="{{ richTextArray: courseType.richTextArray }}" />
     </view>
-    <view class="courseList-header">近期课程列表</view>
+    <view wx:if="{{courseList.length}}" class="courseList-header">近期课程列表</view>
     <block wx:for="{{courseList}}" wx:key="{{index}}">
       <view class="courseList">
         <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">

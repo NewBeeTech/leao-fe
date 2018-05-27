@@ -7,7 +7,7 @@
       {{item.content}}
     </view>
     <view wx:if="{{item.type == 3}}">
-      <image class="content-img" src="{{item.content}}" />
+      <image class="content-img" mode="widthFix" src="{{item.content}}" />
     </view>
   </view>
 </template>
