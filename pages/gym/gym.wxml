@@ -18,7 +18,7 @@
         <image class="gym-address-icon" src="../../assets/map.svg" />
       </view>
     </view>
-    <view class="gym-header">近期课程列表</view>
+    <view wx:if="{{courseList.length}}" class="gym-header">近期课程列表</view>
     <block wx:for="{{courseList}}" wx:key="{{index}}">
       <view class="gymList">
         <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">

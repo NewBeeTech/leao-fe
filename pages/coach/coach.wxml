@@ -24,7 +24,7 @@
         {{coach.desc}}
       </view>
     </view>
-    <view class="coach-header">近期课程列表</view>
+    <view wx:if="{{courseList.length}}" class="coach-header">近期课程列表</view>
     <block wx:for="{{courseList}}" wx:key="{{index}}">
       <view>
         <view class="courseList-cell" bindtap="navToCourse" data-id="{{item.id}}">
