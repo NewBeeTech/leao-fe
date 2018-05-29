@@ -32,6 +32,28 @@ Page({
       }],
     });
   },
+  // 分享好友或群聊
+onShareAppMessage: function () {
+  const self = this;
+  return {
+    title: '场馆地图',
+    path: `/pages/gymMap/gymMap?lat=${self.data.lat}&long=${self.data.long}&name=${self.data.name}`,
+    success: function(res) {
+      // 转发成功
+      wx.showToast({
+        title: '转发成功',
+        duration: 2000
+      });
+    },
+    fail: function(res) {
+      // 转发失败
+      wx.showToast({
+        title: '转发失败',
+        duration: 2000
+      });
+    }
+  }
+},
   topNavAction: (e) => {
     wx.reLaunch({
       url: `/pages/index/index?selectedTab=${e.currentTarget.dataset.selectedtab}`

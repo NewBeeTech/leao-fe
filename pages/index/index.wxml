@@ -38,7 +38,7 @@
   <swiper class="swiper"  current="{{selectedTab}}" bindchange="change">
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
-        <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
+        <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'https://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/leaocover.png'}}"/>
         <view wx:if="{{!newUser && myCourse && myCourse.length}}" class="myCourse">
           <view class="myCourseHeader" >
             <view class="myCourseHeaderLeft">已预约的课程</view>
@@ -89,7 +89,7 @@
           <view class="bottom-info" bindtap="call">
             <image src="../../assets/tell1.svg" class="bottom-icon"/>
             <view class="bottom-info-title">客服电话</view>
-            <view>15088682347</view>
+            <view>18612217842</view>
           </view>
           <button class="bottom-info" open-type="contact" >
             <image src="../../assets/mail1.svg" class="bottom-icon"/>
@@ -167,7 +167,7 @@
           </view>
         </view>
         <view class="buy-btn-container">
-          <view class="buy-btn" data-url="/pages/shop/shop" bindtap="navAction">购买课时（限时低至7折）</view>
+          <view class="buy-btn" data-url="/pages/shop/shop" bindtap="navAction">购买课时（小狮子会员卡）</view>
         </view>
         <view class="my-list">
           <view class="my-list-cell" data-url="/pages/sport/sport" bindtap="navAction">

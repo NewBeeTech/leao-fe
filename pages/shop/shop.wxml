@@ -14,7 +14,7 @@
           </view>
           <view class="price">
             <text class="delete-price">{{newUser && index == 0 ? '￥'+item.text : ''}}</text>
-              ￥{{newUser && index == 0 ? '19.90' : item.text}}
+              ￥{{newUser && index == 0 ? '9.90' : item.text}}
           </view>
         </view>
       </label>

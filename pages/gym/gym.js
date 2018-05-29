@@ -4,16 +4,40 @@ Page({
     gym: {
     },
     courseList:[],
+    id: '',
   },
   onLoad(options) {
     if (!this.data.token) {
       this.setData({
         token: wx.getStorageSync('token'),
+        id: options.id,
       });
     }
     const id = options.id;
     this.getCoachInfo(id);
   },
+  // 分享好友或群聊
+onShareAppMessage: function () {
+  const self = this;
+  return {
+    title: '场馆地图',
+    path: `/pages/gym/gym?id=${self.data.id}`,
+    success: function(res) {
+      // 转发成功
+      wx.showToast({
+        title: '转发成功',
+        duration: 2000
+      });
+    },
+    fail: function(res) {
+      // 转发失败
+      wx.showToast({
+        title: '转发失败',
+        duration: 2000
+      });
+    }
+  }
+},
   getCoachInfo(id) {
     wx.showLoading({
       title: '加载中...',
