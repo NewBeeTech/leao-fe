@@ -78,7 +78,7 @@ button::after{
   font-size: 32rpx;
   font-weight: 500;
   margin: 0 auto;
-  margin-bottom: 30rpx;
+  margin-top: 20rpx;
   display: flex;
   flex-direction: row;
   justify-content: center;
