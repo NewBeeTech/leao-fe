@@ -1,0 +1,99 @@
+@import "../../components/topbar/topbar.wxss";
+@import "../../components/richText/richText.wxss";
+button {
+  margin: 0 0;
+  padding: 0 0;
+  font-size:18px;
+  text-align: inherit;
+  text-decoration:none;
+  line-height: inherit;
+  border-radius: none!important;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color: inherit;
+  background-color: none;
+  border: none!important;
+  border-radius: 0;
+}
+button::after{
+  border: none!important;
+  border-radius: 0!important;
+}
+
+.course-content {
+  padding: 0 30rpx 60rpx 30rpx;
+  /* margin-bottom: 100rpx; */
+}
+
+.coach {
+  margin: 30rpx 0 60rpx 0;
+  display: flex;
+  flex-direction: row;
+}
+.coachPortrait {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-right: 24rpx;
+}
+.coach-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.coach-info-name {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-family: PingFangSC;
+  font-size: 30rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #262a2f;
+}
+.coach-info-desc {
+  height: 33rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #888888;
+}
+.course-desc {
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  color: #353535;
+  white-space: pre-line;
+  padding-top: -30rpx;
+  transform: translateY(-30rpx);
+}
+.bottomBar {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 690rpx;
+  height: 94rpx;
+  border-radius: 74rpx;
+  background-color: #f8d450;
+  box-shadow: 0 4rpx 8rpx -22rpx rgba(0, 0, 0, 0.2), 0 2rpx 20rpx 0 rgba(0, 0, 0, 0.12), 0 8rpx 10rpx 0 rgba(0, 0, 0, 0.14);
+}
+
+
+.gray {
+  background-color: #e2e2e2;
+}
+.light {
+  background-image: linear-gradient(to left, #ffeb4c, #ffd225);
+}

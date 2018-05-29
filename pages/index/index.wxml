@@ -220,7 +220,7 @@
             </view>
           </button>
           <view class="line" />
-          <view class="my-list-cell-last">
+          <view class="my-list-cell-last" bindtap="routeToAbout">
             <view class="cell-left-item">
               <image class="cell-icon" src="../../assets/info-black.svg" style="color: rgba(33, 33, 33, 0.87);" />
               <view>关于我们</view>

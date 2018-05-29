@@ -20,7 +20,8 @@
     "pages/invitation/invitation",
     "pages/reflect/reflect",
     "pages/reflectSuccess/reflectSuccess",
-    "pages/reflectFail/reflectFail"
+    "pages/reflectFail/reflectFail",
+    "pages/aboutUs/aboutUs"
   ],
   "window":{
     "backgroundTextStyle":"light",

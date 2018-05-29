@@ -1,0 +1,14 @@
+<import src="../../components/topbar/topbar.wxml"/>
+<import src="../../components/richText/richText.wxml"/>
+<view>
+  <template is="topbar" date="{{ navAction }}" />
+  <view class="course-content">
+    <template is="richText" data="{{ richTextArray: richTextArray, noTitleBorder: true }}" />
+  </view>
+  <!-- <button class="bottomBar" bindtap="routeToPay">
+    立即成为小狮子会员
+  </button> -->
+  <button open-type="getUserInfo" class="bottomBar" data-url="/pages/userInfo/userInfo" bindgetuserinfo="navUserAction">
+    立即成为小狮子会员
+  </button>
+</view>

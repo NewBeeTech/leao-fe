@@ -623,6 +623,11 @@ Page({
       url: '/pages/invitation/invitation?userId='+this.data.userInfo.id,
     });
   },
+  routeToAbout: function() {
+    wx.navigateTo({
+      url: '/pages/aboutUs/aboutUs?portrait='+this.data.userInfo.portrait,
+    });
+  },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
