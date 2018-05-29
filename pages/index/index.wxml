@@ -38,7 +38,7 @@
   <swiper class="swiper"  current="{{selectedTab}}" bindchange="change">
     <swiper-item class="swiper-item">
       <scroll-view scroll-y style="height: 100vh; margin-bottom: 80rpx;">
-        <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'http://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/newUserAd.png'}}"/>
+        <template wx:if="{{newUser}}" is="newUserAd" data="{{ description: '了解乐傲运动', src: 'https://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/leaocover.png'}}"/>
         <view wx:if="{{!newUser && myCourse && myCourse.length}}" class="myCourse">
           <view class="myCourseHeader" >
             <view class="myCourseHeaderLeft">已预约的课程</view>
