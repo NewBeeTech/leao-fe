@@ -586,6 +586,11 @@ Page({
       url: '/pages/courseType/courseType?id='+id,
     });
   },
+  navToAboutUs: (e) => {
+    wx.navigateTo({
+      url: '/pages/aboutUs/aboutUs',
+    });
+  },
   /**
    * 跳转到课程页面
    * @param  {[type]} e [description]
