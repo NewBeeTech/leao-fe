@@ -12,7 +12,7 @@ Page({
       mask: true,
     });
     console.log(e.portrait);
-    this.setData({ portrait: e.portrait });
+    this.setData({ portrait: e.portrait, token: wx.getStorageSync('token'), });
     const that = this;
     wx.request({
       url: 'https://ssl.newbeestudio.com/about_us/about_us.json',
