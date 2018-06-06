@@ -20,7 +20,7 @@ Page({
 onShareAppMessage: function () {
   const self = this;
   return {
-    title: '场馆地图',
+    title: `乐傲运动·${self.data.gym.name}`,
     path: `/pages/gym/gym?id=${self.data.id}`,
     success: function(res) {
       // 转发成功
@@ -93,7 +93,7 @@ onShareAppMessage: function () {
       lat,
     } = this.data.gym;
     wx.navigateTo({
-      url: `/pages/gymMap/gymMap?name=${name}&long=${long}&lat=${lat}`,
+      url: `/pages/gymMap/gymMap?name=${name}&long=${long}&lat=${lat}&id=${this.data.id}`,
     });
   },
   navToCourse: (e) => {

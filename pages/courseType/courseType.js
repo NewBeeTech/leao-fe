@@ -48,7 +48,7 @@ Page({
 onShareAppMessage: function () {
   const self = this;
   return {
-    title: '课程类型详情',
+    title: `乐傲运动·${self.data.courseType.name}`,
     path: `/pages/courseType/courseType?id=${self.data.id}`,
     success: function(res) {
       // 转发成功

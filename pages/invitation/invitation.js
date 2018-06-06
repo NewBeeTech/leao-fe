@@ -109,11 +109,20 @@ Page({
     console.warn('userId', this.data.userId)
     if (res.from === 'button') {
       // 来自页面内转发按钮
-      console.log(res.target)
+      return {
+        title: '乐傲运动·专业、有爱、有趣的青少年运动训练',
+        path: `/pages/index/index?userId=${this.data.userId}`,
+        success: function(res) {
+          // 转发成功
+        },
+        fail: function(res) {
+          // 转发失败
+        }
+      }
     }
     return {
-      title: '乐傲运动',
-      path: `/pages/index/index?userId=${this.data.userId}`,
+      title: '乐傲运动·专业、有爱、有趣的青少年运动训练',
+      path: `/pages/invitation/invitation`,
       success: function(res) {
         // 转发成功
       },

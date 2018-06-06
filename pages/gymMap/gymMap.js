@@ -1,5 +1,6 @@
 Page({
   data: {
+    id: '',
     lat: '',
     long: '',
     name: '',
@@ -9,11 +10,13 @@ Page({
     const lat = options.lat;
     const long = options.long;
     const name = options.name;
-    console.log(lat,long,name);
+    const id = options.id;
+    console.log(lat,long,name,id);
     this.setData({
       lat,
       long,
       name,
+      id,
       markers: [{
         id: 0,
         latitude: lat,
@@ -36,8 +39,9 @@ Page({
 onShareAppMessage: function () {
   const self = this;
   return {
-    title: '场馆地图',
-    path: `/pages/gymMap/gymMap?lat=${self.data.lat}&long=${self.data.long}&name=${self.data.name}`,
+    title: `乐傲运动·${self.data.name}`,
+    // path: `/pages/gymMap/gymMap?lat=${self.data.lat}&long=${self.data.long}&name=${self.data.name}`,
+    path: `/pages/gym/gym?id=${self.data.id}`,
     success: function(res) {
       // 转发成功
       wx.showToast({

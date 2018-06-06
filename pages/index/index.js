@@ -15,7 +15,6 @@ function throttle(fn, gapTime) {
     // 返回新的函数
     return function () {
         let _nowTime = + new Date()
-        console.log(_nowTime, _lastTime, gapTime);
         if (_nowTime - _lastTime > gapTime || !_lastTime) {
             fn.apply(this, arguments)   //将this和参数传给原函数
             _lastTime = _nowTime
@@ -198,13 +197,11 @@ Page({
     const that = this;
     wx.getSetting({
       success: res => {
-        console.log(res)
         // if (res.authSetting['scope.userInfo']) {
         if (res.errMsg === 'getSetting:ok') {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: respond => {
-              console.log(respond)
               // this.globalData.userInfo = res.userInfo;
               wx.request({
                 url: 'https://ssl.newbeestudio.com/api/user/edit', //仅为示例，并非真实的接口地址
@@ -367,7 +364,6 @@ Page({
       },
       method: 'GET',
       success: function(res) {
-        console.log(res.data);
         if (res.data.code == '000') {
           if (res.data.datas.user) {
             that.setData({
@@ -377,7 +373,6 @@ Page({
               hour: res.data.datas.hour,
             });
             that.getCount();
-            that.handShareUser();
             app.globalData.userInfo = res.data.datas.user;
           } else {
             that.authSaveUserInfo(that.data.token);
@@ -400,7 +395,6 @@ Page({
       },
       method: 'GET',
       success: function(res) {
-        console.log(res.data);
         if (res.data.code == '000') {
           let result = res.data.datas;
           result = result.map(item => {
@@ -429,7 +423,6 @@ Page({
                   course.showColor = '#fc6621';
                 }
               }
-              console.log(course);
               return course;
             });
           });
@@ -452,7 +445,6 @@ Page({
       },
       method: 'GET',
       success: function(res) {
-        console.log(res.data);
         if (res.data.code == '000') {
           let result = res.data.datas;
           that.setData({
@@ -469,18 +461,30 @@ Page({
     console.log('that.data.shareUserId', that.data.shareUserId);
     if(that.data.shareUserId && that.data.userInfo.id && (that.data.userInfo.id !== that.data.shareUserId)) {
       wx.request({
-        url: 'https://ssl.newbeestudio.com/api/user/handShareUser', //仅为示例，并非真实的接口地址
+        url: 'https://ssl.newbeestudio.com/api/user/getUserByOpenId',
         header: {
           'token': that.data.token,
         },
-        data: {
-          shareUserId: that.data.shareUserId,
-        },
+        data: {},
         method: 'GET',
         success: function(res) {
-          console.log('分享', res.data);
+          console.log('getUserByOpenId', res.data);
+          // wx.request({
+          //   url: 'https://ssl.newbeestudio.com/api/user/handShareUser', //仅为示例，并非真实的接口地址
+          //   header: {
+          //     'token': that.data.token,
+          //   },
+          //   data: {
+          //     shareUserId: that.data.shareUserId,
+          //   },
+          //   method: 'GET',
+          //   success: function(res) {
+          //     console.log('分享', res.data);
+          //   }
+          // })
         }
       })
+
     }
   },
   changeDayAction(e) {
@@ -492,7 +496,6 @@ Page({
     });
   },
   bindChangeMonth: function(e) {
-    console.log(e.detail.value);
     this.setData({
       yearAndMonth: e.detail.value,
       year: new Date(e.detail.value).getFullYear(),
@@ -520,6 +523,7 @@ Page({
         url: e.currentTarget.dataset.url + '?userId=' + this.data.userInfo.id,
       });
     } else {
+      console.log(e);
       const that = this;
       const token = that.data.token;
       if (e.detail.userInfo) { // 有授权用户信息进行上传
@@ -538,6 +542,7 @@ Page({
             method: 'POST',
             success: function(res) {
               wx.hideLoading();
+              that.handShareUser();
               if (res.data.code == '000') { // 保存用户信息
                 that.setData({
                   userInfo: {
@@ -580,7 +585,6 @@ Page({
    * @return {[type]}   [description]
    */
   navToCourseType: (e) => {
-    console.log(e);
     const id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/courseType/courseType?id='+id,
@@ -634,8 +638,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '乐傲运动',
-      path: '/pages/index/index',
+      title: '乐傲运动·专业、有爱、有趣的青少年运动训练',
+      path: `/pages/index/index?selectedTab=${this.data.selectedTab}`,
       success: function(res) {
         // 转发成功
       },

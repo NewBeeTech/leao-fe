@@ -17,7 +17,7 @@ Page({
 onShareAppMessage: function () {
   const self = this;
   return {
-    title: '教练详情',
+    title: `乐傲运动·${self.data.coach.name}教练`,
     path: `/pages/coach/coach?id=${self.data.id}`,
     success: function(res) {
       // 转发成功

@@ -22,7 +22,7 @@ Page({
 onShareAppMessage: function () {
   const self = this;
   return {
-    title: '课程详情',
+    title: `乐傲运动·${self.data.course.courseType}`,
     path: `/pages/course/course?id=${self.data.id}`,
     success: function(res) {
       // 转发成功
