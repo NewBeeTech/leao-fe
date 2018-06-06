@@ -21,7 +21,7 @@ button::after{
 }
 
 .course-content {
-  padding: 0 30rpx 60rpx 30rpx;
+  padding: 0 30rpx 160rpx 30rpx;
   /* margin-bottom: 100rpx; */
 }
 
@@ -88,6 +88,9 @@ button::after{
   border-radius: 74rpx;
   background-color: #f8d450;
   box-shadow: 0 4rpx 8rpx -22rpx rgba(0, 0, 0, 0.2), 0 2rpx 20rpx 0 rgba(0, 0, 0, 0.12), 0 8rpx 10rpx 0 rgba(0, 0, 0, 0.14);
+  position: fixed;
+  bottom: 30rpx;
+  left: 30rpx;
 }
 
 

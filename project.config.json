@@ -168,6 +168,18 @@
 					"name": "教练",
 					"pathName": "pages/coach/coach",
 					"query": "id=3"
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/aboutUs/aboutUs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/aboutUs/aboutUs",
+					"query": ""
 				}
 			]
 		}

@@ -80,7 +80,7 @@ swiper {
 }
 .gym-info-address {
   max-width: 538rpx;
-  height: 40rpx;
+  /* height: 40rpx; */
   font-family: PingFangSC;
   font-size: 28rpx;
   font-weight: normal;
