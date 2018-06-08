@@ -146,7 +146,7 @@ Page({
        console.log(res.target)
      }
      return {
-       title: '乐傲运动',
+       title: `乐傲运动·${self.data.course.courseType}`,
        path: '/pages/index/index',
        success: function(res) {
          // 转发成功

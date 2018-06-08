@@ -102,8 +102,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '乐傲运动',
-      path: '/pages/index/index',
+      title: '乐傲运动·专业、有爱、有趣的青少年运动训练',
+      path: '/pages/aboutUs/aboutUs',
       success: function(res) {
         // 转发成功
       },

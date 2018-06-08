@@ -146,49 +146,6 @@ Page({
         }
       })
     })
-    // const localName = `${Math.random().toString(36).substr(7)}-phytest.png`;
-    // wx.request({
-    //   url: 'https://ssl.newbeestudio.com/api/oss/web/sign', //仅为示例，并非真实的接口地址
-    //   success: function(res) {
-    //     console.log(res.data);
-    //     if(res.data.code == "000") {
-    //       const signature = res.data.datas;
-    //       wx.uploadFile({
-    //         url: signature.host,
-    //         filePath: params.tempFilePath,
-    //         name: 'file',
-    //         formData:{
-    //           name: localName,
-    //           key: `${signature.dir}${localName}`,
-    //           policy: signature.policy,
-    //           OSSAccessKeyId: signature.accessid,
-    //           success_action_status: '200',
-    //           signature: signature.signature,
-    //         },
-    //         success: function(res){
-    //           console.log(res);
-    //           if(res.statusCode == '200') {
-    //             that.setData({
-    //               avatorUrl: `${signature.host}/${signature.dir}${localName}`,
-    //               avator: params.tempFilePath,
-    //             })
-    //           } else {
-    //             wx.showToast({
-    //               title: '上传失败',
-    //             })
-    //           }
-    //         },
-    //         fail: function(res){
-    //           console.log('fail', res);
-    //         }
-    //       })
-    //     } else {
-    //       wx.showToast({
-    //         title: '上传失败',
-    //       })
-    //     }
-    //   }
-    // })
   },
   choosePic() {
     var that = this
@@ -214,21 +171,5 @@ Page({
       imgList: list,
       imgUrlList: urlList
     })
-  },
-  onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
-    return {
-      title: '乐傲运动',
-      path: '/pages/index/index',
-      success: function(res) {
-        // 转发成功
-      },
-      fail: function(res) {
-        // 转发失败
-      }
-    }
   }
 });
