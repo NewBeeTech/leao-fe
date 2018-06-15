@@ -226,9 +226,9 @@ button::after{
 .bottomBar-right {
   position: fixed;
   height: 100rpx;
-  bottom: 10rpx;
-  left: 3%;
-  width: 94%;
+  bottom: 4vw;
+  left: 4vw;
+  width: 92vw;
   margin: 0 auto;
   border-radius: 74rpx;
   line-height: 48rpx;
