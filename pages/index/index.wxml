@@ -127,7 +127,7 @@
               <view class="calendarCourse" bindtap="navToCourse" data-id="{{item.id}}">
                 <image wx:if="{{item.name === '羽毛球'}}" class="courseNamePic" src="../../assets/yumaoqiu.svg"/>
                 <image wx:if="{{item.name === '篮球'}}" class="courseNamePic" src="../../assets/lanqiu.svg"/>
-                <image wx:else class="courseNamePic" src="../../assets/tineng.svg"/>
+                <image wx:if="{{item.name === '体能' || item.name === '亲子体能'}}" class="courseNamePic" src="../../assets/tineng.svg"/>
                 <view class="calendarCourse-right">
                   <view class="calendarCourse-cell">
                     <view class="calendarCourse-name">{{item.name}}

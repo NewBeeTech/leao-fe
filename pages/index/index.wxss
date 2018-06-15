@@ -496,7 +496,6 @@ swiper {
 .courseNamePic {
   width: 150rpx;
   height: 150rpx;
-  border-radius: 50%;
 }
 .calendarCourse-right {
   width: 520rpx;
