@@ -125,18 +125,23 @@
           <block wx:else>
             <view wx:for="{{calendarCourses[dayIndex]}}" wx:key="index" class="calendarCourses">
               <view class="calendarCourse" bindtap="navToCourse" data-id="{{item.id}}">
-                <view class="calendarCourse-cell">
-                  <view class="calendarCourse-name">{{item.name}}</view>
-                  <view class="calendarCourse-showText" style="border: 2rpx solid {{item.showColor}}; color: {{item.showColor}}">{{item.showText}}</view>
-                </view>
-                <view class="calendarCourse-cell">
-                  <view class="calendarCourse-timeText"><text>{{item.timeText}}</text><text class="calendarCourse-dateText">{{item.dateText}}</text></view>
-                </view>
-                <view class="calendarCourse-cell">
-                  <view class="calendarCourse-gym">{{item.gym}}</view>
-                  <view class="calendarCourse-cell-right">
-                    <view class="calendarCourse-coach">{{item.coach}}</view>
-                    <image class="coachPortrait" src="{{item.coachPortrait}}"/>
+                <image wx:if="{{item.name === '体能' || item.name === '亲子体能'}}" class="courseNamePic" src="../../assets/tineng.svg"/>
+                <image wx:if="{{item.name === '羽毛球'}}" class="courseNamePic" src="../../assets/yumaoqiu.svg"/>
+                <image wx:if="{{item.name === '篮球'}}" class="courseNamePic" src="../../assets/lanqiu.svg"/>
+                <view class="calendarCourse-right">
+                  <view class="calendarCourse-cell">
+                    <view class="calendarCourse-name">{{item.name}}
+                      <text wx:if="{{item.signStatus === -1}}" class="calendarCourse-status">已预约</text>
+                      <text wx:if="{{item.signStatus === 0}}" class="calendarCourse-over">已结束</text>
+                      <text wx:if="{{item.signStatus === -2}}" class="calendarCourse-over">已约满</text>
+                    </view>
+                    <view class="calendarCourse-showText"><text>{{item.timeText}}</text></view>
+                  </view>
+                  <view class="calendarCourse-cell">
+                    <view class="calendarCourse-timeText">{{item.coach}}</view>
+                  </view>
+                  <view class="calendarCourse-cell">
+                    <view class="calendarCourse-gym">{{item.gym}}</view>
                   </view>
                 </view>
               </view>

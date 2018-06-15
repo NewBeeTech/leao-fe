@@ -75,7 +75,7 @@ onShareAppMessage: function () {
             result.signStatusClass = 'light';
           } else if (result.signStatus === -1) {
             result.signStatusText = '已预约';
-            result.signStatusClass = 'gray';
+            result.signStatusClass = 'green';
           } else if (result.signStatus === 1) {
             result.signStatusText = '立即预约';
             result.signStatusClass = 'light';

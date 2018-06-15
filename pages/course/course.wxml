@@ -34,10 +34,6 @@
   </view>
   <form bindsubmit="bottomBtnAction" report-submit="{{true}}">
     <button class="bottomBar" hover-class="none" formType="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
-      <view class="bottomBar-left">
-        <view>已预约</view>
-        <view>{{course.count}}/{{course.maxCount}}</view>
-      </view>
       <view class="bottomBar-right {{course.signStatusClass}}">
         {{course.signStatusText}}
       </view>

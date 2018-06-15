@@ -319,15 +319,11 @@ swiper {
   padding: 24rpx 0;
 }
 .my-list-cell-btn {
-  /* border-bottom: 1rpx solid #e5ebf1; */
-  border: 1rpx solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 24rpx 0;
-  /* position: static; */
   background-color: #fff;
-  /* border: 1px solid red; */
   border-radius: 0;
 }
 .my-list-cell-btn::after {
@@ -494,8 +490,19 @@ swiper {
   padding: 30rpx 0;
   border-bottom: 1rpx solid #d8d8d8;
   display: flex;
-  flex-direction: column;
   box-sizing: border-box;
+  justify-content: space-between;
+}
+.courseNamePic {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.calendarCourse-right {
+  width: 520rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .calendarCourse-cell {
   display: flex;
@@ -514,11 +521,54 @@ swiper {
   letter-spacing: normal;
   text-align: left;
   color: #353535;
+  display: flex;
+  align-items: center;
+}
+.calendarCourse-status {
+  margin-left: 5rpx;
+  min-width: 100rpx;
+  height: 34rpx;
+  border-radius: 8rpx;
+  line-height: 34rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #7ed321;
+  box-sizing: border-box;
+}
+.calendarCourse-over {
+  margin-left: 5rpx;
+  min-width: 100rpx;
+  height: 34rpx;
+  border-radius: 8rpx;
+  line-height: 34rpx;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #bdbdbd;
+  box-sizing: border-box;
 }
 .calendarCourse-showText {
   min-width: 100rpx;
   height: 36rpx;
-  border-radius: 36rpx;
   line-height: 36px;
   font-family: PingFangSC;
   font-size: 24rpx;
@@ -533,35 +583,22 @@ swiper {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  border: 2rpx solid #9ca3ae;
 }
 .calendarCourse-timeText {
   height: 40rpx;
   line-height: 40rpx;
   font-family: PingFangSC;
-  font-size: 28rpx;
+  font-size: 24rpx;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: right;
-  color: #353535;
+  color: #888888;
   margin-top: 16rpx;
 }
-.calendarCourse-dateText {
-  height: 33rpx;
-  font-family: PingFangSC;
-  font-size: 24rpx;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: right;
-  color: #888888;
-  margin-left: 20rpx;
-}
+
 .calendarCourse-cell-right {
   display: flex;
   flex-direction: row;

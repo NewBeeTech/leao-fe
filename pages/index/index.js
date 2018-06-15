@@ -643,8 +643,9 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '乐傲运动·专业、有爱、有趣的青少年运动训练',
+      title: `${that.data.userInfo.realName || that.data.userInfo.nickName || ''}邀请你加入乐傲运动！最专业、最有趣、最有爱的少儿运动训练`,
       path: `/pages/index/index?selectedTab=${this.data.selectedTab}`,
+      imageUrl: 'https://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/others/recommend.png',
       success: function(res) {
         // 转发成功
       },
