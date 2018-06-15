@@ -222,7 +222,7 @@ Page({
     if (res.from === 'button') {
       // 来自页面内转发按钮
       return {
-        title: `${that.data.userInfo.realName || that.data.userInfo.nickName || ''}邀请你加入乐傲运动！最专业、最有趣、最有爱的少儿运动训练`,
+        title: `${this.data.userInfo.realName || this.data.userInfo.nickName || ''}邀请你加入乐傲运动！最专业、最有趣、最有爱的少儿运动训练`,
         path: `/pages/index/index?userId=${this.data.userId}`,
         imageUrl: 'https://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/others/recommend.png',
         success: function(res) {
@@ -234,7 +234,7 @@ Page({
       }
     }
     return {
-      title: `${that.data.userInfo.realName || that.data.userInfo.nickName || ''}邀请你加入乐傲运动！最专业、最有趣、最有爱的少儿运动训练`,
+      title: `${this.data.userInfo.realName || this.data.userInfo.nickName || ''}邀请你加入乐傲运动！最专业、最有趣、最有爱的少儿运动训练`,
       path: `/pages/invitation/invitation`,
       imageUrl: 'https://newbeestudio.oss-cn-beijing.aliyuncs.com/leao/others/recommend.png',
       success: function(res) {
