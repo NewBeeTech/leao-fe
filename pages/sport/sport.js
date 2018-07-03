@@ -67,7 +67,7 @@ Page({
       success: (res) => {
         if (res.data.code == '000') { // 之前使用过运用
           const result = res.data.datas;
-          result.map((item, index) => {
+          result && result.map((item, index) => {
             item.jsonObj = JSON.parse(item.descJson);
             item.time = formatTime(item.updateTime, 'Y-M-D');
             let age = item.age
@@ -108,11 +108,11 @@ Page({
     });
   },
   select(e) {
+    console.log(e);
     const index = e.currentTarget.dataset.index;
     const item = e.currentTarget.dataset.item;
     const testInfo = this.data.testInfo;
-    console.log(index, item);
-    testInfo[index]['isSelected'] = !item.isSelected;
+    testInfo[index]['isSelected'] = !testInfo[index]['isSelected'];
     this.setData({
       testInfo
     })
