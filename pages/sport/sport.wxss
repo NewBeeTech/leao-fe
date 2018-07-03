@@ -61,6 +61,7 @@
 .history-item-line {
   width: 300rpx;
   height: 8rpx;
+  border-radius: 4rpx;
 }
 .sport-top-avator {
   width: 160rpx;
