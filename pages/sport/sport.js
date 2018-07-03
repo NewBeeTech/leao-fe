@@ -108,7 +108,6 @@ Page({
     });
   },
   select(e) {
-    console.log(e)
     const index = e.currentTarget.dataset.index;
     const item = e.currentTarget.dataset.item;
     const testInfo = this.data.testInfo;
