@@ -40,7 +40,7 @@
       style="background: {{item.isSelected ? '#3399FF' : '#dedede'}}"
     >
       <view class="history-item-title">{{item.time}}</view>
-      <view class="history-item-line" style="background: {{colorArr[index]}}"></view>
+      <view class="history-item-line" style="background: {{colorArr[index % 9]}}"></view>
     </view>
   </view>
 </view>
