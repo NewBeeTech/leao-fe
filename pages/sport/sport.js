@@ -4,11 +4,11 @@ import { getStandard } from '../../libs/standard'
 
 var numCount = 5;
 var numSlot = 4;
-var mW = 400;
-var mH = 400;
+var mW = 300;
+var mH = 300;
 var mCenter = mW / 2; //中心点
 var mAngle = Math.PI * 2 / numCount; //角度
-var mRadius = mCenter - 80; //半径(减去的值用于给绘制的文本留空间)
+var mRadius = mCenter -20; //半径(减去的值用于给绘制的文本留空间)
 //获取Canvas
 var radCtx = wx.createCanvasContext("radarCanvas")
 
