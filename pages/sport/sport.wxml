@@ -1,63 +1,46 @@
 <import src="../../components/loading/loading.wxml"/>
 <import src="../../components/topbar/topbar.wxml"/>
+<import src="../../components/radarChart/radarChart.wxml" />
+
 <view class="user-info-container">
   <template is="loading" data="{{ isFetching }}" />
   <template is="topbar" date="{{ navAction }}" />
   <view class="sport-top">
-    <image class="sport-top-avator" src="{{userInfo.portrait}}"/>
+    <!-- <image class="sport-top-avator" src="{{userInfo.portrait}}"/> -->
     <view class="sport-userinfo">
       <view class="sport-username">
-        {{userInfo.realName || userInfo.nickName}}
+        {{testInfo[0].userName}}
         <image wx:if="{{userInfo.gender === 2}}" class="sport-top-gender" src="../../assets/female.svg" />
         <image wx:if="{{userInfo.gender === 1}}" class="sport-top-gender" src="../../assets/male.svg" />
       </view>
-      <view wx:if="{{userInfo.age}}" class="sport-age">
-        {{userInfo.age}}岁
+      <view wx:if="{{testInfo[0].age}}" class="sport-age">
+        {{testInfo[0].age}}岁
       </view>
+      <image src="{{male}}" wx:if="{{testInfo[0].gender === 1 }}" class="sport-gender" />
+      <image src="{{female}}" wx:if="{{testInfo[0].gender === 2 }}" class="sport-gender" />
     </view>
   </view>
-  <view wx:if="{{testInfo.jsonObj.param1}}" class="update-time">
-    {{testInfo.createTime}} 更新
+  <!-- <view wx:if="{{testInfo.length}}" class="update-time">
+    {{testInfo[0].createTime}} 更新
+  </view> -->
+  <view wx:if="{{testInfo.length}}" class="update-time">
+    <template is="radarChart" date="{{ navAction }}" />
   </view>
   <view wx:else class="update-time">
     参加首节课后由教练录入
   </view>
   <view class="basic-info-container">
-    <view class="history-item-title">
-      <view class="history-item-address">核心力量耐力
-        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
-      </view>
-      <view class="history-item-address">{{testInfo.jsonObj.param1 || '--'}}</view>
-    </view>
-    <view class="history-item-title">
-      <view class="history-item-address">下肢力量耐力
-        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
-      </view>
-      <view class="history-item-address">{{testInfo.jsonObj.param2 || '--'}}</view>
-    </view>
-    <view class="history-item-title">
-      <view class="history-item-address">下肢爆发力
-        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
-      </view>
-      <view class="history-item-address">{{testInfo.jsonObj.param3 || '--'}}</view>
-    </view>
-    <view class="history-item-title">
-      <view class="history-item-address">上肢爆发力
-        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
-      </view>
-      <view class="history-item-address">{{testInfo.jsonObj.param4 || '--'}}</view>
-    </view>
-    <view class="history-item-title">
-      <view class="history-item-address">最大速度
-        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
-      </view>
-      <view class="history-item-address">{{testInfo.jsonObj.param5 || '--'}}</view>
-    </view>
-    <view class="history-item-title">
-      <view class="history-item-address">多方向速度
-        <!-- <image class="sport-top-gender" src="../../assets/notice.svg" /> -->
-      </view>
-      <view class="history-item-address">{{testInfo.jsonObj.param6 || '--'}}</view>
+    <view
+      class="history-item"
+      wx:for="{{testInfo}}"
+      wx:key="{{index}}"
+      bindtap="select"
+      data-item="{{item}}"
+      data-index="{{index}}"
+      style="background: {{item.isSelected ? '#3399FF' : '#dedede'}}"
+    >
+      <view class="history-item-title">{{item.time}}</view>
+      <view class="history-item-line" style="background: {{colorArr[index]}}"></view>
     </view>
   </view>
 </view>

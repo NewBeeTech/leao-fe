@@ -2,12 +2,14 @@ const app = getApp()
 
 Page({
   data: {
+    age: '',
+    gender: 0,
+    genderArr:['请选择', '男', '女'],
     param1: '',
     param2: '',
     param3: '',
     param4: '',
     param5: '',
-    param6: '',
     avator: '',
     avatorUrl: '',
     isFetching: false,
@@ -21,6 +23,9 @@ Page({
       userId,
     })
   },
+  bindPickerChange(e) {
+    this.setData({ gender: e.detail.value })
+  },
   inputChangeAction(e) {
     const value = e.detail.value;
     const name = e.currentTarget.dataset.name;
@@ -32,22 +37,22 @@ Page({
   checkInfo() {
     var that = this
     const {
+      age,
+      gender,
       param1,
       param2,
       param3,
       param4,
       param5,
-      param6,
       avatorUrl,
     } = that.data;
-    if (param1 && param2 && param3 && param4 && param5 && param6 && avatorUrl) { // 基本信息必填
+    if (age && gender && param1 && param2 && param3 && param4 && param5 && avatorUrl) { // 基本信息必填
       const descJson = JSON.stringify({
         param1,
         param2,
         param3,
         param4,
         param5,
-        param6,
         avator: avatorUrl,
       });
       wx.showModal({
@@ -57,7 +62,7 @@ Page({
         confirmText: '提交',
         success: function(res) {
           if (res.confirm) {
-            that.saveUserInfoAction(descJson)
+            that.saveUserInfoAction({ descJson, age, gender})
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -71,7 +76,7 @@ Page({
       })
     }
   },
-  saveUserInfoAction(descJson) {
+  saveUserInfoAction(data) {
     wx.showLoading({
       title: '加载中...',
       mask: true,
@@ -83,7 +88,9 @@ Page({
       data: {
         courseId: that.data.courseId,
         userId: that.data.userId,
-        descJson
+        age: data.age,
+        gender: data.gender,
+        descJson: data.descJson
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded', // 默认值
