@@ -9,25 +9,23 @@
     <!-- <image class="sport-top-avator" src="{{userInfo.portrait}}"/> -->
     <view class="sport-userinfo">
       <view class="sport-username">
-        {{testInfo[0].userName}}
-        <image wx:if="{{userInfo.gender === 2}}" class="sport-top-gender" src="../../assets/female.svg" />
-        <image wx:if="{{userInfo.gender === 1}}" class="sport-top-gender" src="../../assets/male.svg" />
+        {{testInfo[0].userName || userInfo.realName || userInfo.nickName }}
       </view>
-      <view wx:if="{{testInfo[0].age}}" class="sport-age">
-        {{testInfo[0].age}}岁
+      <view wx:if="{{testInfo[0].age || userInfo.age}}" class="sport-age">
+        {{testInfo[0].age || userInfo.age }}岁
       </view>
-      <image src="{{male}}" wx:if="{{testInfo[0].gender === 1 }}" class="sport-gender" />
-      <image src="{{female}}" wx:if="{{testInfo[0].gender === 2 }}" class="sport-gender" />
+      <image wx:if="{{testInfo[0].gender === 2 || userInfo.gender === 2}}" class="sport-top-gender" src="../../assets/female.svg" />
+      <image wx:if="{{testInfo[0].gender === 1 || userInfo.gender === 1}}" class="sport-top-gender" src="../../assets/male.svg" />
     </view>
   </view>
   <!-- <view wx:if="{{testInfo.length}}" class="update-time">
     {{testInfo[0].createTime}} 更新
   </view> -->
-  <view wx:if="{{testInfo.length}}" class="update-time">
-    <template is="radarChart" date="{{ navAction }}" />
-  </view>
-  <view wx:else class="update-time">
+  <view wx:if="{{!testInfo.length}}" class="update-time">
     参加首节课后由教练录入
+  </view>
+  <view class="update-time">
+    <template is="radarChart" date="{{ navAction }}" />
   </view>
   <view class="basic-info-container">
     <view

@@ -4,7 +4,7 @@ import { getStandard } from '../../libs/standard'
 
 var numCount = 5;
 var numSlot = 4;
-var mW = 300;
+var mW = 290;
 var mH = 300;
 var mCenter = mW / 2; //中心点
 var mAngle = Math.PI * 2 / numCount; //角度
@@ -66,7 +66,7 @@ Page({
       method: 'GET',
       success: (res) => {
         if (res.data.code == '000') { // 之前使用过运用
-          const result = res.data.datas;
+          const result = res.data.datas || [];
           result && result.map((item, index) => {
             item.jsonObj = JSON.parse(item.descJson);
             item.time = formatTime(item.updateTime, 'Y-M-D');

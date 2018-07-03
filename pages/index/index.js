@@ -94,7 +94,7 @@ Page({
     );
     this.setData({
       nextDays: [0, 1, 2, 3, 4, 5, 6, 7].map(item => getNextNDay(item)),
-      selectedTab: options.selectedTab,
+      selectedTab: options.selectedTab || 0,
       shareUserId: options.userId || '',
     });
     // 地理位置
@@ -311,7 +311,7 @@ Page({
                 courseType: result.courseType,
                 hotCoach: result.hotCoach,
                 myCourse: [],
-                recommendCourse: result.recommendCourse,
+                recommendCourse: result.recommendCourse || [],
               });
             } else {
               that.setData({
@@ -319,7 +319,7 @@ Page({
                 courseType: res.data.datas.courseType,
                 hotCoach: res.data.datas.hotCoach,
                 myCourse: res.data.datas.myCourse || [],
-                recommendCourse: res.data.datas.recommendCourse,
+                recommendCourse: res.data.datas.recommendCourse || [],
               });
             }
           }
