@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -125,7 +125,7 @@
 					"id": 15,
 					"name": "运动能力",
 					"pathName": "pages/sport/sport",
-					"query": "userId=79"
+					"query": "userId=78"
 				},
 				{
 					"id": 16,

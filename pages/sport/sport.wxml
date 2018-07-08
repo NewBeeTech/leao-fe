@@ -5,40 +5,37 @@
 <view class="user-info-container">
   <template is="loading" data="{{ isFetching }}" />
   <template is="topbar" date="{{ navAction }}" />
-  <view class="sport-top">
-    <!-- <image class="sport-top-avator" src="{{userInfo.portrait}}"/> -->
+  <view class="update-time">
+    <template is="radarChart" date="{{ navAction }}" />
+  </view>
+  <view class="line" />
+  <view class="basic-info-container">
     <view class="sport-userinfo">
       <view class="sport-username">
         {{testInfo[0].userName || userInfo.realName || userInfo.nickName }}
       </view>
+      <image wx:if="{{testInfo[0].gender === 2 || userInfo.gender === 2}}" class="sport-top-gender" src="../../assets/female.svg" />
+      <image wx:if="{{testInfo[0].gender === 1 || userInfo.gender === 1}}" class="sport-top-gender" src="../../assets/male.svg" />
       <view wx:if="{{testInfo[0].age || userInfo.age}}" class="sport-age">
         {{testInfo[0].age || userInfo.age }}岁
       </view>
-      <image wx:if="{{testInfo[0].gender === 2 || userInfo.gender === 2}}" class="sport-top-gender" src="../../assets/female.svg" />
-      <image wx:if="{{testInfo[0].gender === 1 || userInfo.gender === 1}}" class="sport-top-gender" src="../../assets/male.svg" />
     </view>
-  </view>
-  <!-- <view wx:if="{{testInfo.length}}" class="update-time">
-    {{testInfo[0].createTime}} 更新
-  </view> -->
-  <view wx:if="{{!testInfo.length}}" class="update-time">
-    参加首节课后由教练录入
-  </view>
-  <view class="update-time">
-    <template is="radarChart" date="{{ navAction }}" />
-  </view>
-  <view class="basic-info-container">
-    <view
-      class="history-item"
-      wx:for="{{testInfo}}"
-      wx:key="{{index}}"
-      bindtap="select"
-      data-item="{{item}}"
-      data-index="{{index}}"
-      style="background: {{item.isSelected ? '#3399FF' : '#dedede'}}"
-    >
-      <view class="history-item-title">{{item.time}}</view>
-      <view class="history-item-line" style="background: {{colorArr[index % 9]}}"></view>
+    <view wx:if="{{testInfo.length}}" class="history-list">
+      <view
+        class="history-item"
+        wx:for="{{testInfo}}"
+        wx:key="{{index}}"
+        bindtap="select"
+        data-item="{{item}}"
+        data-index="{{index}}"
+        style="border-color: {{item.isSelected ? '#ffd255' : '#dedede'}}"
+      >
+        <view class="history-item-title">{{item.time}}</view>
+        <view class="history-item-line" style="background: {{colorArr[index % 9]}}"></view>
+      </view>
+    </view>
+    <view wx:else class="update-time">
+      暂无体测数据，预约课程后将由教练完成测试
     </view>
   </view>
 </view>

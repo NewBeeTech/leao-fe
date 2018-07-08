@@ -3,20 +3,18 @@
 @import "../../components/radarChart/radarChart.wxss";
 
 .basic-info-container {
-  margin-top: 20rpx;
   background-color: #fff;
   padding: 30rpx;
   z-index: 100;
 }
 .update-time {
-  margin-top: 20rpx;
-  background-color: #fff;
-  padding: 30rpx;
-  font-size: 28rpx;
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 32rpx;
   color: #9ca3ae;
 }
 .user-info-container {
-  background-color: #f5f8fb;
+  background-color: #fff;
   width: 100vw;
   min-height: 100vh;
   overflow-y: scroll;
@@ -36,38 +34,43 @@
   align-items: center;
   margin: 0 30rpx;
 }
+.history-list {
+  width: 690rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 
 .history-item {
+  width: 250rpx;
   z-index: 100;
   display: flex;
   border-radius: 50rpx;
   font-size: 32rpx;
-  background-color: #dedede;
+  border: 1px solid #e0e0e0;
   color: #353535;
   align-items: center;
-  justify-content: space-between;
-  padding: 10rpx 30rpx;
+  justify-content: space-around;
+  padding: 12rpx 30rpx;
   margin: 0 auto;
-  margin-top: 20rpx;
+  margin-top: 40rpx;
 }
 .history-item-title {
-  width: 690rpx;
   display: flex;
   font-size: 26rpx;
   color: #353535;
   align-items: center;
   justify-content: space-between;
 }
-.history-item-line {
-  width: 300rpx;
-  height: 8rpx;
-  border-radius: 4rpx;
+.line {
+  width: 750rpx;
+  height: 20rpx;
+  background-color: #f5f8fb;
 }
-.sport-top-avator {
-  width: 160rpx;
-  height: 160rpx;
-  border-radius: 50%;
-  border: solid 6rpx #f5f8fb;
+.history-item-line {
+  width: 40rpx;
+  height: 30rpx;
 }
 .sport-top-gender {
   width: 32rpx;
@@ -80,14 +83,14 @@
   padding: 15rpx 0;
   font-weight: 500;
   text-align: left;
-  color: #353535;
+  color: #212121;
 }
 .sport-age {
   font-size: 32rpx;
   padding: 15rpx 0;
   font-weight: 500;
   text-align: left;
-  color: #8e8b59;
+  color: #212121;
   margin-left: 20rpx;
 }
 .sport-gender {

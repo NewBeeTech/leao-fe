@@ -3,7 +3,7 @@ import { formatTime } from '../../libs/moment'
 import { getStandard } from '../../libs/standard'
 
 var numCount = 5;
-var numSlot = 4;
+var numSlot = 7;
 var mW = 290;
 var mH = 300;
 var mCenter = mW / 2; //中心点
@@ -22,7 +22,8 @@ Page({
     error: '',
     stepText:4,
     chanelArray:[["柔韧",0],["力量耐力",0],["爆发力",0],["速度",0],["稳定",0]],
-    colorArr: ['rgba(0,204,0,0.2)', 'rgba(102,0,0,0.2)', 'rgba(0,255,153,0.2)', 'rgba(204,255,102.2)', 'rgba(204,153,204,0.2)', 'rgba(153,0,0,0.2)', 'rgba(102,102,153,0.2)', 'rgba(102,153,153,0.2)', 'rgba(153,51,204,0.2)'],
+    colorArr: ['rgb(251,146,146)', 'rgb(255,210,37)', 'rgb(141,231,255)', 'rgb(138,114,255)', 'rgb(114,180,255)', 'rgb(251,189,146)'],
+    colorArrOpacity: ['rgba(251,146,146,0.8)', 'rgba(255,210,37,0.7)', 'rgba(141,231,255,0.6)', 'rgba(138,114,255,0.5)', 'rgba(114,180,255,0.4)', 'rgba(251,189,146,0.3)'],
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -66,10 +67,11 @@ Page({
       method: 'GET',
       success: (res) => {
         if (res.data.code == '000') { // 之前使用过运用
-          const result = res.data.datas || [];
+          const results = res.data.datas || [];
+          const result = results.slice(0, 6)
           result && result.map((item, index) => {
             item.jsonObj = JSON.parse(item.descJson);
-            item.time = formatTime(item.updateTime, 'Y-M-D');
+            item.time = formatTime(item.updateTime, 'Y.M.D');
             let age = item.age
             if (item.age > 18) {
               age = 18
@@ -108,7 +110,6 @@ Page({
     });
   },
   select(e) {
-    console.log(e);
     const index = e.currentTarget.dataset.index;
     const item = e.currentTarget.dataset.item;
     const testInfo = this.data.testInfo;
@@ -133,9 +134,9 @@ Page({
     //设置数据
     testInfo.forEach((item, index) => {
       if (item.isSelected) {
-        this.drawRegion(item.radarData, this.data.colorArr[index % 9])
+        this.drawRegion(item.radarData, this.data.colorArrOpacity[index])
         //设置节点
-        this.drawCircle(item.radarData, this.data.colorArr[index % 9])
+        this.drawCircle(item.radarData, this.data.colorArr[index])
       }
     })
     //设置文本数据
@@ -145,7 +146,7 @@ Page({
   },
   // 绘制5条边
   drawEdge: function() {
-    radCtx.setStrokeStyle("grey")
+    radCtx.setStrokeStyle("#CFDFF5")
     radCtx.setLineWidth(1)  //设置线宽
     for (var i = 0; i < numSlot; i++) {
       //计算半径
@@ -189,8 +190,8 @@ Page({
 
   //绘制文字
   drawTextCans: function(mData) {
-    radCtx.setFillStyle("black")
-    // radCtx.font = 'bold 17px cursive'  //设置字体
+    radCtx.setFillStyle("#ADB5C0")
+    radCtx.font = 'normal 14px SimHei'  //设置字体
     for (var n = 0; n < numCount; n++) {
       var x = mCenter + mRadius * Math.cos(mAngle * n);
       var y = mCenter + mRadius * Math.sin(mAngle * n);
