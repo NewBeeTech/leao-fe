@@ -93,7 +93,7 @@ Page({
             const param4 = Math.floor((Math.atan((Number(item.jsonObj.param4) - standard4))/(2 * Math.PI) + 0.5) * 100);
             const param5 = Math.floor((Math.atan((Number(item.jsonObj.param5) - standard5))/(2 * Math.PI) + 0.5) * 100);
             item.radarData = [["柔韧",param5],["力量耐力",param4],["爆发力",param1],["速度",param2],["稳定",param3]]
-            if(index == 0) {
+            if(index == 0 || index == 1) {
               item.isSelected = true
             } else {
               item.isSelected = false
